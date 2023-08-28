@@ -1,0 +1,149 @@
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--color-b6);
+}
+
+.aboutMe {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: var(--aboutMe-bg);
+  border-radius: 10px;
+  box-shadow: var(--boxshadow-aboutMe);
+  border: 0.2px solid var(--color-b1);
+}
+
+[data-animation="scroll"] {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+  transition: 0.6s;
+}
+
+[data-animation="scroll"].ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.aboutMe-bg {
+  background-color: transparent;
+}
+
+.content-text {
+  margin-top: 10px;
+  grid-column: 2;
+}
+
+.content-text p {
+  font-size: 1.4rem;
+}
+
+.line-1.title {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 2.125rem;
+  color: var(--color-b3);
+  grid-column: 2;
+}
+
+.content-text p,
+.content-text a {
+  word-spacing: -4px;
+  text-align: justify;
+  text-justify: distribute;
+  text-align-last: left;
+  line-height: 140%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.content-text p {
+  color: var(--color-w4);
+}
+
+.content-text a {
+  font-weight: 600;
+  color: var(--color-b3);
+}
+
+[data-theme="dark"] .content-text p {
+  color: var(--color-w6);
+}
+
+[data-theme="dark"] .content-text a {
+  color: var(--color-b3);
+}
+
+.aboutMeImg {
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-bottom: 4rem;
+}
+
+.container-img img {
+  margin-top: 4rem;
+  box-shadow: var(--boxshadow-aboutMeImg);
+  border: 0.5px solid var(--color-w2);
+  max-height: 300px;
+}
+
+.aboutMeImg:hover {
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.aboutMe {
+  box-shadow: -2.5px 0px 0px rgba(20, 25, 45, 1),
+    -5px 0px 0px rgba(50, 60, 90, 0.7), -7.5px 0px 0px rgba(60, 70, 100, 0.4),
+    -10px 0px 0px rgba(60, 70, 100, 0.1);
+}
+
+@media (min-width: 1200px) {
+  .content-text {
+    margin-bottom: 3rem;
+  }
+
+  .line-1::after {
+    content: "👨‍💻";
+  }
+  .line-1::before {
+    z-index: 9999;
+    position: absolute;
+    left: -10px;
+    top: 4px;
+    content: "";
+    background-color: var(--color-b1);
+    width: 6px;
+    height: 30px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .aboutMe.grid {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  .content-text a,
+  .content-text p {
+    text-align: justify;
+    text-justify: inherit;
+    text-align-last: inherit;
+  }
+  .photoMobile.aboutMeImg {
+    box-shadow: var(--boxshadow-aboutMeImg);
+    display: block;
+    max-height: 300px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 487px) {
+  .content-text a,
+  .content-text p {
+    font-size: 1rem;
+  }
+}

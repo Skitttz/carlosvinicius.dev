@@ -1,0 +1,174 @@
+:root[data-theme="light"] {
+  /* Colors Default */
+  --color-MenuDefault: rgba(21, 21, 21, 1);
+  --color-MenuOn: rgba(21, 21, 21, 1);
+  --color-b-222: #222;
+
+  --color-w: #fff;
+  --color-w1: rgba(244, 244, 244, 1);
+  --color-w2: rgb(205, 205, 205);
+  --color-w3: rgba(75, 75, 75, 1);
+  --color-w4: rgba(33, 33, 33, 1);
+  --color-w5: rgba(31, 30, 30, 1);
+  --color-w6: rgba(21, 21, 21, 1);
+  --color-w7: rgba(0, 0, 0, 1);
+
+  --color-b1: rgba(196, 201, 243, 1);
+  --color-b2: rgba(115, 125, 210, 1);
+  --color-b3: rgba(69, 82, 187, 1);
+  --color-b4: rgba(44, 58, 168, 1);
+  --color-b5: rgba(37, 46, 118, 1);
+  --color-b6: rgba(4, 11, 63, 1);
+
+  /* Menu */
+  --menu-border: 0px 0px 0px 2px rgba(3, 3, 3, 0.1);
+  --line-menu-a: linear-gradient(
+    315deg,
+    hsla(0, 0%, 90%, 1) 4%,
+    hsla(232, 40%, 30%, 1) 28%,
+    hsla(233, 52%, 60%, 1) 73%,
+    hsla(233, 82%, 10%, 1) 95%
+  );
+  --line-menu-a-moz: -moz-linear-gradient(
+    315deg,
+    hsla(0, 0%, 90%, 1) 4%,
+    hsla(232, 40%, 30%, 1) 28%,
+    hsla(233, 52%, 60%, 1) 73%,
+    hsla(233, 82%, 10%, 1) 95%
+  );
+
+  --line-menu-a-webkit: -webkit-linear-gradient(
+    315deg,
+    hsla(0, 0%, 90%, 1) 4%,
+    hsla(232, 40%, 30%, 1) 28%,
+    hsla(233, 52%, 60%, 1) 73%,
+    hsla(233, 82%, 10%, 1) 95%
+  );
+
+  /* Menu Mobile */
+  --hMenu-span: rgba(60, 65, 63, 1);
+  --M-header: linear-gradient(
+    90deg,
+    rgba(15, 15, 20, 1) 9%,
+    rgba(10, 10, 20, 1) 55%,
+    rgba(20, 23, 40, 1) 100%
+  );
+
+  /* Separator */
+  /* Separator */
+  --colors-separator-bg-speed: linear-gradient(
+    90deg,
+    #ffff 0%,
+    #ffff 5%,
+    transparent 5%,
+    transparent 10%,
+    #ffff 10%,
+    #ffff 15%,
+    transparent 15%,
+    transparent 20%,
+    #ffff 20%,
+    #ffff 25%,
+    transparent 25%,
+    transparent 30%,
+    #ffff 30%,
+    #ffff 35%,
+    transparent 35%,
+    transparent 40%,
+    #ffff 40%,
+    #ffff 45%,
+    transparent 45%,
+    transparent 50%,
+    #ffff 50%,
+    #ffff 55%,
+    transparent 55%,
+    transparent 60%,
+    #ffff 60%,
+    #ffff 65%,
+    transparent 65%,
+    transparent 70%,
+    #ffff 70%,
+    #ffff 75%,
+    transparent 75%,
+    transparent 80%,
+    #ffff 80%,
+    #ffff 85%,
+    transparent 85%,
+    transparent 90%,
+    #ffff 90%,
+    #ffff 95%,
+    transparent 95%,
+    transparent 100%
+  );
+  --colors-separator-bg: linear-gradient(
+    90deg,
+    #ffff 0%,
+    #ffff 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  --colors-separator: linear-gradient(
+    to right,
+    #08053b 5%,
+    #00316b 15%,
+    #005b94 25%,
+    #0087ae 35%,
+    #00b4bb 45%,
+    #12dfbb 55%,
+    #08053b 65%,
+    #00316b 75%,
+    #005b94 85%,
+    #0087ae 95%
+  );
+
+  /* Home */
+  --colors-btn-contact: linear-gradient(
+    90deg,
+    rgba(15, 19, 39, 1) 9%,
+    rgba(10, 10, 45, 1) 55%,
+    rgba(25, 32, 70, 1) 100%
+  );
+
+  /* Home Panel */
+  --colors-btn-Red-bg: #aa1319;
+  --colors-btn-Red-border: #5d1317;
+
+  --colors-btn-Zoom-bg: #008e28;
+  --colors-btn-Zoom-border: #04611b;
+
+  --colors-btn-Mini-bg: #d8a700;
+  --colors-btn-Mini-border: #7c5e1f;
+
+  --color-text-exitConsole: #00ff00;
+
+  /* About Me */
+  --aboutMe-bg: rgb(224, 229, 236, 1);
+  --boxshadow-aboutMe: -5px 0px 0px rgba(20, 25, 45, 1),
+    -10px 0px 0px rgba(50, 60, 90, 0.7), -15px 0px 0px rgba(60, 70, 100, 0.4),
+    -20px 0px 0px rgba(60, 70, 100, 0.1);
+  --boxshadow-aboutMeImg: rgba(0, 184, 217, 0.24) 0px 8px 16px 0px;
+
+  /* Projects */
+  --btn-demo-bg: linear-gradient(
+    90deg,
+    rgba(18, 18, 42, 1) 10%,
+    rgba(23, 25, 53, 1) 50%,
+    rgba(25, 30, 58, 1) 100%
+  );
+  --btn-demo-bg-hover: linear-gradient(
+    90deg,
+    rgba(18, 18, 42, 1) 100%,
+    rgba(23, 25, 53, 1) 20%,
+    rgba(25, 30, 58, 1) 10%
+  );
+  --arrow-bg: #111;
+  --color-btn-linkP: #ffff;
+  --projects-boxshadow: 5px 0px 0px rgba(128, 128, 128, 1),
+    10px 0px 0px rgba(128, 128, 128, 0.7), 15px 0px 0px rgba(128, 128, 128, 0.4),
+    20px 0px 0px rgba(128, 128, 128, 0.1);
+
+  /* Slide */
+  --controls-boxshadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --color-project-AniArt: #5f0a0a;
+  --slide-li-img: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}

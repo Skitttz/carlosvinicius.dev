@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio {Carlos Vinicus} - Dev Front-end">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./favicon.svg">
+  <title>Portfólio {Carlos Vinicius} </title>
+</head>
+
+<body>
+  <header class="header-bg fixed">
+    <div class="header container ">
+      <li>
+        <a class="logo link" href="#home"> <img src="./img/logo.svg" alt="" class="logoImg" id="ImagemLogo" aria-label="Logo"></a>
+
+      </li>
+      <nav class="menu" data-menu="smooth">
+        <ul class="header-menu">
+          <li><a class="link" href="#home">Home</a></li>
+          <li><a class="link" href="#about">Sobre Mim</a></li>
+          <li><a class="link" href="#project">Projetos</a></li>
+          <li><a class="link" href="https://linktr.ee/skittzdev" target="_blank"> Contato</a></li>
+          <li><a class="btnDarkMode" href="">🌕</a></li>
+          <div class="hMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar last"></span>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="home-bg" data-animation="scroll" id="home">
+    <div class="grid container first">
+      <ul class="linksContato">
+        <li><a href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/" target="_blank" aria-label="LinkedinHome"> <img src="./img/icon-linkedin.svg" class="icon" alt=""> </a></li>
+        <li><a href="https://github.com/Skitttz" target="_blank" aria-label="githubHome"><img src="./img/icon-github.svg" class="icon" alt=""></a></li>
+        <li><a href="mailto:skittz.dev@gmail.com" target="_blank"><img src="./img/icon-email.svg" class="icon" alt="" aria-label="EmailHome"></a></li>
+        <li><a href="https://wa.me/5582981229049" target="_blank" aria-label="emailHome"><img src="./img/icon-whatsapp.svg" class="icon" alt=""></a></li>
+      </ul>
+      <div class="home-main">
+        <p id="text">
+        </p>
+        <section class='panelSection'>
+          <div class='cssMenu'>
+            <div class='btnMenu btnClose'></div>
+            <div class='btnMenu btnMini'></div>
+            <div class='btnMenu btnZoom'></div>
+          </div>
+          <div class='cssContainer'>
+            <img class="loading" src="./img/loading.svg" alt="">
+            <pre class="textArea"><code class='css'>
+          <span class="textCode" id="consoleType"></span>
+          <p id="teste"></p>
+          <span class="exit-console">...Program finished with exit code 0
+            Press ENTER to exit console.</span>
+          </code></pre>
+          </div>
+        </section>
+        <div class="linksBtn">
+          <a class="btn btn-cv" href="https://wa.me/5582981229049">Entrar em contato</a>
+          <a class="btn btn-contact" href="./assets/Curriculo-CarlosVinicius.pdf" download="Curriculo-CarlosVinicius">Download CV</a>
+        </div>
+      </div>
+
+      <div class="homeGif">
+        <img class="" src="./img/home.gif" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <b class="hr "></b>
+
+
+  <section class="aboutMe-bg" data-animation="scroll" id="about">
+    <div class="grid container aboutMe" id="#about">
+      <div class="container-img">
+        <img class="aboutMeImg" src="./img/photo.jpeg" alt="">
+      </div>
+      <div class="content-text">
+        <h1 class="line-1 title">Sobre mim</h1>
+        <p>Formado em Ciência da Computação pela <a href="https://www.unit.br/" target="_blank">Universidade Tiradentes</a>, minha jornada é juntar o mundo visual com técnicas do desenvolvimento web, permitindo-me criar experiências interativas e interfaces intuitivas. Estou constantemente explorando novas maneiras de integrar projetos. Meus conhecimentos são formados por HTML, CSS e JavaScript. Além disso, estou expandindo meus horizontes aprendendo TypeScript e React. Estou em busca de desafios estimulantes para expressar minha criatividade e conhecimento. Nos momentos de lazer, meu interesse é editar fotos, vídeos e explorar games. Se você compartilha a paixão por criação, estou pronto para colaborar e enfrentar novos projetos. Fique à vontade para explorar meus trabalhos e entrar em contato.</p>
+        <img class="photoMobile aboutMeImg" src="./img/photo.jpeg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <b class="hr "></b>
+
+  <section class="projects-bg" id="project" data-animation="scroll">
+    <div class="container projects">
+      <h1 class="line-2 title projects-title">Projetos </h1>
+
+      <ul class="controls">
+
+        <li><img src="./img/control-aniArt-icon.svg" alt=""></li>
+        <li><img src="./img/control-surfCurse-icon.svg" alt=""></li>
+        <li><img src="./img/control-DrinkWater-icon.svg" alt=""></li>
+      </ul>
+
+      <div class="wrap">
+        <ul class="slide">
+
+          <li>
+            <div class="content-text-slide">
+              <h1 class="aniArtText">AniArt </h1>
+
+            </div>
+
+            <img src="./img/projetoAniArt.png" alt="">
+            <div>
+              <a class="legenda linkP" href="https://github.com/Skitttz/AniArt" target="_blank">Link do Projeto</a> <a class="legenda demo" href="https://skitttz.github.io/AniArt/" target="_blank"> Demo </a>
+            </div>
+          </li>
+          <li>
+            <div class="content-text-slide">
+              <h1 class="surfCurseText">SurfCurse </h1>
+
+            </div>
+
+            <img src="./img/projetoSurfCurse.png" alt="">
+            <div>
+              <a class="legenda linkP" href="https://github.com/Skitttz/SurfCurse" target="_blank">Link do Projeto</a> <a class="legenda demo" href="https://skitttz.github.io/SurfCurse/" target="_blank"> Demo </a>
+            </div>
+          </li>
+          <li>
+            <div class="content-text-slide">
+              <h1 class="drinkWaterText">DrinkWater</h1>
+
+
+            </div>
+
+            <img src="./img/projetoDrinkWater.png" alt="">
+            <div>
+              <a class="legenda linkP" href="https://github.com/Skitttz/DrinkWater" target="_blank">Link do Projeto</a> <a class="legenda demo" href="https://skitttz.github.io/DrinkWater/" target="_blank"> Demo </a>
+            </div>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="arrow-nav">
+      <button class="prev"></button>
+      <button class="next"></button>
+    </div> -->
+    </div>
+  </section>
+  <footer class="copy">
+    <div class="container">
+      <div class="dados">
+        <p>Copyright © 2023-2023. Todos os direitos reservados.</p>
+        <div class="icons">
+          <a href="https://wa.me/5582981229049" target="_blank" aria-label="WhatsappFooter"> <img src="./img/icon-whatsapp.svg" class="icon" alt=""></a>
+          <a href="mailto:skittz.dev@gmail.com" target="_blank" aria-label="EmailFooter"> <img src="./img/icon-email.svg" class="icon" alt=""></a>
+          <a href="https://github.com/Skitttz" target="_blank" aria-label="GitHubFooter"> <img src="./img/icon-github.svg" class="icon" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script type="" src="main.js"></script>
+
+</html>
