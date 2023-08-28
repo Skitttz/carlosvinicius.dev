@@ -24,6 +24,16 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid var(--color-w1); /* creates padding around scroll thumb */
 }
 
+[data-theme="dark"] body::-webkit-scrollbar-track {
+  background: var(--color-w); /* color of the tracking area */
+}
+
+[data-theme="dark"] body::-webkit-scrollbar-thumb {
+  background-color: var(--color-w1); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--color-w); /* creates padding around scroll thumb */
+}
+
 html,
 body {
   max-width: 100vw;
