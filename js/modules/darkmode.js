@@ -21,12 +21,12 @@ export default class DarkMode {
     let local = localStorage.getItem("theme");
     if (local === "light") {
       this.moon.innerText = "🌕";
-      this.logo.src = "../img/logo.svg";
-      this.homeGif.src = "../img/home.gif";
+      this.logo.src = "./img/logo.svg";
+      this.homeGif.src = "./img/home.gif";
     } else if (local === "dark") {
       this.moon.innerText = "🌑";
-      this.logo.src = "../img/logoDark.svg";
-      this.homeGif.src = "../img/homeDark.gif";
+      this.logo.src = "./img/logoDark.svg";
+      this.homeGif.src = "./img/homeDark.gif";
     }
   }
 
@@ -34,19 +34,19 @@ export default class DarkMode {
     event.preventDefault();
     if (this.moon.innerText === "🌕") {
       this.moon.innerText = "🌑";
-      this.logo.src = "../img/logoDark.svg";
+      this.logo.src = "./img/logoDark.svg";
       this.homeGif.style.opacity = "0";
       setTimeout(() => {
-        this.homeGif.src = "../img/homeDark.gif";
+        this.homeGif.src = "./img/homeDark.gif";
         this.homeGif.style.opacity = "1";
         this.homeGif.style.transition = "opacity 0.5s ease-in-out;";
       }, 250);
     } else if (this.moon.innerText === "🌑") {
       this.moon.innerText = "🌕";
-      this.logo.src = "../img/logo.svg";
+      this.logo.src = "./img/logo.svg";
       this.homeGif.style.opacity = "0";
       setTimeout(() => {
-        this.homeGif.src = "../img/home.gif";
+        this.homeGif.src = "./img/home.gif";
         this.homeGif.style.opacity = "1";
       }, 250);
     }
