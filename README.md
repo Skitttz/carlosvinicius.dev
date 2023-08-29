@@ -11,6 +11,7 @@
 </p>
 
 <div align="center">
+<h2>Light Mode</h2>
 <img src="https://i.ibb.co/LtLcHQq/light-Mode.jpg" width="90%" />
 <h2>Dark Mode</h2>
 <img src="https://i.ibb.co/5rNdZHH/darkMode.jpg" width="90%" />
@@ -18,7 +19,7 @@
 
 ## Contexto 📝
 
-O portfólio é uma forma de apresentação interativas e envolventes. Mostrando cada projeto demonstra o compromisso em criar experiências digitais. Permitindo que explore um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
+O portfólio é uma forma de apresentação interativas e envolventes. Mostrando cada projeto, demonstrando o compromisso em criar experiências digitais. Permitindo explorar um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
 
 ## Tecnologias 🖥️
 
