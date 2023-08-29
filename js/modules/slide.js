@@ -10,6 +10,19 @@ export class Slide {
     };
     this.activeClass = "active";
     this.changeEvent = new Event("changeEvent");
+    this.project = document.querySelector(".projects-bg");
+  }
+
+  mouseUpOut() {
+    this.project.addEventListener("mouseup", (event) => {
+      if (!this.wrap.contains(event.target)) {
+        const moveType = event.type === "mouseup" ? "mousemove" : "touchmove";
+        this.wrap.removeEventListener(moveType, this.onMove);
+        this.dist.finalPosition = this.dist.movePosition;
+        this.transition(true);
+        this.changeSlideOnEnd();
+      }
+    });
   }
 
   transition(active) {
@@ -148,6 +161,7 @@ export class Slide {
   init() {
     this.bindEvents();
     this.transition(true);
+    this.mouseUpOut();
     this.addSlideEvent();
     this.slideConfig();
     this.changeSlide(0);

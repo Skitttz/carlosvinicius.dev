@@ -31,7 +31,10 @@ export default class DarkMode {
   }
 
   changeIcon(event) {
-    event.preventDefault();
+    if (event.cancelable) {
+      event.preventDefault();
+    }
+
     if (this.moon.innerText === "🌕") {
       this.moon.innerText = "🌑";
       this.logo.src = "./img/logoDark.svg";

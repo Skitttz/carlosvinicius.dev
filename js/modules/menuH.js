@@ -39,7 +39,10 @@ export default class MenuMobile {
 
   openMenu(event) {
     /* Iniciar Menu ao clicar */
-    event.preventDefault();
+
+    if (event.cancelable) {
+      event.preventDefault();
+    }
     this.menu.classList.toggle(this.activeClass);
     this.menuHamburguer.classList.toggle(this.activeClass);
     this.navMenu.classList.toggle(this.activeClass);
@@ -56,11 +59,11 @@ export default class MenuMobile {
 
     /* Clicar em um item fechar o menu */
     const arrayItemsMenu = [...this.itemMenus];
-    this.eventos.forEach((event) => {
-      this.animationOpacity();
 
+    this.eventos.forEach((event) => {
       arrayItemsMenu.forEach((item) => {
         item.addEventListener(event, () => {
+          this.animationOpacity();
           this.menuHamburguer.classList.remove(this.activeClass);
           this.navMenu.classList.remove(this.activeClass);
           this.menu.classList.remove(this.activeClass);

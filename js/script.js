@@ -10,7 +10,7 @@ const menuMobile = new MenuMobile(
   ".hMenu",
   ".header",
   ".header-menu",
-  ".link",
+  '.link[href^="#"]',
   ".last"
 );
 menuMobile.init();
