@@ -87,6 +87,12 @@
   font-size: 0.8rem;
 }
 
+@media (max-width: 426px) {
+  .exit-console {
+    font-size: 0.7rem;
+  }
+}
+
 .panelSection {
   display: none;
   flex-direction: column;
@@ -154,7 +160,7 @@
   }
 
   .exit-console {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   .textCode {

@@ -122,6 +122,9 @@
 }
 
 @media (max-width: 1250px) {
+  .aboutMeImg {
+    display: none;
+  }
   .aboutMe.grid {
     grid-auto-flow: column;
     grid-template-columns: 1fr;

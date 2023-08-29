@@ -11,27 +11,27 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--color-w1); /* color of the tracking area */
+  background: var(--color-w1);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--color-w6); /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid var(--color-w1); /* creates padding around scroll thumb */
+  background-color: var(--color-w6);
+  border-radius: 20px;
+  border: 3px solid var(--color-w1);
 }
 
 [data-theme="dark"] body::-webkit-scrollbar-track {
-  background: var(--color-w); /* color of the tracking area */
+  background: var(--color-w);
 }
 
 [data-theme="dark"] body::-webkit-scrollbar-thumb {
-  background-color: var(--color-w1); /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid var(--color-w); /* creates padding around scroll thumb */
+  background-color: var(--color-w1);
+  border-radius: 20px;
+  border: 3px solid var(--color-w);
 }
 
 html,
@@ -54,6 +54,11 @@ ul {
 img {
   display: block;
   max-width: 100%;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+[data-theme="light"] .icon.i-download {
+  filter: invert(1) !important;
 }
 
 [data-theme="dark"] .icon {

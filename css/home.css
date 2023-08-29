@@ -118,7 +118,7 @@
   color: var(--color-w2);
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   .homeGif {
     display: none;
   }

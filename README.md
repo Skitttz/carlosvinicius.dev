@@ -1,1 +1,29 @@
-# portfolio-cv
+<h1 align="center">
+  <img src="https://i.ibb.co/4KDWqsf/Logo-Warrior.png" width="10%" />
+
+</h1>
+
+<p align="center">
+  <a href="#contexto-">𝙲𝚘𝚗𝚝𝚎𝚡𝚝𝚘</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias-%EF%B8%8F">𝚃𝚎𝚌𝚗𝚘𝚕𝚘𝚐𝚒𝚊𝚜</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
+  <a href="#como-acessar-">𝙲𝚘𝚖𝚘 𝚊𝚌𝚎𝚜𝚜𝚊𝚛</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</p>
+
+<div align="center">
+<img src="https://i.ibb.co/LtLcHQq/light-Mode.jpg" width="90%" />
+<h2>Dark Mode</h2>
+<img src="https://i.ibb.co/5rNdZHH/darkMode.jpg" width="90%" />
+</div>
+
+## Contexto 📝
+
+O portfólio é uma forma de apresentacao interativas e envolventes. mostrando cada projeto é mostrando meu compromisso em criar experiências digitais. Permitindo que explore um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
+
+## Tecnologias 🖥️
+
+Utilizando as bases de **HTML**, **CSS** e **JavaScript**, este projeto foi concebido para estabelecer uma estrutura robusta, estilo visual cativante e animações envolventes. Essas melhorias elevam a experiência do usuário, proporcionando uma navegação interativa, resultando em uma experiência agradável.
+
+## Como acessar 🚪🚶
+
+O projeto foi hospedado no GitHub Pages, ao clicar no link <a href="https://skitttz.github.io/portfolio-cv/"> skitttz.github.io/portfolio-cv/</a> você será redirecionado para uma previa nessa mesma **aba**.

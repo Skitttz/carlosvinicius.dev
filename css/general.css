@@ -7,8 +7,33 @@
   margin-right: auto;
 }
 
-.opac {
-  opacity: 0.2;
+.btnDarkMode {
+  cursor: pointer;
+}
+
+.i-download {
+  display: inline-block;
+  max-width: 21px;
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 490px) {
+  .i-download {
+    max-width: 16px;
+  }
+}
+
+@media (max-width: 370px) {
+  .i-download {
+    max-width: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .i-download {
+    max-width: 8px;
+  }
 }
 
 .grid {

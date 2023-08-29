@@ -1,6 +1,7 @@
 export default class ScrollSmooth {
-  constructor(links) {
+  constructor(links, logo) {
     this.linksInternos = document.querySelectorAll(links);
+    this.logo = document.querySelector(logo);
     this.scrollToSection = this.scrollToSection.bind(this);
   }
 
@@ -9,7 +10,6 @@ export default class ScrollSmooth {
     const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
     let topSection = section.offsetTop;
-    console.log(href);
     if (href === "#home") {
       topSection = 0;
     } else if (href === "#about") {
@@ -31,6 +31,9 @@ export default class ScrollSmooth {
         link.addEventListener(evento, this.scrollToSection);
       });
     });
+
+    /* set section to logo (home) */
+    eventos.forEach((e) => this.logo.addEventListener(e, this.scrollToSection));
   }
 
   init() {
