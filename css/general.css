@@ -32,7 +32,7 @@
 
 @media (max-width: 320px) {
   .i-download {
-    max-width: 8px;
+    display: none;
   }
 }
 
