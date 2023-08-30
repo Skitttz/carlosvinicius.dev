@@ -10,11 +10,10 @@ export class Slide {
     };
     this.activeClass = "active";
     this.changeEvent = new Event("changeEvent");
-    this.project = document.querySelector(".projects-bg");
   }
 
   mouseUpOut() {
-    this.project.addEventListener("mouseup", (event) => {
+    document.addEventListener("mouseup", (event) => {
       if (!this.wrap.contains(event.target)) {
         const moveType = event.type === "mouseup" ? "mousemove" : "touchmove";
         this.wrap.removeEventListener(moveType, this.onMove);
