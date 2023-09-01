@@ -100,13 +100,16 @@
     -10px 0px 0px rgba(60, 70, 100, 0.1);
 }
 
+@media (min-width: 360px) {
+  .line-1::after {
+    content: "👨‍💻";
+    max-width: 32px;
+  }
+}
+
 @media (min-width: 1200px) {
   .content-text {
     margin-bottom: 3rem;
-  }
-
-  .line-1::after {
-    content: "👨‍💻";
   }
   .line-1::before {
     z-index: 9999;

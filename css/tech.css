@@ -118,10 +118,13 @@
   color: rgba(101, 90, 255, 1);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 360px) {
   .line-3::after {
     content: "🛠️";
   }
+}
+
+@media (min-width: 1200px) {
   .line-3::before {
     z-index: 9999;
     position: absolute;
