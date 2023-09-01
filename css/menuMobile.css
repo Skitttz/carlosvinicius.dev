@@ -1,7 +1,6 @@
 .hMenu {
   display: none;
   cursor: pointer;
-  
 }
 
 .header.active {
@@ -140,7 +139,7 @@
 
 @media (max-width: 769px) {
   .active.header .menu {
-    height: 410px;
+    height: 480px;
   }
   .hMenu span {
     background-color: var(--hMenu-span);

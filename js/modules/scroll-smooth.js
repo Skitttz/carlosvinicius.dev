@@ -14,6 +14,10 @@ export default class ScrollSmooth {
       topSection = 0;
     } else if (href === "#about") {
       topSection *= 0.8;
+    } else if (href === "#project") {
+      topSection *= 0.9;
+    } else if (href === "#tech") {
+      topSection *= 0.9;
     }
     if (options === undefined) {
       options = { top: topSection, behavior: "smooth" };

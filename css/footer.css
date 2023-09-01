@@ -18,6 +18,14 @@
   color: #e2e2e2;
 }
 
+.author-footer {
+  color: var(--color-b3);
+}
+
+[data-theme="dark"] .author-footer {
+  color: var(--color-b4);
+}
+
 .copy p {
   padding: 10px;
   text-align: center;

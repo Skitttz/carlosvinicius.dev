@@ -39,7 +39,7 @@
     color: var(--color-w1);
   }
 
-  .header-menu li:nth-child(5) a:after {
+  .header-menu li:nth-child(6) a:after {
     height: 0px;
   }
 

@@ -5,6 +5,7 @@ import ScrollSmooth from "./modules/scroll-smooth.js";
 import TypeF from "./modules/typeF.js";
 import DarkMode from "./modules/darkmode.js";
 import moveIcon from "./modules/moveIcon.js";
+import tech from "./modules/tech-animation.js";
 
 const menuMobile = new MenuMobile(
   ".hMenu",
@@ -39,3 +40,11 @@ const darkMode = new DarkMode(
   "#ImagemLogo"
 );
 darkMode.init();
+
+const techS = new tech(
+  ".card-ul li",
+  "#tech-title",
+  "#tech-about",
+  ".tech-text"
+);
+techS.init();
