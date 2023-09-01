@@ -20,7 +20,7 @@
 
 ## Contexto 📝
 
-O portfólio é uma forma de apresentação interativas e envolventes. Mostrando cada projeto, demonstrando o compromisso em criar experiências digitais. Permitindo explorar um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
+O portfólio é uma forma de apresentação interativas e envolventes. Mostrando algum dos projetos criados. Permitindo explorar um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
 
 ## Tecnologias 🖥️
 
