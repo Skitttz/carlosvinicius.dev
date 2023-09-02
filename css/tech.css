@@ -158,7 +158,7 @@
 
 @media (max-width: 600px) {
   #tech-about {
-    min-height: 400px;
+    min-height: 350px;
   }
 
   .line-3::before {
@@ -188,6 +188,8 @@
 
 @media (max-width: 426px) {
   #tech-about {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
+
+    min-height: 220px;
   }
 }

@@ -30,7 +30,7 @@ scrollAni.init();
 const slide = new SlideNav(".slide", ".wrap");
 slide.onResize();
 slide.init();
-// slide.addArrow(".prev", ".next");
+slide.addArrow(".prev", ".next");
 slide.addControl(".controls");
 
 const darkMode = new DarkMode(
