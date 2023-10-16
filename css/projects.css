@@ -314,3 +314,9 @@
     margin-bottom: 1rem;
   }
 }
+
+@media (max-width: 340px){
+  .linkP{
+    margin-right: 2px;
+  }
+}

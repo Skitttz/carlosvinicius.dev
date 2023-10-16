@@ -58,6 +58,14 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width:340px){
+  .content-text p,.contentx a{
+    word-spacing: 0 !important; 
+    text-align: justify !important;
+    text-justify: initial !important;
+  }
+}
+
 .content-text p {
   color: var(--color-w4);
 }
@@ -135,7 +143,7 @@
   }
   .content-text a,
   .content-text p {
-    text-align: justify;
+    text-align: distribute;
     text-justify: inherit;
     text-align-last: inherit;
   }
@@ -153,3 +161,5 @@
     font-size: 1rem;
   }
 }
+
+
