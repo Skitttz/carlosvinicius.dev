@@ -13,6 +13,82 @@
   filter: invert(100%);
 }
 
+
+#body-repository img{
+  border-radius: 0px;
+}
+
+
+.wrap {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.wrap::-webkit-scrollbar {
+  width: 12px;
+}
+
+.wrap::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: var(--color-w2);
+}
+
+.wrap::-webkit-scrollbar-thumb {
+  background-color: var(--color-w3);
+  border-radius: 20px;
+  border: 3px solid var(--color-w1);
+}
+
+[data-theme="dark"] .wrap::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background: var(--color-w);
+}
+
+[data-theme="dark"] .wrap::-webkit-scrollbar-thumb {
+  background-color: var(--color-w1);
+  border-radius: 20px;
+  border: 3px solid var(--color-w);
+}
+
+
+#body-repository{
+  max-width: 700px;
+  font-size: 16px;
+  margin: 0 auto;
+  max-height: 400px;
+}
+
+#body-repository p{
+  font-size: 16px;
+}
+
+#body-repository h2{
+  margin: 1rem 0 1rem 0;
+}
+
+#body-repository ul{
+  margin: .5rem 0 .5rem 0;
+}
+
+#body-repository input[type="checkbox" i]:disabled{
+  background-color: black;
+  color: black;
+  border-color: yellow;
+}
+
+#body-repository li{
+  opacity: 1;
+  color: var(--color-b-222);
+  display: block;
+  transform: 0;
+  margin: 0px;
+  padding: 0;
+  transform: scale(1);
+  text-align: start;
+}
+#body-repository li:hover{
+transform: scale(1);}
+
+
 @media (max-width: 1200px) {
   .icon-projects {
     margin: 0 auto;
@@ -97,6 +173,8 @@
 
 .wrap {
   overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: 1rem;
 }
 
 .slide li {
