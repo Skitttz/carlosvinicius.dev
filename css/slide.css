@@ -12,6 +12,7 @@
 .aniArtText {
   color: var(--color-project-AniArt);
   border-bottom: 0.2rem solid var(--color-project-AniArt);
+  margin-bottom: 1rem;
 }
 
 .surfCurseText {

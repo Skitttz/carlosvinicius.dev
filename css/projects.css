@@ -14,8 +14,8 @@
 }
 
 
-#body-repository img{
-  border-radius: 0px;
+.body-repository img{
+  border-radius: 0px !important;
 }
 
 
@@ -35,7 +35,7 @@
 .wrap::-webkit-scrollbar-thumb {
   background-color: var(--color-w3);
   border-radius: 20px;
-  border: 3px solid var(--color-w1);
+  border: 3px solid var(--color-w2);
 }
 
 [data-theme="dark"] .wrap::-webkit-scrollbar-track {
@@ -50,43 +50,43 @@
 }
 
 
-#body-repository{
-  max-width: 700px;
-  font-size: 16px;
-  margin: 0 auto;
-  max-height: 400px;
+.body-repository{
+  max-width: 700px  !important;
+  font-size: 16px !important ;
+  margin: 0 auto  !important;
+  max-height: 400px  !important;
 }
 
-#body-repository p{
-  font-size: 16px;
+.body-repository p{
+  font-size: 16px  !important;
 }
 
-#body-repository h2{
-  margin: 1rem 0 1rem 0;
+.body-repository h2{
+  margin: 1rem 0 1rem 0  !important;
 }
 
-#body-repository ul{
-  margin: .5rem 0 .5rem 0;
+.body-repository ul{
+  margin: .5rem 0 .5rem 0 !important;
 }
 
-#body-repository input[type="checkbox" i]:disabled{
-  background-color: black;
-  color: black;
-  border-color: yellow;
+.body-repository input[type="checkbox" i]:disabled{
+  background-color: black !important;
+  color: black !important;
+  border-color: yellow !important; 
 }
 
-#body-repository li{
-  opacity: 1;
-  color: var(--color-b-222);
-  display: block;
-  transform: 0;
-  margin: 0px;
-  padding: 0;
-  transform: scale(1);
-  text-align: start;
+.body-repository li{
+  opacity: 1 !important;
+  color: var(--color-b-222) !important;
+  display: block !important;
+  transform: scale(1) !important;
+  margin: 0px !important;
+  padding: 0 !important; 
+  transform: scale(1) !important;
+  text-align: start !important;
 }
-#body-repository li:hover{
-transform: scale(1);}
+.body-repository li:hover{
+transform: scale(1) !important;}
 
 
 @media (max-width: 1200px) {
@@ -127,7 +127,6 @@ transform: scale(1);}
   margin-top: 3rem;
   margin-bottom: 3rem;
   background-color: var(--color-w1);
-
   border-radius: 10px;
   box-shadow: var(--projects-boxshadow);
   border: 0.5px solid var(--color-b1);
