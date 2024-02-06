@@ -7,6 +7,22 @@ export default class RepositoryGit {
     this.slideContainer = document.querySelector('.slide');
   }
 
+  allLinksBlank(tagName) {
+    const domParser = new DOMParser();
+    const document = domParser.parseFromString(html, `text/html`);
+    const serializer = new XMLSerializer();
+    let links = document.querySelectorAll(tagName);
+    links.forEach((link) => {
+      if (link.href) {
+        if (isExternalUrl(link.href)) {
+          link.target = `_blank`;
+          link.rel = `noopener noreferrer`;
+        }
+      }
+    });
+    return serializer.serializeToString(document);
+  }
+
   async getDataUserGit(username) {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
@@ -43,6 +59,7 @@ export default class RepositoryGit {
       console.error(error);
     } finally {
       this.bodyRepository = document.querySelectorAll('.body-repository');
+      this.allLinksBlank('a');
     }
   }
 
