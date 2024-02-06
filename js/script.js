@@ -28,12 +28,6 @@ scrollS.init();
 const scrollAni = new ScrollAnimation("[data-animation='scroll']");
 scrollAni.init();
 
-const slide = new SlideNav('.slide', '.wrap');
-slide.onResize();
-slide.init();
-slide.addArrow('.prev', '.next');
-slide.addControl('.controls');
-
 const darkMode = new DarkMode(
   '.btnDarkMode',
   '[data-theme]',
@@ -51,4 +45,10 @@ const techS = new tech(
 techS.init();
 
 const ListRepository = new RepositoryGit('.body-repository');
-ListRepository.init();
+ListRepository.init().then(() => {
+  const slide = new SlideNav('.slide', '.wrap');
+  slide.onResize();
+  slide.init();
+  slide.addArrow('.prev', '.next');
+  slide.addControl('.controls');
+});
