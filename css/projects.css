@@ -92,6 +92,15 @@ li input:disabled {
   transition: 0.4s;
 }
 
+.containerTopic{
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.titleTopic{
+font-size: 1.25rem;
+}
+
 ul .liDoCode code {
   padding: .1rem;
   margin-bottom: 10px;

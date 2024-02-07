@@ -8,18 +8,59 @@ export default class RepositoryGit {
   }
 
   renderizeCodeTag() {
-    var codeElements = document.querySelectorAll('code');
+    let codeElements = document.querySelectorAll('code');
     codeElements.forEach(function (codeElement) {
-      var liElement = codeElement.parentElement;
+      let liElement = codeElement.parentElement;
       liElement.classList.add('liDoCode');
     });
   }
 
+  clearTopicsHyperLink() {
+    let divElements = document.querySelectorAll('.body-repository');
+    const objectTopicsHref = {
+      0: { id: 0, href: '#contexto-' },
+      1: { id: 1, href: '#contexto' },
+      2: { id: 2, href: '#tecnologias-%EF%B8%8F' },
+      3: { id: 3, href: '#desafios-' },
+      4: { id: 4, href: '#como-acessar-' },
+      5: { id: 5, href: '#design-' },
+      6: { id: 6, href: '#passos-para-testar-' },
+      7: { id: 7, href: '#wireframe-e-prototipo-' },
+    };
+
+    if (divElements) {
+      divElements.forEach((divElement) => {
+        // Seleciona todos os hiperlinks dentro da div
+        if (divElement) {
+          let pElement = divElement.querySelector('p');
+          pElement.classList.add('containerTopic');
+        }
+        let links = divElement.querySelectorAll('a');
+
+        // Itera sobre os hiperlinks
+        links.forEach((linkElement) => {
+          for (const key in objectTopicsHref) {
+            if (
+              objectTopicsHref.hasOwnProperty(key) &&
+              objectTopicsHref[key].href === linkElement.getAttribute('href')
+            ) {
+              let topicElement = document.createElement('span');
+              topicElement.textContent = linkElement.textContent;
+              linkElement.parentNode.replaceChild(topicElement, linkElement);
+              topicElement.classList.add('titleTopic');
+
+              break;
+            }
+          }
+        });
+      });
+    }
+  }
   transformArchorToVideo(src) {
-    var linkElement = document.querySelector(`a[href="${src}"]`);
+    let linkElement = document.querySelector(`a[href="${src}"]`);
     if (linkElement) {
-      var videoURL = linkElement.href;
-      var videoElement = document.createElement('video');
+      let videoURL = linkElement.href;
+      let videoElement = document.createElement('video');
       videoElement.src = videoURL;
       videoElement.controls = true;
       videoElement.width = 360;
@@ -59,10 +100,10 @@ export default class RepositoryGit {
       const data = await response.json();
       for (let index = 0; index < data.length; index++) {
         //Criar Li
-        var listItem = document.createElement('li');
+        let listItem = document.createElement('li');
         listItem.className = 'content-body-repository';
         //Criar Div
-        var divElement = document.createElement('div');
+        let divElement = document.createElement('div');
         divElement.className = 'body-repository';
 
         //Colocar div dentro do Li
@@ -124,21 +165,21 @@ export default class RepositoryGit {
   }
 
   searchLiGuide() {
-    var olELement = document.querySelector('ol');
+    let olELement = document.querySelector('ol');
     if (olELement) {
-      var liElements = olELement.querySelectorAll('li');
+      let liElements = olELement.querySelectorAll('li');
 
-      for (var i = 0; i < liElements.length; i++) {
-        var liElement = liElements[i];
+      for (let i = 0; i < liElements.length; i++) {
+        let liElement = liElements[i];
 
         // Verifique se este <li> contém um elemento <ul>
-        var pElement = liElement.querySelector('p');
+        let pElement = liElement.querySelector('p');
 
         // Se este <li> contém um <ul>, verifique se contém um <a> dentro do <ul>
-        var ulElement = liElement.querySelector('ul');
+        let ulElement = liElement.querySelector('ul');
 
         if (pElement && ulElement) {
-          var li2ndElement = ulElement.querySelector('li');
+          let li2ndElement = ulElement.querySelector('li');
           pElement.classList.add('stepStepP');
           ulElement.classList.add('stepStepUL');
           li2ndElement.classList.add('stepStepLI');
@@ -155,6 +196,7 @@ export default class RepositoryGit {
         this.createElements(username),
       ]);
       this.searchLiGuide();
+      this.clearTopicsHyperLink();
       this.renderizeCodeTag();
       this.transformArchorToVideo(
         'https://github.com/Skitttz/Cats/assets/94083688/bcd0c656-1773-4e9c-9add-68d0176c3b36',
