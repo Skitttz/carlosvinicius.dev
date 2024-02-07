@@ -80,10 +80,10 @@ export class Slide {
   }
 
   addSlideEvent() {
-    this.wrap.addEventListener('mousedown', this.onStart);
+    /*     this.wrap.addEventListener('mousedown', this.onStart);
     this.wrap.addEventListener('touchstart', this.onStart);
     this.wrap.addEventListener('mouseup', this.onEnd);
-    this.wrap.addEventListener('touchend', this.onEnd);
+    this.wrap.addEventListener('touchend', this.onEnd); */
   }
 
   slidePosition(slide) {
