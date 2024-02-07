@@ -7,20 +7,37 @@ export default class RepositoryGit {
     this.slideContainer = document.querySelector('.slide');
   }
 
+  renderizeCodeTag() {
+    var codeElements = document.querySelectorAll('code');
+    codeElements.forEach(function (codeElement) {
+      var liElement = codeElement.parentElement;
+      liElement.classList.add('liDoCode');
+    });
+  }
+
+  transformArchorToVideo(src) {
+    var linkElement = document.querySelector(`a[href="${src}"]`);
+    if (linkElement) {
+      var videoURL = linkElement.href;
+      var videoElement = document.createElement('video');
+      videoElement.src = videoURL;
+      videoElement.controls = true;
+      videoElement.width = 360;
+      videoElement.height = 270;
+      linkElement.parentNode.replaceChild(videoElement, linkElement);
+    } else {
+      console.error('Elemento <a> não encontrado.');
+    }
+  }
+
   allLinksBlank(tagName) {
-    const domParser = new DOMParser();
-    const document = domParser.parseFromString(html, `text/html`);
-    const serializer = new XMLSerializer();
     let links = document.querySelectorAll(tagName);
     links.forEach((link) => {
       if (link.href) {
-        if (isExternalUrl(link.href)) {
-          link.target = `_blank`;
-          link.rel = `noopener noreferrer`;
-        }
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       }
     });
-    return serializer.serializeToString(document);
   }
 
   async getDataUserGit(username) {
@@ -41,25 +58,23 @@ export default class RepositoryGit {
       );
       const data = await response.json();
       for (let index = 0; index < data.length; index++) {
-        // Create the <li> element
+        //Criar Li
         var listItem = document.createElement('li');
         listItem.className = 'content-body-repository';
-
-        // Create the <div> element within the <li>
+        //Criar Div
         var divElement = document.createElement('div');
         divElement.className = 'body-repository';
 
-        // Append the <div> to the <li>
+        //Colocar div dentro do Li
         listItem.appendChild(divElement);
 
-        // Append the <li> to the slideContainer
+        //Colocar Li dentro do UL slide
         this.slideContainer.appendChild(listItem);
       }
     } catch (error) {
-      console.error(error);
+      console.error('[Error Criar Elementos do Slide]:', error);
     } finally {
       this.bodyRepository = document.querySelectorAll('.body-repository');
-      this.allLinksBlank('a');
     }
   }
 
@@ -96,11 +111,39 @@ export default class RepositoryGit {
       if (this.bodyRepository[index]) {
         this.bodyRepository[index].innerHTML = sanitizedData;
         return sanitizedData;
-      } else {
-        console.error('Elemento não encontrado para o índice:', index);
       }
+      return console.error('Elemento não encontrado para o índice:', index);
     } catch (error) {
-      console.error(error);
+      console.error(
+        '[Catch] problema no índice:',
+        index,
+        '[Api Error]:',
+        error,
+      );
+    }
+  }
+
+  searchLiGuide() {
+    var olELement = document.querySelector('ol');
+    if (olELement) {
+      var liElements = olELement.querySelectorAll('li');
+
+      for (var i = 0; i < liElements.length; i++) {
+        var liElement = liElements[i];
+
+        // Verifique se este <li> contém um elemento <ul>
+        var pElement = liElement.querySelector('p');
+
+        // Se este <li> contém um <ul>, verifique se contém um <a> dentro do <ul>
+        var ulElement = liElement.querySelector('ul');
+
+        if (pElement && ulElement) {
+          var li2ndElement = ulElement.querySelector('li');
+          pElement.classList.add('stepStepP');
+          ulElement.classList.add('stepStepUL');
+          li2ndElement.classList.add('stepStepLI');
+        }
+      }
     }
   }
 
@@ -111,6 +154,12 @@ export default class RepositoryGit {
         this.getDataPinnedRepository(username),
         this.createElements(username),
       ]);
+      this.searchLiGuide();
+      this.renderizeCodeTag();
+      this.transformArchorToVideo(
+        'https://github.com/Skitttz/Cats/assets/94083688/bcd0c656-1773-4e9c-9add-68d0176c3b36',
+      );
+      this.allLinksBlank('a');
     }
   }
 }
