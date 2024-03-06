@@ -72,11 +72,11 @@
   transform: scale(1) !important;
 }
 
-li input [type='checkbox'] .content-body-repository{
+li input [type='checkbox'] .content-body-repository {
   font-size: 1rem !important;
 }
 
-li input[type='checkbox' i]:disabled, 
+li input[type='checkbox' i]:disabled,
 li input:disabled {
   border-color: #eee !important;
   align-self: center;
@@ -92,22 +92,23 @@ li input:disabled {
   transition: 0.4s;
 }
 
-.containerTopic{
+.containerTopic {
   padding-top: 1rem;
   padding-bottom: 2rem;
+  justify-content: center;
 }
 
-.titleTopic{
+.titleTopic {
   font-size: 1.25rem;
   padding: 5px;
   color: #f2f2f2;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 2px 0;
 }
 
-
 ul .liDoCode code {
-  padding: .1rem;
+  padding: 0.1rem;
   margin-bottom: 10px;
   opacity: 0.8;
   background-color: #222 !important;
@@ -131,16 +132,15 @@ ol li {
   margin: 0 auto;
 }
 
-.stepStepLI{
+.stepStepLI {
   display: inline-block !important;
 }
 
-.stepStepLI code{
+.stepStepLI code {
   padding: 1rem;
   background-color: #222 !important;
   color: #f2f2f2;
 }
-
 
 .body-repository {
   align-items: center;
@@ -160,11 +160,27 @@ ol li {
 }
 
 .body-repository p {
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
-.body-repository h2 {
-  margin: 3rem 0 1rem 0 !important;
+@media (max-width: 940px) {
+  .titleTopic {
+    font-size: 1rem;
+    padding: 2px;
+  }
+  .body-repository p {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .titleTopic {
+    font-size: 0.75rem;
+    padding: 2px;
+  }
+  .containerTopic {
+    justify-content: center;
+  }
 }
 
 .body-repository ul {
@@ -296,14 +312,18 @@ ol li {
   background: var(--color-w7);
 }
 
+.containerTopic {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .controls {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
-
 .controls li {
   opacity: 0.6;
   transform: scale(0.6);

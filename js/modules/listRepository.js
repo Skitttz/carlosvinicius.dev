@@ -1,6 +1,6 @@
 import { marked } from 'marked';
 import * as DOMPurify from 'dompurify';
-import { generateRandomRGB } from './randomRGB';
+import { generateDefaultColor } from './generateDefaultColor';
 
 export default class RepositoryGit {
   constructor(bodyRepository) {
@@ -31,7 +31,7 @@ export default class RepositoryGit {
 
     if (divElements) {
       divElements.forEach((divElement) => {
-        let titleRandomColors = generateRandomRGB();
+        let defaultColor = generateDefaultColor();
         // Seleciona todos os hiperlinks dentro da div
         if (divElement) {
           let pElement = divElement.querySelector('p');
@@ -50,7 +50,7 @@ export default class RepositoryGit {
               topicElement.textContent = linkElement.textContent;
               linkElement.parentNode.replaceChild(topicElement, linkElement);
               topicElement.classList.add('titleTopic');
-              topicElement.style.backgroundColor = titleRandomColors;
+              topicElement.style.backgroundColor = defaultColor;
 
               break;
             }
