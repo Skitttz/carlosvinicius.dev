@@ -54,6 +54,7 @@
   margin: 0 20px;
 }
 
+
 .content-body-repository .slide ol li {
   opacity: 1 !important;
 }
@@ -150,6 +151,26 @@ ol li {
   max-height: 420px !important;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+@media(max-width:400px){
+  .body-repository{
+    min-width: 180px;
+    max-width: 300px !important;
+  }
+
+  .body-repository h2{
+    margin: 2rem 0 1rem 0;
+  }
+
+  .body-repository ul{
+    font-size: 12px;
+  }
+  .content-body-repository ul li{
+    max-width: 280px;
+    margin: 0 10px;
+  }
+    
 }
 
 .content-body-repository {
