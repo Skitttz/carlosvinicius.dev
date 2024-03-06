@@ -323,6 +323,7 @@ ol li {
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 10px;
+  height: 68px;
 }
 .controls li {
   opacity: 0.6;
@@ -336,6 +337,13 @@ ol li {
   transition: 0.3s;
 }
 
+@media (max-width: 800px) {
+  .controls li {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .controls li.active {
   opacity: 1;
   transform: scale(1);
@@ -344,7 +352,7 @@ ol li {
 .arrow-nav {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  margin: 10px 0 0 0;
 }
 
 .arrow-nav button {
