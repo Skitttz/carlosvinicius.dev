@@ -55,6 +55,11 @@ export default class tech {
         texto:
           'PostgreSQL é um sistema de gerenciamento de banco de dados relacional de código aberto, conhecido por sua confiabilidade, robustez e recursos avançados. Ele oferece suporte completo para SQL, transações ACID, replicação, extensibilidade e uma ampla variedade de tipos de dados, Uma boa escolha para aplicações de todos os tamanhos e complexidades.',
       },
+      {
+        nome: 'Figma',
+        texto:
+          'O Figma é uma plataforma feita para projetar desde sites até aplicativos móveis e muito mais. Criando layouts, adicionando elementos gráficos e até mesmo definindo interações, é uma boa ferramenta para dar uma noção de como as partes visuais de um projeto com interface gráfica ficariam antes de sua implementação.',
+      },
     ];
   }
 
