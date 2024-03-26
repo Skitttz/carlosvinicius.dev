@@ -139,7 +139,7 @@
 
 @media (max-width: 769px) {
   .active.header .menu {
-    height: 480px;
+    height: 440px;
   }
   .hMenu span {
     background-color: var(--hMenu-span);
@@ -155,6 +155,9 @@
   }
   .link {
     font-size: 1rem;
+  }
+  .active.header .menu {
+    height: 410px;
   }
 }
 
