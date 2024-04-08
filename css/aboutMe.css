@@ -104,9 +104,9 @@
 }
 
 .aboutMe {
-  box-shadow: -2.5px 0px 0px rgba(20, 25, 45, 1),
-    -5px 0px 0px rgba(50, 60, 90, 0.7), -7.5px 0px 0px rgba(60, 70, 100, 0.4),
-    -10px 0px 0px rgba(60, 70, 100, 0.1);
+  box-shadow: -2.5px 0px 0px rgba(101, 90, 255, 0.9),
+    -5px 0px 0px rgba(60, 5, 255, 0.2), -7.5px 0px 0px rgba(60, 5, 255, 0.3),
+    -10px 0px 0px rgba(0, 5, 255, 0.2);
 }
 
 @media (min-width: 360px) {

@@ -20,10 +20,6 @@
   background-color: var(--color-w1);
   border: 0.5px solid var(--color-border-tech);
   width: 90%;
-
-  box-shadow: -2.5px 0px 0px rgba(101, 90, 255, 0.9),
-    -5px 0px 0px rgba(60, 5, 255, 0.6), -7.5px 0px 0px rgba(60, 5, 255, 0.5),
-    -10px 0px 0px rgba(0, 5, 255, 0.2);
   border-radius: 10px;
 }
 
