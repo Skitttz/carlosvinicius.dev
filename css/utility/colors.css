@@ -1,8 +1,9 @@
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   /* Colors Default */
   --color-MenuDefault: rgba(21, 21, 21, 1);
   --color-MenuOn: rgba(21, 21, 21, 1);
   --color-b-222: #222;
+  --color-border-tech: rgba(75, 75, 75, 0.3);
 
   --color-w: #fff;
   --color-w1: rgba(244, 244, 244, 1);

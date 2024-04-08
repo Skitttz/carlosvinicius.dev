@@ -1,3 +1,7 @@
+#tech {
+  grid-column: 1 / -1;
+}
+
 .tech-bg {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -8,13 +12,15 @@
 }
 
 #tech-title {
-  font-size: 2rem;
+  margin-top: 10px;
+  font-size: 1.5rem;
 }
 
 .tech-main {
   background-color: var(--color-w1);
-  border: 0.5px solid var(--color-w3);
+  border: 0.5px solid var(--color-border-tech);
   width: 90%;
+
   box-shadow: -2.5px 0px 0px rgba(101, 90, 255, 0.9),
     -5px 0px 0px rgba(60, 5, 255, 0.6), -7.5px 0px 0px rgba(60, 5, 255, 0.5),
     -10px 0px 0px rgba(0, 5, 255, 0.2);
@@ -24,17 +30,18 @@
 #tech-about {
   margin-top: 15px;
   margin-bottom: 25px;
-  min-height: 250px;
-  max-height: auto;
 }
 
 .line-3.title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 2.125rem;
+  height: 50px;
 }
 
-.tech-text {
-  max-height: auto;
+@media (max-width: 460px) {
+  .line-3.title {
+    font-size: 1.625rem;
+  }
 }
 
 .ativo.tech-text {
@@ -49,6 +56,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  min-height: 400px;
 }
 
 .card-ul {
@@ -94,33 +102,33 @@
   max-width: 64px;
 }
 
-[data-theme="dark"] .card-ul li {
+[data-theme='dark'] .card-ul li {
   background-color: var(--color-b2);
   border: 1px solid var(--color-b4);
 }
 
-[data-theme="dark"] .card-ul li:hover {
+[data-theme='dark'] .card-ul li:hover {
   background-color: var(--color-w);
   border: 1px solid var(--color-b1);
 }
 
-[data-theme="dark"] .card-ul .ativo {
+[data-theme='dark'] .card-ul .ativo {
   background-color: var(--color-w);
   border: 1px solid var(--color-b1);
 }
 
-[data-theme="dark"] .card-ul li img {
+[data-theme='dark'] .card-ul li img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
     hue-rotate(315deg) brightness(103%) contrast(102%);
 }
 
-[data-theme="dark"] .line-3.title {
+[data-theme='dark'] .line-3.title {
   color: rgba(101, 90, 255, 1);
 }
 
 @media (min-width: 360px) {
   .line-3::after {
-    content: "🛠️";
+    content: '🛠️';
   }
 }
 
@@ -130,7 +138,7 @@
     position: absolute;
     left: -10px;
     top: 3px;
-    content: "";
+    content: '';
     background-color: rgba(101, 95, 255, 1);
     width: 6px;
     height: 30px;
@@ -166,7 +174,7 @@
     position: absolute;
     left: -10px;
     top: 6px;
-    content: "";
+    content: '';
     background-color: var(--color-b2);
     width: 5px;
     height: 25px;

@@ -9,6 +9,7 @@
 
 .btnDarkMode {
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .i-download {
@@ -49,7 +50,7 @@
 
 .header ul li img,
 .logo img {
-  max-width: 46px;
+  max-width: 36px;
 }
 
 .title {
@@ -94,7 +95,7 @@
     position: absolute;
     left: -12px;
     top: 4px;
-    content: " ";
+    content: ' ';
     background-color: var(--color-b2);
     width: 6px;
     height: 30px;
@@ -106,7 +107,7 @@
     position: absolute;
     left: -12px;
     top: 35px;
-    content: " ";
+    content: ' ';
     background-color: var(--color-b6);
     width: 6px;
     height: 30px;
@@ -118,7 +119,7 @@
     position: absolute;
     left: -12px;
     top: 4px;
-    content: " ";
+    content: ' ';
     background-color: var(--color-b2);
     width: 6px;
     height: 30px;

@@ -25,11 +25,9 @@
       </li>
       <nav class="menu" data-menu="smooth">
         <ul class="header-menu">
-          <li><a class="link" href="#home">Home</a></li>
-          <li><a class="link" href="#about">Sobre Mim</a></li>
           <li><a class="link" href="#project">Projetos</a></li>
-          <li><a class="link" href="#tech">Tecnologias</a></li>
-          <li><a class="btnDarkMode">🌕</a></li>
+          <li><a class="link" href="#about">Sobre Mim</a></li>
+          <li><a class="link" target="_blank" href="https://linktr.ee/skittzdev">Contato</a></li>
           <div class="hMenu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -37,6 +35,9 @@
           </div>
         </ul>
       </nav>
+      <div class="divDarkMode">
+        <li><a class="btnDarkMode">🌕</a></li>
+      </div>
     </div>
   </header>
   <section class="home-bg" data-animation="scroll" id="home">
@@ -79,23 +80,7 @@
 
   </section>
 
-  <b class="hr "></b>
-
-
-  <section class="aboutMe-bg" data-animation="scroll" id="about">
-    <div class="grid container aboutMe" id="#about">
-      <div class="container-img">
-        <img class="aboutMeImg" src="./img/photo.jpeg" alt="">
-      </div>
-      <div class="content-text">
-        <h1 class="line-1 title">Sobre mim</h1>
-        <p>Formado em Ciência da Computação pela <a href="https://www.unit.br/" target="_blank">Universidade Tiradentes</a>, meu foco é unir o mundo visual com técnicas de desenvolvimento web. Minhas principais habilidades incluem HTML, CSS e JavaScript, além disso atualmente estou aprendendo TypeScript e React para expandir meus conhecimentos. Nos momentos de lazer, meu interesse é editar fotos e vídeos. Fique à vontade para explorar meus trabalhos e entrar em contato. Para saber mais sobre meu trabalho, explore meu site. Fico à disposição para esclarecer dúvidas ou discutir oportunidades.</p>
-        <img class="photoMobile aboutMeImg" src="./img/photo.jpeg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <b class="hr "></b>
+  <b class="hr"></b>
 
   <section class="projects-bg" id="project" data-animation="scroll">
     <div class="container projects">
@@ -188,39 +173,50 @@
       </div>
     </div>
   </section>
+  <b class="hr"></b>
 
-
-  <b class="hr "></b>
-
-  <section class="tech-bg" data-animation="scroll" id="tech">
-    <div class="container tech-main" id="#tech">
-      <div class="tech-container">
-        <h1 class="line-3 title">Tecnologias</h1>
-        <article class="tech-text">
-          <h2 id="tech-title"></h2>
-          <p id="tech-about">(Use os icones para ver um pequeno resumo das tecnologias que utilizo)</p>
-        </article>
-        <div class="tech-card">
-          <ul class="card-ul">
-            <li><img src="./img/icon-html.svg" alt="Icone Html"></li>
-            <li><img src="./img/icon-css.svg" alt="Icone Css"></li>
-            <li><img src="./img/icon-javascript.svg" alt="Icone JavaScript"></li>
-            <li><img src="./img/icon-typescript.svg" alt="Icone Typescript"></li>
-            <li><img src="./img/icon-nodejs.svg" alt="Icone NodeJS"></li>
-            <li><img src="./img/icon-react.svg" alt="Icone React"></li>
-            <li><img src="./img/icon-nextjs.svg" alt="Icone NextJS"></li>
-            <li><img src="./img/icon-strapi.svg" alt="Icone Strapi"></li>
-            <li><img src="./img/icon-postgres.svg" alt="Icone Postgres"></li>
-            <li><img src="./img/icon-figma.svg" alt="Icone Figma"></li>
-
-
-
-          </ul>
-        </div>
+  <section class="aboutMe-bg" data-animation="scroll" id="about">
+    <div class="grid container aboutMe" id="#about">
+      <div class="container-img">
+        <img class="aboutMeImg" src="./img/photo.jpeg" alt="">
       </div>
-    </div>
-  </section>
+      <div class="content-text">
+        <h1 class="line-1 title">Sobre mim</h1>
+        <p>Formado em Ciência da Computação pela <a href="https://www.unit.br/" target="_blank">Universidade Tiradentes</a>, meu foco é unir o mundo visual com técnicas de desenvolvimento web. Minhas principais habilidades incluem HTML, CSS e JavaScript, além disso atualmente estou aprendendo TypeScript e React para expandir meus conhecimentos. Nos momentos de lazer, meu interesse é editar fotos e vídeos. Fique à vontade para explorar meus trabalhos e entrar em contato. Para saber mais sobre meu trabalho, explore meu site. Fico à disposição para esclarecer dúvidas ou discutir oportunidades.</p>
+        <!-- <img class="photoMobile aboutMeImg" src="./img/photo.jpeg" alt=""> -->
+      </div>
+      <section class="tech-bg" data-animation="scroll" id="tech">
+        <div class="container tech-main" id="#tech">
+          <h1 class="line-3 title">Tecnologias</h1>
+          <div class="tech-container">
+            <article class="tech-text">
+              <h2 id="tech-title"></h2>
+              <p id="tech-about">(Use os icones para ver um pequeno resumo das tecnologias que utilizo)</p>
+            </article>
+            <div class="tech-card">
+              <ul class="card-ul">
+                <li><img src="./img/icon-html.svg" alt="Icone Html"></li>
+                <li><img src="./img/icon-css.svg" alt="Icone Css"></li>
+                <li><img src="./img/icon-javascript.svg" alt="Icone JavaScript"></li>
+                <li><img src="./img/icon-typescript.svg" alt="Icone Typescript"></li>
+                <li><img src="./img/icon-nodejs.svg" alt="Icone NodeJS"></li>
+                <li><img src="./img/icon-react.svg" alt="Icone React"></li>
+                <li><img src="./img/icon-nextjs.svg" alt="Icone NextJS"></li>
+                <li><img src="./img/icon-strapi.svg" alt="Icone Strapi"></li>
+                <li><img src="./img/icon-postgres.svg" alt="Icone Postgres"></li>
+                <li><img src="./img/icon-figma.svg" alt="Icone Figma"></li>
 
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </section>
 
 
   <footer class="copy">

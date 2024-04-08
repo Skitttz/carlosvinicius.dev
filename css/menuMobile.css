@@ -14,6 +14,17 @@
 }
 
 @media (max-width: 768px) {
+  .divDarkMode,
+  .btnDarkMode {
+    display: none;
+    margin: 0;
+  }
+
+  .active .divDarkMode,
+  .active .btnDarkMode {
+    display: block;
+  }
+
   .container.header {
     justify-content: space-between;
     gap: 0px;
@@ -139,7 +150,7 @@
 
 @media (max-width: 769px) {
   .active.header .menu {
-    height: 440px;
+    min-height: 300px;
   }
   .hMenu span {
     background-color: var(--hMenu-span);
@@ -155,9 +166,6 @@
   }
   .link {
     font-size: 1rem;
-  }
-  .active.header .menu {
-    height: 410px;
   }
 }
 
