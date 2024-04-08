@@ -18,9 +18,10 @@
 
 .tech-main {
   background-color: var(--color-w1);
-  border: 0.5px solid var(--color-border-tech);
+  border: 0.2px solid var(--color-border-tech);
   width: 90%;
   border-radius: 10px;
+  box-shadow: inset gray 0px 0px 20px -12px;
 }
 
 #tech-about {
