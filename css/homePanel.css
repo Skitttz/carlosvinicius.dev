@@ -7,8 +7,12 @@
   border-top-left-radius: 5px;
 }
 
-[data-theme="dark"] .cssMenu {
+[data-theme='dark'] .cssMenu {
   background-color: #444;
+}
+
+[data-theme='dark'] .ti-cursor {
+  color: var(--color-b6) !important;
 }
 
 .btnMenu {
@@ -49,12 +53,12 @@
   border-bottom-right-radius: 5px;
 }
 
-[data-theme="dark"] .cssContainer {
+[data-theme='dark'] .cssContainer {
   background-color: var(--color-b1);
 }
 
 .css span {
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inconsolata', monospace;
 }
 
 .textCode {
@@ -64,7 +68,7 @@
   color: var(--color-w1);
 }
 
-[data-theme="dark"] .textCode {
+[data-theme='dark'] .textCode {
   color: var(--color-w1);
 }
 
