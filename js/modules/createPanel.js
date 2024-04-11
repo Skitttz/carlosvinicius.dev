@@ -4,11 +4,13 @@ export default class Panel {
     const textArea = document.querySelector('.textArea');
     const loading = document.querySelector('.loading');
     const html = document.querySelector('html');
+    let count = 0;
     this.loading = loading;
     this.panel = panel;
     this.textArea = textArea;
     this.html = html;
     this.Aparecer = this.Aparecer.bind(this);
+    this.count = count;
   }
 
   Aparecer() {
@@ -25,9 +27,10 @@ export default class Panel {
 
   pressKey(keyP) {
     this.html.addEventListener('keydown', (e) => {
-      if (e.key == keyP) {
+      if (e.key == keyP && this.count === 0) {
         this.Desaparecer();
         document.getElementById('project').scrollIntoView();
+        this.count = 1;
       }
     });
   }
