@@ -4,13 +4,22 @@ export default class Panel {
     const textArea = document.querySelector('.textArea');
     const loading = document.querySelector('.loading');
     const html = document.querySelector('html');
+
+    // Elements press enter
+    const elementProject = document.getElementById('project');
     let count = 0;
+    let offset = -100;
+
     this.loading = loading;
     this.panel = panel;
     this.textArea = textArea;
     this.html = html;
     this.Aparecer = this.Aparecer.bind(this);
+
+    // Elements press enter (this)
+    this.elementProject = elementProject;
     this.count = count;
+    this.offset = offset;
   }
 
   Aparecer() {
@@ -29,7 +38,14 @@ export default class Panel {
     this.html.addEventListener('keydown', (e) => {
       if (e.key == keyP && this.count === 0) {
         this.Desaparecer();
-        document.getElementById('project').scrollIntoView();
+        let elementPosition = this.elementProject.getBoundingClientRect().top;
+        let offsetPosition = elementPosition + window.scrollY + this.offset;
+        setTimeout(function () {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }, 500);
         this.count = 1;
       }
     });
