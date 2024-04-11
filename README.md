@@ -13,18 +13,18 @@
 
 <div align="center">
 <h2>Light Mode</h2>
-<img src="https://i.ibb.co/YpbhYv9/light-Mode.png" width="90%" />
+<img src="https://i.ibb.co/YpbhYv9/light-Mode.png" width="100%" />
 <h2>Dark Mode</h2>
-<img src="https://i.ibb.co/4TtctRB/darkMode.png" width="90%" />
+<img src="https://i.ibb.co/4TtctRB/darkMode.png" width="100%" />
 </div>
 
 ## Contexto 📝
 
-O portfólio é uma forma de apresentação interativas e envolventes. Mostrando algum dos projetos criados. Permitindo explorar um pouco dos meus trabalhos de criações que refletem minha jornada como desenvolvedor front-end.
+O portfólio é uma forma de apresentação interativa com o intuito de apresentar quem sou eu e mostrar algum dos meus projetos ja criados que refletem minha jornada como desenvolvedor.
 
 ## Tecnologias 🖥️
 
-Utilizando as bases de **HTML**, **CSS** e **JavaScript**, este projeto foi concebido para estabelecer uma estrutura robusta, estilo visual cativante e animações envolventes. Essas melhorias elevam a experiência do usuário, proporcionando uma navegação interativa, resultando em uma experiência agradável.
+Utilizando as bases de **HTML**, **CSS** e **JavaScript**, este projeto foi concebido para estabelecer uma estrutura harmonica, estilo visual atraente e algumas animações simples. Com o proposito de melhorar a experiência do usuário, proporcionando uma navegação interativa e gerando uma experiência agradável.
 
 ## Como acessar 🚪🚶
 
