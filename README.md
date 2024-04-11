@@ -13,9 +13,9 @@
 
 <div align="center">
 <h2>Light Mode</h2>
-<img src="https://i.ibb.co/LtLcHQq/light-Mode.jpg" width="90%" />
+<img src="https://i.ibb.co/YpbhYv9/light-Mode.png" width="90%" />
 <h2>Dark Mode</h2>
-<img src="https://i.ibb.co/5rNdZHH/darkMode.jpg" width="90%" />
+<img src="https://i.ibb.co/4TtctRB/darkMode.png" width="90%" />
 </div>
 
 ## Contexto 📝
@@ -30,6 +30,7 @@ Utilizando as bases de **HTML**, **CSS** e **JavaScript**, este projeto foi conc
 
 O projeto foi hospedado no GitHub Pages, ao clicar no link <a href="https://skitttz.github.io/portfolio-cv/"> skitttz.github.io/portfolio-cv/</a> você será redirecionado para uma previa nessa mesma **aba**.
 
-## Wireframe 🎨 
+## Wireframe 🎨
+
 Um wireframe é uma representação visual ou esboço de uma página web, aplicativo ou design de interface do usuário (UI), além disso foi montado um guia de estilo do projeto juntamente do wireframe dentro do software Figma para acessa-lo clique
 <a href="https://www.figma.com/file/xAiWXbWMQT0xqjx2qCwvWG/Portfolio-Front-Developer-Wireframe%2FStyle-Guide?type=design&node-id=0%3A1&mode=design&t=vPbdsSF3OIpDQfKi-1">aqui.</a>

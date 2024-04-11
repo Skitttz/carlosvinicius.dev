@@ -22,11 +22,11 @@ export default class DarkMode {
     if (local === 'light') {
       this.moon.innerText = '🌕';
       this.logo.src = './img/logo.svg';
-      this.homeGif.src = './img/homeLight.png';
+      this.homeGif.src = './img/homeDarkV2.png';
     } else if (local === 'dark') {
       this.moon.innerText = '🌑';
       this.logo.src = './img/logoDark.svg';
-      this.homeGif.src = './img/homeDark.png';
+      this.homeGif.src = './img/homeLight.png';
     }
   }
 
@@ -46,7 +46,7 @@ export default class DarkMode {
       this.logo.src = './img/logoDark.svg';
       this.homeGif.style.opacity = '0';
       setTimeout(() => {
-        this.homeGif.src = './img/homeDark.png';
+        this.homeGif.src = './img/homeLight.png';
         this.homeGif.style.opacity = '1';
       }, 250);
     } else if (this.moon.innerText === '🌑') {
@@ -54,7 +54,7 @@ export default class DarkMode {
       this.logo.src = './img/logo.svg';
       this.homeGif.style.opacity = '0';
       setTimeout(() => {
-        this.homeGif.src = './img/homeLight.png';
+        this.homeGif.src = './img/homeDarkV2.png';
         this.homeGif.style.opacity = '1';
       }, 250);
     }
