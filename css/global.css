@@ -2,12 +2,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   background-color: var(--color-w);
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
 body::-webkit-scrollbar {
@@ -24,11 +24,11 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid var(--color-w1);
 }
 
-[data-theme="dark"] body::-webkit-scrollbar-track {
+[data-theme='dark'] body::-webkit-scrollbar-track {
   background: var(--color-w);
 }
 
-[data-theme="dark"] body::-webkit-scrollbar-thumb {
+[data-theme='dark'] body::-webkit-scrollbar-thumb {
   background-color: var(--color-w1);
   border-radius: 20px;
   border: 3px solid var(--color-w);
@@ -57,18 +57,18 @@ img {
   aspect-ratio: attr(width) / attr(height);
 }
 
-[data-theme="light"] .icon.i-download {
+[data-theme='light'] .icon.i-download {
   filter: invert(1) !important;
 }
 
-[data-theme="dark"] .icon {
+[data-theme='dark'] .icon {
   filter: invert();
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   transition: 2s all;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   transition: 2s all;
 }
