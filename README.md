@@ -4,9 +4,9 @@
 </h1>
 
 <p align="center">
-  <a href="#contexto-">𝙲𝚘𝚗𝚝𝚎𝚡𝚝𝚘</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
-  <a href="#tecnologias-%EF%B8%8F">𝚃𝚎𝚌𝚗𝚘𝚕𝚘𝚐𝚒𝚊𝚜</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
-  <a href="#como-acessar-">𝙲𝚘𝚖𝚘 𝚊𝚌𝚎𝚜𝚜𝚊𝚛</a>&nbsp;&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;
+  <a href="#contexto-">Contexto</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias-%EF%B8%8F">Tecnologias</a>&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;&nbsp;
+  <a href="#como-acessar-">Como acessar</a>&nbsp;&nbsp;&nbsp;&nbsp;┋&nbsp;&nbsp;
   <a href="#como-acessar-">Wireframe</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 </p>
