@@ -1,3 +1,4 @@
+import Lottie from 'lottie-web';
 export default class DarkMode {
   constructor(targetClick, elements, homeGif, logo) {
     this.moon = document.querySelector(targetClick);
@@ -5,8 +6,15 @@ export default class DarkMode {
     this.homeGif = document.querySelector(homeGif);
     this.logo = document.querySelector(logo);
     this.eventos = ['click', 'touchstart'];
-    this.moon.style.fontSize = '1.2rem';
     this.changeIcon = this.changeIcon.bind(this);
+    Lottie.setSpeed(3);
+    Lottie.loadAnimation({
+      container: this.moon,
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: '../../img/iconDark.json',
+    });
   }
 
   changeMode() {
@@ -19,18 +27,27 @@ export default class DarkMode {
 
   initCheckLocal() {
     let local = localStorage.getItem('theme');
-    if (local === 'light') {
-      this.moon.innerText = '🌕';
+    if (local === 'light' || local === null) {
+      this.moon.addEventListener('click', () => {
+        Lottie.setDirection('-1');
+        Lottie.play();
+      });
       this.logo.src = './img/logo.svg';
       this.homeGif.src = './img/homeDarkV2.png';
     } else if (local === 'dark') {
-      this.moon.innerText = '🌑';
+      Lottie.setDirection('-1');
+
+      this.moon.addEventListener('click', () => {
+        Lottie.setDirection('1');
+        Lottie.play();
+      });
       this.logo.src = './img/logoDark.svg';
       this.homeGif.src = './img/homeLight.png';
     }
   }
 
   changeIcon(event) {
+    let local = localStorage.getItem('theme');
     if (event.cancelable) {
       event.preventDefault();
     }
@@ -41,16 +58,24 @@ export default class DarkMode {
     this.homeGif.style.oTransition = 'opacity 10s ease-in-out';
     this.homeGif.style.transition = 'opacity 10s ease-in-out';
 
-    if (this.moon.innerText === '🌕') {
-      this.moon.innerText = '🌑';
+    if (local === 'light') {
+      this.moon.addEventListener('click', () => {
+        Lottie.setDirection('1');
+        Lottie.play();
+      });
       this.logo.src = './img/logoDark.svg';
       this.homeGif.style.opacity = '0';
       setTimeout(() => {
         this.homeGif.src = './img/homeLight.png';
         this.homeGif.style.opacity = '1';
       }, 250);
-    } else if (this.moon.innerText === '🌑') {
-      this.moon.innerText = '🌕';
+    } else if (local === 'dark') {
+      Lottie.setDirection('1');
+
+      this.moon.addEventListener('click', () => {
+        Lottie.setDirection('-1');
+        Lottie.play();
+      });
       this.logo.src = './img/logo.svg';
       this.homeGif.style.opacity = '0';
       setTimeout(() => {
