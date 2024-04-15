@@ -13,7 +13,7 @@ export default class DarkMode {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '../img/iconDark.json',
+      path: 'img/iconDark.json',
     });
   }
 
