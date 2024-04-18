@@ -15,6 +15,7 @@ export default class DarkMode {
       autoplay: false,
       path: '../img/iconDark.json',
     });
+    Lottie.setDirection('1');
   }
 
   changeMode() {
@@ -28,30 +29,31 @@ export default class DarkMode {
   initCheckLocal() {
     let local = localStorage.getItem('theme');
     if (local === 'light' || local === null) {
-      this.moon.addEventListener('click', () => {
-        Lottie.setDirection('-1');
-        Lottie.play();
-      });
       this.logo.src = './img/logo.svg';
       this.homeGif.src = './img/homeDarkV2.png';
-    } else if (local === 'dark') {
-      Lottie.setDirection('-1');
-
       this.moon.addEventListener('click', () => {
         Lottie.setDirection('1');
         Lottie.play();
       });
+    } else if (local === 'dark') {
+      Lottie.setDirection('1');
+      Lottie.play();
+      this.moon.addEventListener('click', () => {
+        Lottie.setDirection('-1');
+        Lottie.play();
+      });
+
       this.logo.src = './img/logoDark.svg';
       this.homeGif.src = './img/homeLight.png';
     }
   }
 
   changeIcon(event) {
-    let local = localStorage.getItem('theme');
     if (event.cancelable) {
       event.preventDefault();
     }
 
+    let local = localStorage.getItem('theme');
     this.homeGif.style.webkitTransition = 'opacity 10s ease-in-out';
     this.homeGif.style.MozTransition = 'opacity 10s ease-in-out';
     this.homeGif.style.msTransition = 'opacity 10s ease-in-out';
@@ -60,7 +62,7 @@ export default class DarkMode {
 
     if (local === 'light') {
       this.moon.addEventListener('click', () => {
-        Lottie.setDirection('1');
+        Lottie.setDirection('-1');
         Lottie.play();
       });
       this.logo.src = './img/logoDark.svg';
@@ -70,10 +72,8 @@ export default class DarkMode {
         this.homeGif.style.opacity = '1';
       }, 250);
     } else if (local === 'dark') {
-      Lottie.setDirection('1');
-
       this.moon.addEventListener('click', () => {
-        Lottie.setDirection('-1');
+        Lottie.setDirection('1');
         Lottie.play();
       });
       this.logo.src = './img/logo.svg';
