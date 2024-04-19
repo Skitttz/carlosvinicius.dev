@@ -19,6 +19,13 @@
   right: 0;
 }
 
+@media (max-width: 1000px) {
+  .fixed {
+    top: 0;
+    bottom: inherit;
+  }
+}
+
 @media (min-width: 768px) {
   .header a {
     display: inline-block;
