@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;800;900&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/x-icon" href="./favicon.svg">
   <title>Portfólio {Carlos Vinicius} </title>
 </head>
@@ -27,7 +28,7 @@
         <ul class="header-menu">
           <li><a class="link" href="#project">Projetos</a></li>
           <li><a class="link" href="#about">Sobre Mim</a></li>
-          <li><a class="link" target="_blank" href="https://linktr.ee/skittzdev">Contato</a></li>
+          <li><a class="link btnOpenModal" href="">Contato</a></li>
           <div class="hMenu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -37,10 +38,31 @@
       </nav>
       <div class="divDarkMode">
         <div class="btnDarkMode"></div>
-        <!-- <li class="btnToggleDarkMode"><img src="img/sun.svg" alt=""></li> -->
       </div>
     </div>
   </header>
+  <section class="modal-contact" id="modalContact">
+    <div class="fadeModal modal-content">
+      <div class="">
+        <div class="menu-modal">
+          <div class="navBtn">
+            <a class="btnCloseModal" href=""></a>
+          </div>
+        </div>
+        <div class="divForm">
+          <h3 class="title-modal">Entrar em contato</h3>
+          <h4 class="subtitle-modal">Preencha o formulário abaixo para entrar em contato.</h4>
+          <form class="main-form" action="">
+            <div class="item-form item-name"><label for="name">Nome</label><input required type="text" placeholder=""></div>
+            <div class="item-form item-email"><label for="email" ;>E-mail</label><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder=""></div>
+            <div class="item-form item-subject"><label for="subject">Assunto</label><input type="text"></div>
+            <div class="item-form item-message"><label for="message">Mensagem</label><textarea class="textarea-modal" id="mensagem" name="mensagem" rows="5" required></textarea></div>
+            <button class="btn-submit">Enviar Mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="home-bg" data-animation="scroll" id="home">
     <div class="grid container first">
       <ul class="linksContato">
