@@ -71,7 +71,7 @@
   justify-self: center;
 }
 
-.teste {
+.broken-line {
   display: none;
   margin: 0;
   padding: 0;
@@ -90,7 +90,7 @@
   color: var(--color-b5);
 }
 
-[data-theme="dark"] .myName {
+[data-theme='dark'] .myName {
   color: var(--color-myName-Dark);
 }
 
@@ -99,7 +99,7 @@
 }
 
 .btn {
-  font-family: "Inter", monospace;
+  font-family: 'Inter', monospace;
   font-weight: 600;
   text-decoration: none;
   font-size: 1.125rem;
@@ -124,12 +124,12 @@
   background: var(--btn-demo-bg-hover);
 }
 
-[data-theme="dark"] .btn-cv {
+[data-theme='dark'] .btn-cv {
   border: var(--color-b3) 1px solid;
   color: var(--color-w2);
 }
 
-[data-theme="dark"] .btn-cv:hover {
+[data-theme='dark'] .btn-cv:hover {
   border: var(--color-w) 1px solid;
   color: var(--color-w2);
 }

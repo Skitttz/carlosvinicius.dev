@@ -1,10 +1,10 @@
-import TypeIt from "typeit";
-import Panel from "./createPanel.js";
+import TypeIt from 'typeit';
+import Panel from './createPanel.js';
 
 export default function TypeF() {
   const panel = new Panel();
   function Type() {
-    const typeA = new TypeIt("#text", {
+    const typeA = new TypeIt('#text', {
       lifeLike: false,
       speed: 50,
       startDelay: 900,
@@ -13,29 +13,29 @@ export default function TypeF() {
         panel.Aparecer();
       },
     })
-      .type("olá", { delay: 100 })
-      .type(", sou ")
+      .type('olá', { delay: 100 })
+      .type(', sou ')
       .pause(448)
-      .move(null, { to: "START", instant: true, delay: 300 })
+      .move(null, { to: 'START', instant: true, delay: 300 })
       .move(1, { delay: 200 })
       .delete(1)
-      .type("O", { delay: 225 })
+      .type('O', { delay: 225 })
       .pause(200)
       .move(7, { instant: true })
       .pause(348)
-      .type(" C")
+      .type(' C')
       .pause(1000)
       .delete(1)
-      .type("<p></p>")
+      .type('<p></p>')
       .type(" <span class='myName'>Carlos Vinicius,</span>")
       .pause(348)
       .break()
       .pause(200)
-      .type(" ")
+      .type(' ')
       .pause(116)
-      .type(" ")
+      .type(' ')
       .pause(135)
-      .type("programad")
+      .type('programad')
       .delete(1)
       .pause(164)
       .delete(1)
@@ -56,29 +56,29 @@ export default function TypeF() {
       .pause(132)
       .type("console.log('")
       .pause(200)
-      .type("d")
+      .type('d')
       .pause(64)
-      .type("e")
-      .pause(150)
-      .type("v")
-      .pause(200)
+      .type('e')
+      .pause(64)
+      .type('v')
+      .pause(64)
       .delete(1)
       .pause(194)
       .delete(1)
       .pause(183)
       .delete(1)
       .pause(284)
-      .type("D")
+      .type('D')
       .pause(93)
-      .type("e")
+      .type('e')
       .pause(150)
-      .type("s")
+      .type('s')
       .pause(300)
-      .type("envolvedor ", { delay: 500 })
+      .type('envolvedor ', { delay: 500 })
       .pause(150)
-      .type("Front-End", { delay: 300 })
+      .type('Front-End', { delay: 300 })
       .pause(200)
-      .type(".")
+      .type('.')
       .type("');")
       .pause(1000)
       .delete(40, { instant: true })
@@ -89,14 +89,14 @@ export default function TypeF() {
   Type();
 
   function TypeConsole() {
-    const typeB = new TypeIt("#consoleType", {
-      cursorChar: "▍",
-      strings: "Desenvolvedor Front-End.",
+    const typeB = new TypeIt('#consoleType', {
+      cursorChar: '▍',
+      strings: 'Desenvolvedor Front-End.',
       lifeLike: false,
       speed: 50,
       startDelay: 900,
       afterComplete: function (typeB) {
-        panel.pressKey("Enter");
+        panel.pressKey('Enter');
       },
     }).go();
   }

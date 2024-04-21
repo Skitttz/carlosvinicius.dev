@@ -1,5 +1,16 @@
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset; 
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  -webkit-text-fill-color: #333;
+} 
+
+
 .modal-contact {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 30000;
   left: 0;
@@ -10,9 +21,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-
-.modal-content{
+.modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,19 +31,17 @@
   height: 100%;
 }
 
-.modal-contact.ativo{
-  display: none;
+.modal-contact.ativo {
+  display: block;
 }
 
 .btnCloseModal {
   cursor: pointer;
-  width: 12px; /* Ajuste a largura conforme necessário */
-  height: 12px; /* Ajuste a altura conforme necessário */
+  width: 12px;
+  height: 12px;
 }
 
-
-
-.menu-modal{
+.menu-modal {
   box-sizing: border-box;
   position: relative;
   inset: 0;
@@ -43,10 +50,9 @@
   border-radius: 10px 10px 0 0;
 }
 
-.navBtn{
+.navBtn {
   height: 80px;
 }
-
 
 .btnCloseModal {
   position: absolute;
@@ -59,50 +65,49 @@
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  right: 10px; /* Ajuste conforme necessário para a margem do lado direito */
-  transition: background-color .5s ease;
-}
-.btnCloseModal:hover{
-  background-color: rgba(232, 12, 15,1);
-
+  right: 10px;
+  transition: background-color 0.5s ease;
 }
 
-.menu-modal{
-  border-bottom: .2px solid #6766;
+.btnCloseModal:hover {
+  background-color: rgba(232, 12, 15, 1);
+}
+
+.menu-modal {
+  border-bottom: 0.2px solid #6766;
   background-color: #333;
 }
 
-.divForm, .menu-modal {
+.divForm,
+.menu-modal {
   min-width: 200px;
   width: 100%;
   padding: 20px 40px 20px 40px;
 }
 
-.divForm{
+.divForm {
   background-color: white;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-@media(max-width: 1200){
-  .modal-content {max-width:500px ;}
-}
-
 .item-form input,
 .item-form textarea {
-  border-radius: 2px;
+  font-size: 1rem;
 }
 
-.item-form textarea{
+.item-form textarea {
   outline: none;
 }
 
 .title-modal {
-  font-weight: 900;
-  margin-top: 0px;;
+  user-select: none;
+  font-weight: 700;
+  margin-top: 0px;
 }
 
 .subtitle-modal {
+  user-select: none;
   color: #888;
 }
 
@@ -111,7 +116,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 12px;
-  column-gap: 10px;
+  column-gap: 25px;
 }
 
 .item-subject {
@@ -123,51 +128,122 @@
 }
 
 .item-form {
+  position: relative;
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
 }
 
-.item-email input::placeholder{
-  text-indent:4px;
+.item-email input::placeholder {
+  text-indent: 4px;
 }
 
-.item-form label {
+.item-form label{
+  transition: .4s; 
+  color: #999 !important; 
+}
+
+.item-message label {
+  position: absolute;
+  z-index: 9999999;
+  top:10%;
+  left: 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+
+.item-email label,.item-subject label, .item-name label {
+  font-weight: 700;
+  position: absolute;
   color: #444;
+  z-index: 9999999;
+  top:50%;
+  left: 5px;
+  transform: translateY(-50%);
 }
 
-.item-name input,.item-email input,.item-subject input{
+.item-email input:focus~label,
+.item-email input:not(:placeholder-shown)~label,  
+.item-name input:focus~label,
+.item-name input:valid~label{
+  padding-left: 5px;
+  padding-right: 5px;
+  top: 0;
+  font-size: 0.85rem !important;
+  background: white;
+  color: rgba(29, 70, 160, 1) !important;
+} 
+
+.item-subject input:valid~label,
+.item-subject input:focus~label{
+  padding-left: 5px;
+  padding-right: 5px;
+  top: 0;
+  font-size: 0.85rem !important;
+  color: rgba(29, 70, 160, 1) !important;
+  background: white;
+}
+
+.item-message textarea:focus~label,
+.item-message textarea:valid~label{
+  padding-left: 2px;
+  padding-right: 5px;
+  top: 0;
+  font-size: 0.85rem !important;
+  color: rgba(29, 70, 160, 1) !important;
+  background: white;
+} 
+
+
+
+/* .item-name input,
+.item-email input,
+.item-subject input,
+.item-message textarea{
+} */
+
+
+.item-name input,
+.item-email input,
+.item-subject input {
   padding: 8px 12px;
-  border-radius: 8px;
-  outline: solid .2px rgba(0, 0, 0,0);
+  border-radius: 5px;
+  outline: solid 1px #333;
+  border: none;
   transition: outline 0.5s ease;
-
 }
 
-.item-name input:hover,.item-email input:hover,.item-subject input:hover{
-outline: solid .2px rgba(82, 63, 252);
+.item-name input:hover,
+.item-email input:hover,
+.item-subject input:hover {
+  outline: solid 1px rgba(82, 63, 252);
 }
 
-.item-name input:focus,.item-email input:focus,.item-subject input:focus{
-outline: solid .2px rgba(82, 63, 252);
+.item-name input:focus,
+.item-email input:focus,
+.item-subject input:focus {
+  outline: solid 1px rgba(82, 63, 252);
 }
-
 
 .textarea-modal {
-  text-indent: 2px;
+  text-indent: 4px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   margin: 0;
-  padding: 0;
-  border-collapse:collapse;
+  padding-top: 4px;
+  border-collapse: collapse;
   transition: outline 0.5s ease;
 }
-.textarea-modal:focus{outline: solid .2px rgba(82, 63, 252);
+.textarea-modal:focus {
+  outline: solid 0.2px rgba(82, 63, 252);
 }
-.textarea-modal:hover{outline: solid .2px rgba(82, 63, 252);
+.textarea-modal:hover {
+  outline: solid 0.2px rgba(82, 63, 252);
 }
 
-label{
+label {
   margin-bottom: 3px;
 }
 
@@ -181,34 +257,130 @@ label{
 }
 
 .btn-submit {
+  font-size: 1rem;
   grid-column: 1/-1;
   font-weight: 600;
-  background-color:rgba(19, 26, 222,0.8);
+  background-color: rgba(19, 26, 222, 0.8);
   border-radius: 8px;
   color: #f3f3f3;
   padding: 12px 10px;
-  margin-top:12px;
-  margin-left: auto;
+  margin-top: 12px;
   transition: all;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: none;
 }
 
-.btn-submit:hover{
-  background-color:rgba(19, 26, 210,0.9);
+.btn-submit:hover {
+  background-color: rgba(19, 26, 210, 0.9);
 }
 
 .fadeModal {
-  opacity: 0; /* Comece com opacidade 0 para esconder o elemento */
-  animation: fadeIn .5s ease-in-out forwards; /* Aplique a animação de fade */
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0; /* No início da animação, opacidade é 0 */
+    opacity: 0;
   }
   to {
-    opacity: 1; /* No final da animação, opacidade é 1 */
+    opacity: 1;
+  }
+}
+
+.othersContact {
+  user-select: none;
+  position: relative;
+  margin: 40px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.orText::after,
+.orText::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 24%;
+  background-color: rgba(19, 70, 144, 0.9);
+  top: 18%;
+}
+
+.orText::before {
+  right: 1%; 
+}
+
+.orText::after {
+  left: 1%; 
+}
+
+.linksContactModal {
+  display: flex;
+  gap: 0 20px;
+}
+
+.linksContactModal img {
+  width: 32px !important;
+}
+
+@media (max-width: 1200px) {
+  .modal-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .orText {
+    font-size: 14px;
+  }
+  .orText::after,
+  .orText::before {
+    width: 20%;
+    height: 2px;
+    top: 13%;
+  }
+  .orText::before {
+    right:  1%; 
+  }
+  
+  .orText::after {
+    left:  1%; 
+  }
+}
+
+@media (max-width: 450px){
+  .orText::after,
+  .orText::before {
+    width: 20%;
+  }
+  .orText::before {
+    right:  -8%; 
+  }
+  
+  .orText::after {
+    left:  -8%; 
+  }
+}
+
+
+@media (max-width: 360px){
+  .orText::after,
+  .orText::before {
+    width: 15%;
+  }
+  .orText::before {
+    right:  -12%; 
+  }
+  
+  .orText::after {
+    left:  -12%; 
   }
 }

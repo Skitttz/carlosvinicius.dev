@@ -43,7 +43,7 @@
   </header>
   <section class="modal-contact" id="modalContact">
     <div class="fadeModal modal-content">
-      <div class="">
+      <div class="modal-container">
         <div class="menu-modal">
           <div class="navBtn">
             <a class="btnCloseModal" href=""></a>
@@ -52,13 +52,35 @@
         <div class="divForm">
           <h3 class="title-modal">Entrar em contato</h3>
           <h4 class="subtitle-modal">Preencha o formulário abaixo para entrar em contato.</h4>
-          <form class="main-form" action="">
-            <div class="item-form item-name"><label for="name">Nome</label><input required type="text" placeholder=""></div>
-            <div class="item-form item-email"><label for="email" ;>E-mail</label><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder=""></div>
-            <div class="item-form item-subject"><label for="subject">Assunto</label><input type="text"></div>
-            <div class="item-form item-message"><label for="message">Mensagem</label><textarea class="textarea-modal" id="mensagem" name="mensagem" rows="5" required></textarea></div>
-            <button class="btn-submit">Enviar Mensagem</button>
+          <form class="main-form" id="FormId">
+            <div class="item-form item-name">
+              <input required type="text" placeholder="" id="nome">
+              <label for="name">Nome</label>
+            </div>
+            <div class="item-form item-email">
+              <input required type="email" placeholder="" id="email">
+              <label for="email">E-mail</label>
+            </div>
+            <div class="item-form item-subject">
+              <input required type="text" placeholder="" id="assunto">
+              <label for="subject">Assunto</label>
+            </div>
+            <div class="item-form item-message">
+              <textarea class="textarea-modal" id="mensagem" name="mensagem" rows="5" required></textarea>
+              <label for="message">Mensagem</label>
+            </div>
+            <button class="btn-submit" type="submit">Enviar Mensagem</button>
           </form>
+          <div class="othersContact">
+
+            <span class="orText">Outras formas de contato</span>
+            <ul class="linksContactModal">
+              <li><a href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/" target="_blank" aria-label="LinkedinHome"> <img src="./img/icon-linkedin.svg" class="icon" alt=""> </a></li>
+              <li><a href="https://github.com/Skitttz" target="_blank" aria-label="githubHome"><img src="./img/icon-github.svg" class="icon" alt=""></a></li>
+              <li><a href="https://wa.me/5582981229049" target="_blank" aria-label="emailHome"><img src="./img/icon-whatsapp.svg" class="icon" alt=""></a></li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </div>
@@ -84,15 +106,16 @@
             <img class="loading" src="./img/loading.svg" alt="">
             <pre class="textArea"><code class='css'>
           <span class="textCode" id="consoleType"></span>
-          <p id="teste"></p>
+          <p id="broken-line"></p>
           <span class="exit-console">...Program finished with exit code 0
-            Press ENTER to exit console.</span>
+            Press ENTER to exit console
+                    and view my projects</span>
           </code></pre>
           </div>
         </section>
         <div class="linksBtn">
-          <a class="btn btn-cv" href="https://wa.me/5582981229049">Entrar em contato</a>
-          <a class="btn btn-contact" href="./assets/Curriculo_CarlosVinicius.pdf" download="Curriculo-CarlosVinicius">Download CV <img src="./img/downloadArrow.svg" class="icon i-download" alt=""></a>
+          <a class="btn btn-cv btnOpenModal" href="" target="_blank">Entrar em contato</a>
+          <a class=" btn btn-contact" href="./assets/Curriculo_CarlosVinicius.pdf" download="Curriculo-CarlosVinicius">Download CV <img src="./img/downloadArrow.svg" class="icon i-download" alt=""></a>
         </div>
       </div>
 
