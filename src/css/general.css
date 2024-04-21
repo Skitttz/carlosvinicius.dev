@@ -1,0 +1,142 @@
+.container {
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnDarkMode {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.btnToggleDarkMode {
+  width: 100%;
+}
+
+.i-download {
+  display: inline-block;
+  max-width: 21px;
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 490px) {
+  .i-download {
+    max-width: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .i-download {
+    max-width: 8px;
+  }
+}
+
+@media (max-width: 376px) {
+  .i-download {
+    display: none;
+  }
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.header ul li img,
+.logo img {
+  max-width: 36px;
+}
+
+.title {
+  position: relative;
+  grid-column: 1/-1;
+}
+
+.line-1 {
+  margin-left: 10px;
+}
+
+.line-2 {
+  margin-left: 20px;
+}
+
+.line-3 {
+  margin-left: 10px;
+}
+
+@media (max-width: 769px) {
+  .header {
+    justify-content: space-between;
+  }
+  .grid {
+    grid-template-columns: 120px 1fr;
+  }
+  .grid .linksBtn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 426px) {
+  .grid {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .logo img {
+    max-width: 48px;
+  }
+  .line-1::before {
+    z-index: 2;
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    content: ' ';
+    background-color: var(--color-b2);
+    width: 6px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  .line-2::before {
+    z-index: 2;
+    position: absolute;
+    left: -12px;
+    top: 35px;
+    content: ' ';
+    background-color: var(--color-b6);
+    width: 6px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  .line-3::before {
+    z-index: 2;
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    content: ' ';
+    background-color: var(--color-b2);
+    width: 6px;
+    height: 30px;
+    border-radius: 5px;
+  }
+}
+
+.photoMobile.aboutMeImg {
+  display: none;
+}
+
+@media (max-width: 374px) {
+  .grid {
+    grid-template-columns: 40px 1fr;
+  }
+}
