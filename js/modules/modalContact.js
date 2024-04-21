@@ -94,10 +94,10 @@ export default class ModalContact {
       };
       try {
         emailjs.send(
-          API_EMAIL_SERVICE_ID,
-          API_EMAIL_TEMPLATE_ID,
+          process.env.API_EMAIL_SERVICE_ID,
+          process.env.API_EMAIL_TEMPLATE_ID,
           templateParams,
-          API_EMAIL_PUBLIC_KEY,
+          process.env.API_EMAIL_PUBLIC_KEY,
         );
         alert(this.msgAlertSucess);
         this.toggleModal();

@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio-cv",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -35,6 +35,7 @@
     "eslint-config-prettier": "^9.0.0",
     "lottie-web": "^5.12.2",
     "marked": "^12.0.0",
+    "netlify-cli": "^17.22.1",
     "typeit": "^8.7.1"
   }
 }
