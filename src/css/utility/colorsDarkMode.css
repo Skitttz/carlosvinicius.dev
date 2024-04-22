@@ -163,13 +163,13 @@
   /* Modal */
   --titleModal: #f1f1f1;
   --bgModal: #222;
-  --menuTopModal: #f3f3f3;
+  --menuTopModal: #a9a9a9;
   --bgInput: #222;
   --spanTextOr: #f4f4f4;
   --borderExitButton: #5f0a0a;
-  --btnSubmit: rgba(19, 250, 16, 0.8);
-  --btnSubmitHover: rgba(19, 215, 60, 0.9);
-  --lineOthers: rgba(19, 222, 24, 0.9);
+  --btnSubmit: rgba(19, 250, 70, 0.8);
+  --btnSubmitHover: rgba(19, 215, 90, 0.9);
+  --lineOthers: rgba(19, 222, 110, 0.9);
   --outlineInputs: rgba(82, 222, 12);
   --labelInput: rgba(29, 210, 10, 1);
   --labelColorInput: #999;
@@ -177,4 +177,5 @@
   --outLineInputsNormie: #e8ede8;
   --bgLabelAnimation: #222;
   --labelInInput: #e8ede8;
+  --fontTypeTextInput: #f3f3f3;
 }

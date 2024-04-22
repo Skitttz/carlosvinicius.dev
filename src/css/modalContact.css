@@ -94,6 +94,7 @@ input:-webkit-autofill:focus {
   width: 100%;
   font-size: 1rem;
   background-color: var(--bgInputDark);
+  color: var(--fontTypeTextInput);
 }
 
 .item-form textarea {
@@ -226,6 +227,12 @@ input:-webkit-autofill:focus {
   outline: solid 1px var(--outlineInputs);
 }
 
+.item-name input:valid,
+.item-email input:not(:placeholder-shown),
+.item-subject input:valid {
+  outline: solid 1px var(--outlineInputs);
+}
+
 .textarea-modal {
   text-indent: 4px;
   -webkit-border-radius: 10px;
@@ -242,6 +249,9 @@ input:-webkit-autofill:focus {
   outline: solid 0.2px var(--outlineInputs);
 }
 .textarea-modal:hover {
+  outline: solid 0.2px var(--outlineInputs);
+}
+.textarea-modal:valid {
   outline: solid 0.2px var(--outlineInputs);
 }
 

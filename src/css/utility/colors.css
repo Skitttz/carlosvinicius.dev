@@ -185,13 +185,11 @@
   --btnSubmit: rgba(19, 26, 222, 0.8);
   --btnSubmitHover: rgba(19, 26, 215, 0.9);
   --lineOthers: rgba(19, 70, 144, 0.9);
-
   --outlineInputs: rgba(82, 63, 252);
   --labelInput: rgba(29, 70, 160, 1);
   --labelColorInput: #999;
   --labelInInput: #444;
-
   --bgLabelAnimation: #f3f3f3;
-
   --outLineInputsNormie: #333;
+  --fontTypeTextInput: #222;
 }
