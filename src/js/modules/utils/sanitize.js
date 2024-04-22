@@ -1,4 +1,4 @@
 export function sanitizeString(str) {
-  str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, '');
+  str = str.replace(/[^a-z0-9áéíóúñü@ \.,_-]/gim, "");
   return str.trim();
 }

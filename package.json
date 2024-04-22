@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@emailjs/nodejs": "^2.2.0",
     "dompurify": "^3.0.8",
     "eslint-config-prettier": "^9.0.0",
     "lottie-web": "^5.12.2",
