@@ -8,6 +8,12 @@ export const handler = async (event) => {
     API_EMAIL_PRIVATE_KEY,
     API_EMAIL_TEMPLATE_ID,
   } = process.env;
+
+  emailjs.init({
+    publicKey: API_EMAIL_PUBLIC_KEY,
+    privateKey: API_EMAIL_PRIVATE_KEY,
+  });
+
   let body = {};
   body = JSON.parse(event.body);
   if (
@@ -23,14 +29,10 @@ export const handler = async (event) => {
       from_email: body.emailValue,
     };
     try {
-      emailjs.send(
+      await emailjs.send(
         API_EMAIL_SERVICE_ID,
         API_EMAIL_TEMPLATE_ID,
         templateParams,
-        {
-          publicKey: API_EMAIL_PUBLIC_KEY,
-          privateKey: API_EMAIL_PRIVATE_KEY,
-        },
       );
       return {
         statusCode: 200,
