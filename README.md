@@ -24,11 +24,11 @@ O portfólio é uma forma de apresentação interativa com o intuito de apresent
 
 ## Tecnologias 🖥️
 
-Utilizando as bases de **HTML**, **CSS** e **JavaScript**, este projeto foi concebido para estabelecer uma estrutura harmonica, estilo visual atraente e algumas animações simples. Com o proposito de melhorar a experiência do usuário, proporcionando uma navegação interativa e gerando uma experiência agradável.
+Utilizando as bases de **HTML**, **CSS**, **JavaScript** e conhecimentos do serverless do Netlify. Este projeto foi concebido para estabelecer uma estrutura harmonica, estilo visual atraente e algumas animações simples. Com o proposito de melhorar a experiência do usuário, proporcionando uma navegação interativa e gerando uma experiência agradável.
 
 ## Como acessar 🚪🚶
 
-O projeto foi hospedado no GitHub Pages, ao clicar no link <a href="https://skitttz.github.io/portfolio-cv/"> skitttz.github.io/portfolio-cv/</a> você será redirecionado para uma previa nessa mesma **aba**.
+O projeto foi hospedado no Netlify, ao clicar no link <a href="https://cv-dev.netlify.app/">cv-dev.netlify.app</a> você será redirecionado para ele nessa mesma **aba**.
 
 ## Wireframe 🎨
 
