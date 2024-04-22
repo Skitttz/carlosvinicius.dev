@@ -1,4 +1,4 @@
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   /* Colors Default */
   --color-MenuDefault: #eee;
   --color-MenuOn: #eee;
@@ -159,4 +159,22 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --color-project-AniArt: #5f0a0a;
   --slide-li-img: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
+  /* Modal */
+  --titleModal: #f1f1f1;
+  --bgModal: #222;
+  --menuTopModal: #f3f3f3;
+  --bgInput: #222;
+  --spanTextOr: #f4f4f4;
+  --borderExitButton: #5f0a0a;
+  --btnSubmit: rgba(19, 250, 16, 0.8);
+  --btnSubmitHover: rgba(19, 215, 60, 0.9);
+  --lineOthers: rgba(19, 222, 24, 0.9);
+  --outlineInputs: rgba(82, 222, 12);
+  --labelInput: rgba(29, 210, 10, 1);
+  --labelColorInput: #999;
+  --bgInputDark: #222;
+  --outLineInputsNormie: #e8ede8;
+  --bgLabelAnimation: #222;
+  --labelInInput: #e8ede8;
 }
