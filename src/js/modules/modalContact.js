@@ -1,4 +1,5 @@
 import { sanitizeString } from './utils/sanitize';
+import { validateInput } from './utils/validate';
 import emailjs from '@emailjs/browser';
 
 // Only non-production
@@ -37,7 +38,6 @@ export default class ModalContact {
     this.btnSubmit = document.querySelector(btnSubmit);
 
     // Function
-    this.validateInput = this.validateInput.bind(this);
     this.eventToggleModal = this.eventToggleModal.bind(this);
     this.clickOutModal = this.clickOutModal.bind(this);
     this.sendEmail = this.sendEmail.bind(this);
@@ -64,41 +64,41 @@ export default class ModalContact {
     }
   }
 
-  validateInput(valueInput) {
-    if (valueInput !== '') {
-      return true;
-    }
-    return false;
-  }
-
   async sendEmail() {
     const valueInputName = this.inputName.value;
     const valueInputEmail = this.inputEmail.value;
     const valueInputSubject = this.inputSubject.value;
     const valueInputMessage = this.inputMessage.value;
     if (
-      this.validateInput(valueInputName) &&
-      this.validateInput(valueInputEmail) &&
-      this.validateInput(valueInputSubject) &&
-      this.validateInput(valueInputMessage)
+      validateInput(valueInputName) &&
+      validateInput(valueInputEmail) &&
+      validateInput(valueInputSubject) &&
+      validateInput(valueInputMessage)
     ) {
       const nameValue = sanitizeString(valueInputName);
       const emailValue = sanitizeString(valueInputEmail);
       const subjectValue = sanitizeString(valueInputSubject);
       const messageValue = sanitizeString(valueInputMessage);
-      const templateParams = {
-        from_name: nameValue,
-        subject: subjectValue,
-        message: messageValue,
-        from_email: emailValue,
-      };
+
+      const requestBody = JSON.stringify({
+        nameValue,
+        emailValue,
+        subjectValue,
+        messageValue,
+      });
       try {
-        emailjs.send(
-          process.env.API_EMAIL_SERVICE_ID,
-          process.env.API_EMAIL_TEMPLATE_ID,
-          templateParams,
-          process.env.API_EMAIL_PUBLIC_KEY,
-        );
+        const response = await fetch('/.netlify/functions/sendEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: requestBody,
+        });
+        if (!response.ok) {
+          throw new Error(
+            'Erro ao enviar o e-mail. Por favor, tente novamente mais tarde.',
+          );
+        }
         alert(this.msgAlertSucess);
         this.toggleModal();
       } catch (error) {
