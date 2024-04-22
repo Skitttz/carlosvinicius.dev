@@ -1,13 +1,12 @@
 input:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 50px white inset; 
+  -webkit-box-shadow: 0 0 0 50px white inset;
   -webkit-text-fill-color: #333;
 }
 
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px white inset;
   -webkit-text-fill-color: #333;
-} 
-
+}
 
 .modal-contact {
   display: none;
@@ -16,7 +15,7 @@ input:-webkit-autofill:focus {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -25,7 +24,6 @@ input:-webkit-autofill:focus {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-items: center;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -93,6 +91,7 @@ input:-webkit-autofill:focus {
 
 .item-form input,
 .item-form textarea {
+  width: 100%;
   font-size: 1rem;
 }
 
@@ -114,7 +113,7 @@ input:-webkit-autofill:focus {
 .main-form {
   margin-top: 15px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 220px 220px;
   row-gap: 12px;
   column-gap: 25px;
 }
@@ -138,45 +137,46 @@ input:-webkit-autofill:focus {
   text-indent: 4px;
 }
 
-.item-form label{
-  transition: .4s; 
-  color: #999 !important; 
+.item-form label {
+  transition: 0.4s;
+  color: #999 !important;
 }
 
 .item-message label {
   position: absolute;
   z-index: 9999999;
-  top:10%;
-  left: 5px;
+  top: 12%;
+  left: 6px;
   transform: translateY(-50%);
   pointer-events: none;
 }
 
-
-.item-email label,.item-subject label, .item-name label {
+.item-email label,
+.item-subject label,
+.item-name label {
   font-weight: 700;
   position: absolute;
   color: #444;
   z-index: 9999999;
-  top:50%;
+  top: 50%;
   left: 5px;
   transform: translateY(-50%);
 }
 
-.item-email input:focus~label,
-.item-email input:not(:placeholder-shown)~label,  
-.item-name input:focus~label,
-.item-name input:valid~label{
+.item-email input:focus ~ label,
+.item-email input:not(:placeholder-shown) ~ label,
+.item-name input:focus ~ label,
+.item-name input:valid ~ label {
   padding-left: 5px;
   padding-right: 5px;
   top: 0;
   font-size: 0.85rem !important;
   background: white;
   color: rgba(29, 70, 160, 1) !important;
-} 
+}
 
-.item-subject input:valid~label,
-.item-subject input:focus~label{
+.item-subject input:valid ~ label,
+.item-subject input:focus ~ label {
   padding-left: 5px;
   padding-right: 5px;
   top: 0;
@@ -185,17 +185,15 @@ input:-webkit-autofill:focus {
   background: white;
 }
 
-.item-message textarea:focus~label,
-.item-message textarea:valid~label{
+.item-message textarea:focus ~ label,
+.item-message textarea:valid ~ label {
   padding-left: 2px;
   padding-right: 5px;
   top: 0;
   font-size: 0.85rem !important;
   color: rgba(29, 70, 160, 1) !important;
   background: white;
-} 
-
-
+}
 
 /* .item-name input,
 .item-email input,
@@ -203,12 +201,12 @@ input:-webkit-autofill:focus {
 .item-message textarea{
 } */
 
-
 .item-name input,
 .item-email input,
 .item-subject input {
   padding: 8px 12px;
   border-radius: 5px;
+  min-height: 50px;
   outline: solid 1px #333;
   border: none;
   transition: outline 0.5s ease;
@@ -233,6 +231,8 @@ input:-webkit-autofill:focus {
   border-radius: 10px;
   margin: 0;
   padding-top: 4px;
+  vertical-align: -144px;
+
   border-collapse: collapse;
   transition: outline 0.5s ease;
 }
@@ -253,6 +253,7 @@ label {
 }
 
 .textarea-modal {
+  padding-top:10px;
   resize: none;
 }
 
@@ -267,12 +268,12 @@ label {
   margin-top: 12px;
   transition: all;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   border: none;
 }
 
 .btn-submit:hover {
-  background-color: rgba(19, 26, 210, 0.9);
+  background-color: rgba(19, 26, 215, 0.9);
 }
 
 .fadeModal {
@@ -303,7 +304,7 @@ label {
 .orText::after,
 .orText::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 2px;
   width: 24%;
   background-color: rgba(19, 70, 144, 0.9);
@@ -311,11 +312,11 @@ label {
 }
 
 .orText::before {
-  right: 1%; 
+  right: 1%;
 }
 
 .orText::after {
-  left: 1%; 
+  left: 1%;
 }
 
 .linksContactModal {
@@ -348,39 +349,63 @@ label {
     top: 13%;
   }
   .orText::before {
-    right:  1%; 
+    right: 1%;
   }
-  
+
   .orText::after {
-    left:  1%; 
+    left: 1%;
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 450px) {
+  .modal-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .othersContact, .subtitle-modal, .title-modal{
+    user-select:none;
+  }
+
+  .main-form{
+    column-gap:0px;
+  }
+
+  .subtitle-modal{
+    font-size:12px;
+  }
+
   .orText::after,
   .orText::before {
     width: 20%;
   }
   .orText::before {
-    right:  -8%; 
+    right: -8%;
   }
-  
+
   .orText::after {
-    left:  -8%; 
+    left: -8%;
   }
 }
 
+@media (max-width:430px){
 
-@media (max-width: 360px){
+  .item-form{
+   flex-wrap: wrap !important;
+  }
+  
+}
+
+@media (max-width: 360px) {
   .orText::after,
   .orText::before {
     width: 15%;
   }
   .orText::before {
-    right:  -12%; 
+    right: -12%;
   }
-  
+
   .orText::after {
-    left:  -12%; 
+    left: -12%;
   }
 }

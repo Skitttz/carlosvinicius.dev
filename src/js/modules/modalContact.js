@@ -1,13 +1,7 @@
-import { sanitizeString } from './utils/sanitize';
-import { validateInput } from './utils/validate';
-import emailjs from '@emailjs/browser';
-
-// Only non-production
-// import {
-//   API_EMAIL_PUBLIC_KEY,
-//   API_EMAIL_TEMPLATE_ID,
-//   API_EMAIL_SERVICE_ID,
-// } from '../../env';
+import sanitizeString from "./utils/sanitize";
+import validateInput from "./utils/validate";
+import clearInputs from "./utils/clear";
+import Toastify from "toastify-js";
 
 export default class ModalContact {
   constructor(
@@ -27,9 +21,13 @@ export default class ModalContact {
     this.modalSection = document.querySelector(modalSection);
     this.modalDiv = document.querySelector(modalDiv);
     this.modalContainer = document.querySelector(modalContainer);
+    this.mainForm = document.querySelector(mainForm);
+
+    //Buttons
     this.btnOpenModal = document.querySelectorAll(btnOpenModal);
     this.btnCloseModal = document.querySelector(btnCloseModal);
-    this.mainForm = document.querySelector(mainForm);
+
+    //Inputs
     this.inputName = document.querySelector(inputName);
     this.inputEmail = document.querySelector(inputEmail);
     this.inputSubject = document.querySelector(inputSubject);
@@ -43,10 +41,10 @@ export default class ModalContact {
     this.sendEmail = this.sendEmail.bind(this);
 
     //Message & others
-    this.msgAlertSucess = 'Formulário enviado com sucesso.';
-    this.msgAlertError = 'Ops! Erro ao enviar o formulário.';
+    this.msgAlertSucess = "Mensagem enviada com sucesso!";
+    this.msgAlertError = "Ops! Erro ao enviar a mensagem";
 
-    this.activeClass = 'ativo';
+    this.activeClass = "ativo";
   }
 
   toggleModal() {
@@ -65,6 +63,10 @@ export default class ModalContact {
   }
 
   async sendEmail() {
+    let loading = true;
+    if (loading && this.btnSubmit) {
+      this.btnSubmit.innerText = "Enviando...";
+    }
     const valueInputName = this.inputName.value;
     const valueInputEmail = this.inputEmail.value;
     const valueInputSubject = this.inputSubject.value;
@@ -87,36 +89,70 @@ export default class ModalContact {
         messageValue,
       });
       try {
-        const response = await fetch('/.netlify/functions/sendEmail', {
-          method: 'POST',
+        const response = await fetch("/.netlify/functions/sendEmail", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: requestBody,
         });
-        if (!response.ok) {
-          throw new Error(
-            'Erro ao enviar o e-mail. Por favor, tente novamente mais tarde.',
+        loading = false;
+        if (this.btnSubmit && !loading) {
+          this.btnSubmit.innerText = "Enviar mensagem";
+          clearInputs(
+            this.inputName,
+            this.inputEmail,
+            this.inputSubject,
+            this.inputMessage,
           );
         }
-        alert(this.msgAlertSucess);
+        if (!response.ok) {
+          throw new Error(
+            "Erro ao enviar o e-mail. Por favor, tente novamente mais tarde.",
+          );
+        }
+        Toastify({
+          text: this.msgAlertSucess,
+          duration: 5000,
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "center",
+          stopOnFocus: true,
+          style: {
+            color: "white",
+            background: "linear-gradient(to right, #31258a, #5443cc)",
+          },
+        }).showToast();
         this.toggleModal();
       } catch (error) {
         console.error(error);
-        alert(this.msgAlertError);
+        Toastify({
+          text: this.msgAlertError,
+          duration: 6000,
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "center",
+          stopOnFocus: true,
+          style: {
+            color: "white",
+            background: "linear-gradient(to right, #851111, #a81111)",
+          },
+        }).showToast();
       }
     } else {
-      alert('Preencha todos os campos');
+      alert("Preencha todos os campos");
     }
   }
 
   addModalEvents() {
-    this.modalDiv.addEventListener('click', this.clickOutModal);
-    this.btnCloseModal.addEventListener('click', this.eventToggleModal);
+    this.modalDiv.addEventListener("click", this.clickOutModal);
+    this.btnCloseModal.addEventListener("click", this.eventToggleModal);
     for (const btn of this.btnOpenModal) {
-      btn.addEventListener('click', this.eventToggleModal);
+      btn.addEventListener("click", this.eventToggleModal);
     }
-    this.mainForm.addEventListener('submit', async (event) => {
+    this.mainForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       await this.sendEmail();
     });
