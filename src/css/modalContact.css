@@ -162,7 +162,7 @@ input:-webkit-autofill:focus {
   color: var(--labelInInput);
   z-index: 9999999;
   top: 50%;
-  left: 5px;
+  left: 10px;
   transform: translateY(-50%);
 }
 
@@ -172,6 +172,7 @@ input:-webkit-autofill:focus {
 .item-name input:valid ~ label {
   padding-left: 5px;
   padding-right: 5px;
+  left: 5px;
   top: 0;
   font-size: 0.85rem !important;
   background: var(--bgLabelAnimation);
@@ -180,6 +181,7 @@ input:-webkit-autofill:focus {
 
 .item-subject input:valid ~ label,
 .item-subject input:focus ~ label {
+  left: 5px;
   padding-left: 5px;
   padding-right: 5px;
   top: 0;
