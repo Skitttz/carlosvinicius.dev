@@ -200,9 +200,12 @@
   }
 
   .first {
-    padding-top: 5rem;
-    padding-bottom: 16rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    height: 100vh;
   }
+
   #text {
     font-size: 1rem;
     margin-bottom: 5px;
