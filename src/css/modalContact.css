@@ -210,6 +210,7 @@ input:-webkit-autofill:focus {
 .item-name input,
 .item-email input,
 .item-subject input {
+  outline: none;
   padding: 8px 12px;
   border-radius: 5px;
   min-height: 50px;
@@ -225,12 +226,9 @@ input:-webkit-autofill:focus {
 
 .item-name input:focus,
 .item-email input:focus,
-.item-subject input:focus,
-.item-name input:focus-visible,
-.item-email input:focus-visible,
-.item-subject input:focus-visible {
+.item-subject input:focus
+{
   border: solid 1px var(--outlineInputs);
-  outline: none;
 }
 
 .item-name input:valid,
@@ -428,5 +426,42 @@ label {
 
   .orText::after {
     left: -12%;
+  }
+}
+
+
+@media (max-height: 850px){
+  .title-modal {
+    font-size: 1.5rem;
+  }
+
+  .divForm{
+    padding:10px 20px 10px 20px;
+  }
+
+  .main-form{
+    row-gap:0px;
+    margin-top:5px;
+  }
+
+  textarea{
+    max-height: 150px !important;
+  }
+
+  .item-form{
+    font-size:0.75rem;
+  }
+
+  .othersContact{
+    margin:25px 0 5px 0
+  }
+  .orText::before{
+    right: -3%;
+  }
+  .orText::after{
+    left:-3%;
+  }
+  .linksContactModal img{
+    width: 24px !important;
   }
 }
