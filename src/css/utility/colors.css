@@ -1,4 +1,4 @@
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   /* Colors Default */
   --color-MenuDefault: rgba(21, 21, 21, 1);
   --color-MenuOn: rgba(21, 21, 21, 1);
@@ -186,7 +186,7 @@
   --btnSubmitHover: rgba(19, 26, 215, 0.9);
   --lineOthers: rgba(19, 70, 144, 0.9);
   --outlineInputs: rgba(82, 63, 252);
-  --labelInput: rgba(29, 70, 160, 1);
+  --labelInput: rgba(29, 70, 200, 1);
   --labelColorInput: #999;
   --labelInInput: #444;
   --bgLabelAnimation: #f3f3f3;

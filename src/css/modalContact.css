@@ -180,7 +180,8 @@ input:-webkit-autofill:focus {
 }
 
 .item-subject input:valid ~ label,
-.item-subject input:focus ~ label {
+.item-subject input:focus ~ label,
+.item-subject input:focus-visible ~ label {
   left: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -212,27 +213,30 @@ input:-webkit-autofill:focus {
   padding: 8px 12px;
   border-radius: 5px;
   min-height: 50px;
-  outline: solid 1px var(--outLineInputsNormie);
-  border: none;
-  transition: outline 0.5s ease;
+  border: solid 1px var(--outLineInputsNormie);
+  transition: border 0.5s ease;
 }
 
 .item-name input:hover,
 .item-email input:hover,
 .item-subject input:hover {
-  outline: solid 1px var(--outlineInputs);
+  border: solid 1px var(--outlineInputs);
 }
 
 .item-name input:focus,
 .item-email input:focus,
-.item-subject input:focus {
-  outline: solid 1px var(--outlineInputs);
+.item-subject input:focus,
+.item-name input:focus-visible,
+.item-email input:focus-visible,
+.item-subject input:focus-visible {
+  border: solid 1px var(--outlineInputs);
+  outline: none;
 }
 
 .item-name input:valid,
 .item-email input:not(:placeholder-shown),
 .item-subject input:valid {
-  outline: solid 1px var(--outlineInputs);
+  border: solid 1px var(--outlineInputs);
 }
 
 .textarea-modal {
@@ -243,18 +247,17 @@ input:-webkit-autofill:focus {
   margin: 0;
   padding-top: 4px;
   vertical-align: -144px;
-
   border-collapse: collapse;
-  transition: outline 0.5s ease;
+  transition: border 0.5s ease;
 }
 .textarea-modal:focus {
-  outline: solid 0.2px var(--outlineInputs);
+  border: solid 0.2px var(--outlineInputs);
 }
 .textarea-modal:hover {
-  outline: solid 0.2px var(--outlineInputs);
+  border: solid 0.2px var(--outlineInputs);
 }
 .textarea-modal:valid {
-  outline: solid 0.2px var(--outlineInputs);
+  border: solid 0.2px var(--outlineInputs);
 }
 
 label {
@@ -322,7 +325,7 @@ label {
 .orText::after,
 .orText::before {
   position: absolute;
-  content: "";
+  content: '';
   height: 2px;
   width: 24%;
   background-color: var(--lineOthers);
