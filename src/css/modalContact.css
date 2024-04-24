@@ -238,7 +238,7 @@ input:-webkit-autofill:focus {
 }
 
 .textarea-modal {
-  text-indent: 4px;
+  padding-left: 5px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -448,12 +448,21 @@ label {
     max-height: 150px !important;
   }
 
-  .item-form{
-    font-size:0.75rem;
+  .item-form input,  .item-form textarea{
+    font-size:0.9rem;
+  }
+
+  .item-name input, .item-email input, .item-subject input{
+    min-height: 40px;
+  }
+
+  label{
+    font-size: 0.9rem;
   }
 
   .othersContact{
-    margin:25px 0 5px 0
+    margin:25px 0 5px 0;
+    row-gap: 10px;
   }
   .orText::before{
     right: -3%;
@@ -463,5 +472,14 @@ label {
   }
   .linksContactModal img{
     width: 24px !important;
+  }
+
+  .menu-modal{
+    padding:5px 10px 5px 10px;
+  }
+
+  .btn-submit{
+    padding:8px 4px;
+    font-size: 0.75rem;
   }
 }
