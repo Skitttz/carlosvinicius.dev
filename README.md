@@ -13,9 +13,9 @@
 
 <div align="center">
 <h2>Light Mode</h2>
-<img src="https://i.ibb.co/YpbhYv9/light-Mode.png" width="100%" />
+<img src="https://i.ibb.co/M8XDxMM/lightmode.png" width="100%" />
 <h2>Dark Mode</h2>
-<img src="https://i.ibb.co/4TtctRB/darkMode.png" width="100%" />
+<img src="https://i.ibb.co/sQvgvF4/darkmode.png" width="100%" />
 </div>
 
 ## Contexto 📝
@@ -30,7 +30,7 @@ Utilizando as bases de **HTML**, **CSS**, **JavaScript** e conhecimentos do serv
 
 O projeto foi hospedado no Netlify, ao clicar no link <a href="https://cv-dev.netlify.app/">cv-dev.netlify.app</a> você será redirecionado para ele nessa mesma **aba**.
 
-## Wireframe 🎨
+## Wireframe(desatualizado) 🎨
 
 Um wireframe é uma representação visual ou esboço de uma página web, aplicativo ou design de interface do usuário (UI), além disso foi montado um guia de estilo do projeto juntamente do wireframe dentro do software Figma para acessa-lo clique
 <a href="https://www.figma.com/file/xAiWXbWMQT0xqjx2qCwvWG/Portfolio-Front-Developer-Wireframe%2FStyle-Guide?type=design&node-id=0%3A1&mode=design&t=vPbdsSF3OIpDQfKi-1">aqui.</a>
