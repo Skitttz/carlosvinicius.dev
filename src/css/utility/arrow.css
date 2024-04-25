@@ -1,0 +1,36 @@
+.divArrow {
+  visibility: hidden;   
+  opacity: 0;
+  position: fixed;
+  z-index: 932939192;
+  bottom: 90px;
+  right: 60px;
+  transition: all 0.5s ease;
+}
+
+
+.divArrow.ativo {
+  opacity: 1;
+  visibility: visible; 
+}
+
+.arrowUp {
+  z-index: 932939192;
+  cursor: pointer;
+  max-width: 42px;
+  display: block;
+  padding: 6px;
+  border: #f9f9f9 solid 2px;
+  background-color: #1f1052;
+  border-radius: 50%;
+}
+
+.divArrow:hover {
+  bottom: 100px;
+}
+
+@media (max-width: 1000px) {
+  .divArrow {
+    display: none;
+  }
+}

@@ -2,6 +2,9 @@ export default class ScrollSmooth {
   constructor(links, logo) {
     this.linksInternos = document.querySelectorAll(links);
     this.logo = document.querySelector(logo);
+
+    //Arrow
+    this.arrowUp = document.querySelector(".arrowUpLink");
     this.scrollToSection = this.scrollToSection.bind(this);
   }
 
@@ -36,6 +39,10 @@ export default class ScrollSmooth {
 
     /* set section to logo (home) */
     eventos.forEach((e) => this.logo.addEventListener(e, this.scrollToSection));
+    /* set section to logo (arrow) */
+    eventos.forEach((e) =>
+      this.arrowUp.addEventListener(e, this.scrollToSection),
+    );
   }
 
   init() {
