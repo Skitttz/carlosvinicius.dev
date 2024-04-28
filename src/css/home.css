@@ -10,7 +10,7 @@
   height: calc(100vh - 8vh);
 }
 
-.hr-frist{
+.hr-frist {
   display: none;
 }
 
@@ -72,6 +72,7 @@
   grid-column: 2;
   text-align: center;
   justify-self: center;
+
 }
 
 .broken-line {
@@ -113,6 +114,117 @@
 .btn-contact {
   background: var(--colors-btn-contact);
   color: var(--color-w1);
+  position: relative;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.btn-contact:before {
+  content: '';
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  animation: borderBtnRight 5s infinite alternate;
+  border-top: 1px solid var(--color-b2);
+  border-right: 1px solid var(--color-b2);
+  border-radius: 10px;
+}
+
+.btn-contact:after {
+  content: '';
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  animation: borderBtnLeft 5s infinite alternate-reverse;
+  border-bottom: 1px solid var(--color-b2);
+  border-left: 1px solid var(--color-b2);
+  border-radius: 10px;
+  opacity: .1;
+}
+
+[data-theme='light'] .btn-contact:before {
+  content: '';
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  animation: borderBtnRight 5s infinite alternate;
+  border-top: 1px solid var(--color-b2);
+  border-right: 1px solid  var(--color-b2);
+  border-radius: 10px;
+}
+
+[data-theme='light'] .btn-contact:after {
+  content: '';
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  animation: borderBtnLeft 5s infinite alternate;
+  border-bottom: 1px solid  var(--color-b2);
+  border-left: 1px solid  var(--color-b2);
+  border-radius: 10px;
+  opacity: .1;
+}
+
+
+@keyframes borderBtnRight{
+  0%{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  25%{
+    width: 100%;
+    height: 0;
+    opacity: 0;
+  }
+  50%{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+  }
+  100%{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+  }
+}
+
+@keyframes borderBtnLeft{
+  0%{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50%{
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+  51%{
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+  75%{
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+  }
+  100%{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
 }
 
 .btn-cv {
@@ -125,6 +237,7 @@
   border: var(--color-b4) 0.5px solid;
   color: var(--color-w1);
   background: var(--btn-demo-bg-hover);
+  box-shadow: 1px .2px 5px var(--color-b2);
 }
 
 [data-theme='dark'] .btn-cv {
