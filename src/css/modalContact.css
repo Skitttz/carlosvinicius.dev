@@ -247,6 +247,7 @@ input:-webkit-autofill:focus {
   vertical-align: -144px;
   border-collapse: collapse;
   transition: border 0.5s ease;
+  border: solid 0.2px var(--outLineInputsNormie);
 }
 .textarea-modal:focus {
   border: solid 0.2px var(--outlineInputs);
