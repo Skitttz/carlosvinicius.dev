@@ -191,7 +191,8 @@
     padding: 6px;
     margin-bottom: 10px;
     font-size: 0.8rem;
-    padding: 9px;
+    padding-inline: 6px;
+    padding-block: 10px;
     border-radius: 10px;
   }
 
