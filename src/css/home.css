@@ -362,4 +362,8 @@
   .btn-contact{
     margin-left: 5px;
   }
+
+  .btn-contact{
+    text-align: center !important;
+  }
 }

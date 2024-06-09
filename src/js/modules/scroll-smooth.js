@@ -4,24 +4,28 @@ export default class ScrollSmooth {
     this.logo = document.querySelector(logo);
 
     //Arrow
-    this.arrowUp = document.querySelector(".arrowUpLink");
+    this.arrowUp = document.querySelector('.arrowUpLink');
     this.scrollToSection = this.scrollToSection.bind(this);
   }
 
   scrollToSection(event, options) {
     event.preventDefault();
-    const href = event.currentTarget.getAttribute("href");
+    let sectionHomeValue = 0,
+      sectionAboutValue = 0.98,
+      sectionProjectValue = 0.95;
+    const href = event.currentTarget.getAttribute('href');
     const section = document.querySelector(href);
+    let viewPortWidth = window.innerWidth;
     let topSection = section.offsetTop;
-    if (href === "#home") {
-      topSection = 0;
-    } else if (href === "#about") {
-      topSection *= 0.98;
-    } else if (href === "#project") {
-      topSection *= 0.95;
+    if (href === '#home') {
+      topSection = sectionHomeValue;
+    } else if (href === '#about') {
+      topSection *= viewPortWidth >= 600 ? sectionAboutValue : 0.94;
+    } else if (href === '#project') {
+      topSection *= viewPortWidth >= 600 ? sectionProjectValue : 0.85;
     }
     if (options === undefined) {
-      options = { top: topSection, behavior: "smooth" };
+      options = { top: topSection, behavior: 'smooth' };
     } else {
       this.options = options;
     }
@@ -29,7 +33,7 @@ export default class ScrollSmooth {
   }
 
   addLinkEvent() {
-    const eventos = ["click", "touchstart"];
+    const eventos = ['click', 'touchstart'];
 
     eventos.forEach((evento) => {
       this.linksInternos.forEach((link) => {
