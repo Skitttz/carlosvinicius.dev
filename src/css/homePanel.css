@@ -1,7 +1,7 @@
 .cssMenu {
   box-sizing: border-box;
   height: 25px;
-  width: 380px;
+  width: 100%;
   background-color: #bbb;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -45,7 +45,7 @@
 .cssContainer {
   background-color: var(--color-w7);
   box-sizing: border-box;
-  width: 380px;
+  width: 100%;
   padding: 20px;
   padding-top: 5px;
   padding-left: 5px;
@@ -140,15 +140,13 @@
     grid-row: 4;
     grid-column: 2;
   }
+  
+}
+
+@media (max-width: 420px){
   .cssMenu,
   .cssContainer {
     width: 260px;
-  }
-}
-
-@media (max-width: 380px) {
-  .panelSection.ativo {
-    width: 300px;
   }
 }
 
