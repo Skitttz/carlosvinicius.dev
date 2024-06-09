@@ -116,7 +116,7 @@
   color: var(--color-w1);
   position: relative;
   border-radius: 10px;
-  margin-left: 10px;
+  text-align: center;
 }
 
 .btn-contact:before {
