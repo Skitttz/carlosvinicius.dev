@@ -53,6 +53,22 @@
   border-bottom-right-radius: 5px;
 }
 
+@media (min-width:1050px) {
+  .btn-contact {
+    margin-left: 0.625rem;
+  }
+
+  .cssContainer,
+  .cssMenu {
+    width: 23.75rem;
+  }
+
+  [data-theme="dark"] .cssMenu,
+  [data-theme="dark"] .cssContainer {
+    outline: 0.0625rem solid #9400ff;
+  }
+}
+
 [data-theme="dark"] .cssContainer {
   background-color: var(--color-b1);
 }
@@ -140,10 +156,11 @@
     grid-row: 4;
     grid-column: 2;
   }
-  
+
 }
 
-@media (max-width: 420px){
+@media (max-width: 420px) {
+
   .cssMenu,
   .cssContainer {
     width: 260px;
@@ -155,6 +172,7 @@
     transition: 0.6s;
     width: 250px;
   }
+
   .cssMenu,
   .cssContainer {
     width: 220px;
