@@ -66,8 +66,8 @@ export default class RepositoryGit {
       let videoElement = document.createElement('video');
       videoElement.src = videoURL;
       videoElement.controls = true;
-      videoElement.width = 360;
-      videoElement.height = 270;
+      videoElement.style.width = '100%';
+      videoElement.style.height = '100%';
       linkElement.parentNode.replaceChild(videoElement, linkElement);
     } else {
       console.error('Elemento <a> não encontrado.');
