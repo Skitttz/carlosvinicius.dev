@@ -1,18 +1,12 @@
 export default function detectColorScheme() {
-  let theme = 'light';
-
   const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    theme = storedTheme;
-  } else {
-    if (
+  if (!storedTheme) {
+    const theme =
       window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      theme = 'dark';
-    }
+      (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light');
     localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
   }
-
-  document.documentElement.setAttribute('data-theme', theme);
 }
