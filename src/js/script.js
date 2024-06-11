@@ -8,6 +8,10 @@ import moveIcon from './modules/moveIcon.js';
 import tech from './modules/tech-animation.js';
 import RepositoryGit from './modules/listRepository.js';
 import ModalContact from './modules/modalContact.js';
+import detectColorScheme from './modules/utils/detectColorScheme.js';
+
+// Detect and set the color scheme based on user preference
+detectColorScheme();
 
 const menuMobile = new MenuMobile(
   '.hMenu',
