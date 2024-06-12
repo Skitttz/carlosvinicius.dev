@@ -53,7 +53,7 @@
   border-bottom-right-radius: 5px;
 }
 
-@media (min-width:1050px) {
+@media (min-width:65.625em) {
   .btn-contact {
     margin-left: 0.625rem;
   }
@@ -108,7 +108,7 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 26.625em) {
   .exit-console {
     font-size: 0.7rem;
   }
@@ -132,7 +132,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .panelSection.ativo {
     display: flex;
     animation: panelFade 0.6s;
@@ -144,14 +144,14 @@
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 56.1875em) {
   .panelSection.ativo {
     display: flex;
     transition: 0.6s;
   }
 }
 
-@media (max-width: 532px) {
+@media (max-width: 33.25em) {
   .panelSection.ativo {
     transition: 0.6s;
     grid-row: 4;
@@ -160,7 +160,7 @@
 
 }
 
-@media (max-width: 420px) {
+@media (max-width: 26.25em) {
 
   .cssMenu,
   .cssContainer {
@@ -168,7 +168,7 @@
   }
 }
 
-@media (max-width: 328px) {
+@media (max-width: 20.5em) {
   .panelSection.ativo {
     transition: 0.6s;
     width: 250px;

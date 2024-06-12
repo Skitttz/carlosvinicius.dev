@@ -71,7 +71,7 @@ e:hover {
   will-change: transform;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .slide li {
     display: flex;
     flex-direction: column;
@@ -82,6 +82,7 @@ e:hover {
     border-radius: 30px;
     margin: 0px;
   }
+
   .wrap {
     object-fit: fill;
     width: 100%;
@@ -92,11 +93,12 @@ e:hover {
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 29.75em) {
   .slide li {
     margin: 0 10px;
     height: auto;
   }
+
   .slide img {
     margin-bottom: 0.75rem;
   }

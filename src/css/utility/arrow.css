@@ -1,5 +1,5 @@
 .divArrow {
-  visibility: hidden;   
+  visibility: hidden;
   opacity: 0;
   position: fixed;
   z-index: 932939192;
@@ -11,7 +11,7 @@
 
 .divArrow.ativo {
   opacity: 1;
-  visibility: visible; 
+  visibility: visible;
 }
 
 .arrowUp {
@@ -29,7 +29,7 @@
   bottom: 100px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .divArrow {
     display: none;
   }

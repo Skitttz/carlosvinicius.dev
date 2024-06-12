@@ -57,7 +57,8 @@
   margin-bottom: 2rem;
 }
 
-@media (max-width: 340px) {
+@media (max-width: 21.25em) {
+
   .content-text p,
   .contentx a {
     word-spacing: 0 !important;
@@ -109,7 +110,7 @@
     -10px 0px 0px rgba(0, 5, 255, 0.2);
 }
 
-@media (min-width: 360px) {
+@media (min-width: 22.5em) {
   .line-1::after {
     margin-right: 12px;
     content: '👨‍💻';
@@ -117,10 +118,11 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .content-text {
     margin-bottom: 3rem;
   }
+
   .line-1::before {
     z-index: 9999;
     position: absolute;
@@ -134,7 +136,7 @@
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 78.125em) {
   #about {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -144,6 +146,7 @@
     grid-row: 2;
     grid-column: 1/-1;
   }
+
   .content-text {
     grid-column: 1/-1;
   }
@@ -163,6 +166,7 @@
     text-align: left;
     text-align-last: inherit;
   }
+
   .photoMobile.aboutMeImg {
     box-shadow: var(--boxshadow-aboutMeImg);
     display: block;
@@ -171,7 +175,8 @@
   }
 }
 
-@media (max-width: 487px) {
+@media (max-width: 30.4375em) {
+
   .content-text a,
   .content-text p {
     font-size: 1rem;

@@ -19,14 +19,14 @@
   right: 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .fixed {
     top: 0;
     bottom: inherit;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   .header a {
     display: inline-block;
     position: relative;
@@ -82,10 +82,11 @@
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .header a {
     color: var(--color-w2);
   }
+
   [data-theme="dark"] .header a {
     color: var(--color-w6);
   }

@@ -36,25 +36,27 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 45.5em) {
   .dados li {
     margin-bottom: 0rem;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 26.25em) {
   .dados {
     padding: 10px;
   }
+
   .copy p {
     font-size: 0.4rem;
   }
 }
 
-@media (max-width: 328px) {
+@media (max-width: 20.5em) {
   .copy img {
     max-width: 24px;
   }
+
   .copy p {
     font-size: 0.7rem;
   }

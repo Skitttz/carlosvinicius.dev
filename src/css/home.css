@@ -35,6 +35,7 @@
   -o-transition: opacity 0.4s ease-in;
   opacity: 1;
 }
+
 .transitioning-src {
   transition: opacity 0.4s ease-out;
   -webkit-transition: opacity 0.4s ease-out;
@@ -44,13 +45,13 @@
   opacity: 0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .homeGif img {
     width: 800px;
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 65.625em) {
   .homeGif {
     display: none;
   }
@@ -155,7 +156,7 @@
   position: absolute;
   animation: borderBtnRight 5s infinite alternate;
   border-top: 1px solid var(--color-b2);
-  border-right: 1px solid  var(--color-b2);
+  border-right: 1px solid var(--color-b2);
   border-radius: 10px;
 }
 
@@ -167,31 +168,34 @@
   height: 0;
   position: absolute;
   animation: borderBtnLeft 5s infinite alternate;
-  border-bottom: 1px solid  var(--color-b2);
-  border-left: 1px solid  var(--color-b2);
+  border-bottom: 1px solid var(--color-b2);
+  border-left: 1px solid var(--color-b2);
   border-radius: 10px;
   opacity: .1;
 }
 
 
-@keyframes borderBtnRight{
-  0%{
+@keyframes borderBtnRight {
+  0% {
     width: 0px;
     height: 0px;
     opacity: 0;
   }
-  25%{
+
+  25% {
     width: 100%;
     height: 0;
     opacity: 0;
   }
-  50%{
+
+  50% {
     width: 100%;
     height: 100%;
     opacity: 1;
 
   }
-  100%{
+
+  100% {
     width: 100%;
     height: 100%;
     opacity: 1;
@@ -199,28 +203,32 @@
   }
 }
 
-@keyframes borderBtnLeft{
-  0%{
+@keyframes borderBtnLeft {
+  0% {
     width: 0px;
     height: 0px;
     opacity: 0;
   }
-  50%{
+
+  50% {
     width: 0%;
     height: 0%;
     opacity: 0;
   }
-  51%{
+
+  51% {
     width: 0%;
     height: 0%;
     opacity: 0;
   }
-  75%{
+
+  75% {
     width: 100%;
     height: 0%;
     opacity: 0;
   }
-  100%{
+
+  100% {
     width: 100%;
     height: 100%;
     opacity: 1;
@@ -250,7 +258,7 @@
   color: var(--color-w2);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .homeGif {
     display: none;
   }
@@ -275,6 +283,7 @@
     margin-left: 20px;
     width: 48px;
   }
+
   .first {
     margin-top: 8rem;
     margin-bottom: 4rem;
@@ -284,32 +293,35 @@
     font-size: 1.5rem;
     margin-bottom: 5px;
   }
+
   .linksBtn {
     margin-top: 2rem;
   }
 }
 
-@media (max-width: 595px) {
+@media (max-width: 37.1875em) {
   .btn {
     font-size: 1.025rem;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
   .first {
     margin-top: 7rem;
     margin-bottom: 3rem;
   }
 }
 
-@media (max-width: 487px) {
+@media (max-width: 30.4375em) {
   .myName {
     font-size: 2rem;
   }
+
   .linksContato img {
     margin-left: 0px;
     width: 24px;
   }
+
   .linksBtn {
     margin-top: 2rem;
     margin-left: 0.5rem;
@@ -339,54 +351,58 @@
     margin: 0 auto;
   }
 }
-@media (max-width: 523px) {
-  .home-main{
+
+@media (max-width: 32.6875em) {
+  .home-main {
     width: 380px;
   }
 }
 
 
-@media (max-width: 445px) {
-  .home-main{
+@media (max-width: 27.8125em) {
+  .home-main {
     width: 100%;
   }
 }
 
-@media (max-width: 360px){
-  .home-main{
+@media (max-width: 22.5em) {
+  .home-main {
     width: 290px;
   }
 }
 
-@media (max-width: 340px){
-  .linksBtn{
+@media (max-width: 21.25em) {
+  .linksBtn {
     margin-left: 0 !important;
   }
-  .home-main{
+
+  .home-main {
     width: 270px;
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 23.5em) {
   #text {
     font-size: 0.8rem;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 21.25em) {
   #text {
     text-align: center;
     font-size: 1rem;
     margin-bottom: 15px;
   }
+
   .linksBtn {
     margin-left: 0rem;
   }
-  .btn-contact{
+
+  .btn-contact {
     margin-left: 5px;
   }
 
-  .btn-contact{
+  .btn-contact {
     text-align: center !important;
   }
 }

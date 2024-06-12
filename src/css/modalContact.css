@@ -166,10 +166,10 @@ input:-webkit-autofill:focus {
   transform: translateY(-50%);
 }
 
-.item-email input:focus ~ label,
-.item-email input:not(:placeholder-shown) ~ label,
-.item-name input:focus ~ label,
-.item-name input:valid ~ label {
+.item-email input:focus~label,
+.item-email input:not(:placeholder-shown)~label,
+.item-name input:focus~label,
+.item-name input:valid~label {
   padding-left: 5px;
   padding-right: 5px;
   left: 5px;
@@ -179,9 +179,9 @@ input:-webkit-autofill:focus {
   color: var(--labelInput) !important;
 }
 
-.item-subject input:valid ~ label,
-.item-subject input:focus ~ label,
-.item-subject input:focus-visible ~ label {
+.item-subject input:valid~label,
+.item-subject input:focus~label,
+.item-subject input:focus-visible~label {
   left: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -191,8 +191,8 @@ input:-webkit-autofill:focus {
   background: var(--bgLabelAnimation);
 }
 
-.item-message textarea:focus ~ label,
-.item-message textarea:valid ~ label {
+.item-message textarea:focus~label,
+.item-message textarea:valid~label {
   padding-left: 2px;
   padding-right: 5px;
   top: 0;
@@ -226,8 +226,7 @@ input:-webkit-autofill:focus {
 
 .item-name input:focus,
 .item-email input:focus,
-.item-subject input:focus
-{
+.item-subject input:focus {
   border: solid 1px var(--outlineInputs);
 }
 
@@ -249,12 +248,15 @@ input:-webkit-autofill:focus {
   transition: border 0.5s ease;
   border: solid 0.2px var(--outLineInputsNormie);
 }
+
 .textarea-modal:focus {
   border: solid 0.2px var(--outlineInputs);
 }
+
 .textarea-modal:hover {
   border: solid 0.2px var(--outlineInputs);
 }
+
 .textarea-modal:valid {
   border: solid 0.2px var(--outlineInputs);
 }
@@ -301,6 +303,7 @@ label {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -348,26 +351,29 @@ label {
   width: 32px !important;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
   .modal-container {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .main-form {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 32.5em) {
   .orText {
     font-size: 14px;
   }
+
   .orText::after,
   .orText::before {
     width: 20%;
     height: 2px;
     top: 13%;
   }
+
   .orText::before {
     right: 1%;
   }
@@ -377,7 +383,7 @@ label {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 28.125em) {
   .modal-container {
     padding-left: 10px;
     padding-right: 10px;
@@ -401,6 +407,7 @@ label {
   .orText::before {
     width: 20%;
   }
+
   .orText::before {
     right: -8%;
   }
@@ -410,17 +417,19 @@ label {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 26.875em) {
   .item-form {
     flex-wrap: wrap !important;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 22.5em) {
+
   .orText::after,
   .orText::before {
     width: 15%;
   }
+
   .orText::before {
     right: -12%;
   }
@@ -431,56 +440,62 @@ label {
 }
 
 
-@media (max-height: 850px){
+@media (max-height: 53.125em) {
   .title-modal {
     font-size: 1.5rem;
   }
 
-  .divForm{
-    padding:10px 20px 10px 20px;
+  .divForm {
+    padding: 10px 20px 10px 20px;
   }
 
-  .main-form{
-    row-gap:0px;
-    margin-top:5px;
+  .main-form {
+    row-gap: 0px;
+    margin-top: 5px;
   }
 
-  textarea{
+  textarea {
     max-height: 150px !important;
   }
 
-  .item-form input,  .item-form textarea{
-    font-size:0.9rem;
-  }
-
-  .item-name input, .item-email input, .item-subject input{
-    min-height: 40px;
-  }
-
-  label{
+  .item-form input,
+  .item-form textarea {
     font-size: 0.9rem;
   }
 
-  .othersContact{
-    margin:25px 0 5px 0;
+  .item-name input,
+  .item-email input,
+  .item-subject input {
+    min-height: 40px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  .othersContact {
+    margin: 25px 0 5px 0;
     row-gap: 10px;
   }
-  .orText::before{
+
+  .orText::before {
     right: -3%;
   }
-  .orText::after{
-    left:-3%;
+
+  .orText::after {
+    left: -3%;
   }
-  .linksContactModal img{
+
+  .linksContactModal img {
     width: 24px !important;
   }
 
-  .menu-modal{
-    padding:5px 10px 5px 10px;
+  .menu-modal {
+    padding: 5px 10px 5px 10px;
   }
 
-  .btn-submit{
-    padding:8px 4px;
+  .btn-submit {
+    padding: 8px 4px;
     font-size: 0.75rem;
   }
 }

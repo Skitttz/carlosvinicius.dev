@@ -153,8 +153,8 @@ ol li {
   padding-right: 50px;
 }
 
-@media (max-width: 1000px){
-  .body-repository{
+@media (max-width: 62.5em) {
+  .body-repository {
     padding-right: 0;
   }
 }
@@ -163,7 +163,7 @@ ol li {
   margin: 2rem 0 1rem 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25em) {
   .body-repository {
     min-width: 180px;
     max-width: 300px !important;
@@ -172,6 +172,7 @@ ol li {
   .body-repository ul {
     font-size: 12px;
   }
+
   .content-body-repository ul li {
     max-width: 280px;
     margin: 0 10px;
@@ -189,21 +190,23 @@ ol li {
   font-size: 16px;
 }
 
-@media (max-width: 940px) {
+@media (max-width: 58.75em) {
   .titleTopic {
     font-size: 1rem;
     padding: 2px;
   }
+
   .body-repository p {
     font-size: 12px !important;
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 36.25em) {
   .titleTopic {
     font-size: 0.75rem;
     padding: 2px;
   }
+
   .containerTopic {
     justify-content: center;
   }
@@ -221,11 +224,12 @@ ol li {
   transform: scale(1);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
   .icon-projects {
     margin: 0 auto;
     margin-top: 20px;
   }
+
   .slide .icon-projects img {
     margin-bottom: 0.5rem;
   }
@@ -278,13 +282,13 @@ ol li {
   margin-left: 20px;
 }
 
-@media (min-width: 360px) {
+@media (min-width: 22.5em) {
   .line-2::after {
     content: "💼📊";
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .line-2::before {
     z-index: 9999;
     position: absolute;
@@ -350,6 +354,7 @@ ol li {
   margin-top: 20px;
   height: 68px;
 }
+
 .controls li {
   opacity: 0.6;
   transform: scale(0.6);
@@ -362,7 +367,7 @@ ol li {
   transition: 0.3s;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 50em) {
   .controls li {
     width: 32px;
     height: 32px;
@@ -388,8 +393,7 @@ ol li {
   width: 40px;
   height: 40px;
   filter: invert(100);
-  background: var(--arrow-bg) url(../assets/img/arrow-icon.svg) center center
-    no-repeat;
+  background: var(--arrow-bg) url(../assets/img/arrow-icon.svg) center center no-repeat;
   border: var(--color-b1) solid 0.5px;
   transition: 0.6s all;
 }
@@ -423,13 +427,13 @@ ol li {
   grid-template-columns: 80px 200px 80px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   .control-main {
     grid-template-columns: 70px 160px 70px;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 22.5em) {
   .control-main {
     grid-template-columns: 50px 160px 50px;
   }
@@ -487,7 +491,7 @@ ol li {
   margin-right: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
   .projects {
     width: 90%;
     box-shadow: 2.5px 0px 0px rgba(128, 128, 128, 1),
@@ -497,16 +501,17 @@ ol li {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .wrap {
     width: 400px;
   }
+
   .slide li img {
     display: inline-block;
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 29.75em) {
   .legenda {
     display: inline-block;
     font-size: 1rem;
@@ -516,12 +521,13 @@ ol li {
   .linkP {
     margin-bottom: 1rem;
   }
+
   .demo {
     margin-bottom: 1rem;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 21.25em) {
   .linkP {
     margin-right: 2px;
   }
