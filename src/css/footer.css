@@ -1,11 +1,18 @@
 .copy {
+  display: none;
   border-top: rgba(0, 0, 0, 0.3) solid 0.2px;
+  background: var(--color-w);
+}
+
+@media(max-width: 64em) {
+  .copy {
+    display: block;
+  }
 }
 
 .dados {
   display: flex;
   justify-content: space-between;
-  background: var(--color-w);
 }
 
 .icons {
@@ -27,13 +34,17 @@
 }
 
 .copy p {
-  padding: 10px;
+  padding-block: 10px;
   text-align: center;
   align-self: center;
   font-family: "Poppins", monospace;
-  font-weight: lighter;
+  font-weight: normal;
   color: #222;
   font-size: 0.8rem;
+
+  & a {
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 45.5em) {
@@ -43,12 +54,8 @@
 }
 
 @media (max-width: 26.25em) {
-  .dados {
-    padding: 10px;
-  }
-
   .copy p {
-    font-size: 0.4rem;
+    font-size: .7rem;
   }
 }
 
