@@ -17,12 +17,18 @@ export default class ScrollSmooth {
     const section = document.querySelector(href);
     let viewPortWidth = window.innerWidth;
     let topSection = section.offsetTop;
-    if (href === '#home') {
-      topSection = sectionHomeValue;
-    } else if (href === '#about') {
-      topSection *= viewPortWidth >= 600 ? sectionAboutValue : 0.94;
-    } else if (href === '#project') {
-      topSection *= viewPortWidth >= 600 ? sectionProjectValue : 0.85;
+    switch (href) {
+      case href === '#home':
+        topSection = sectionHomeValue;
+        break;
+      case href === '#about':
+        topSection *= viewPortWidth >= 600 ? sectionAboutValue : 0.94;
+        break;
+      case href === '#project':
+        topSection *= viewPortWidth >= 600 ? sectionProjectValue : 0.85;
+        break;
+      default:
+        break;
     }
     if (options === undefined) {
       options = { top: topSection, behavior: 'smooth' };
