@@ -68,11 +68,11 @@
   background-color: var(--color-b1);
 }
 
-[data-theme="dark"] .cssMenu,
+/* [data-theme="dark"] .cssMenu,
 [data-theme="dark"] .cssContainer {
   outline-offset: .1px;
   outline: 0.0625rem solid #9400ff;
-}
+} */
 
 .css span {
   font-family: "Inconsolata", monospace;
