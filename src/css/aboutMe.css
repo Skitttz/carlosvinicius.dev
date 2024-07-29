@@ -119,6 +119,11 @@
 }
 
 @media (min-width: 75em) {
+
+  .aboutMe {
+    margin-bottom: 8rem;
+  }
+
   .content-text {
     margin-bottom: 3rem;
   }
