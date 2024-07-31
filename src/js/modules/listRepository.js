@@ -6,6 +6,8 @@ export default class RepositoryGit {
   constructor(bodyRepository) {
     this.bodyRepository = document.querySelectorAll(bodyRepository);
     this.slideContainer = document.querySelector('.slide');
+    this.controlsContainer = document.querySelector('.controls');
+    this.numberLimitRepo = 4;
   }
 
   renderizeCodeTag() {
@@ -35,7 +37,7 @@ export default class RepositoryGit {
         // Seleciona todos os hiperlinks dentro da div
         if (divElement) {
           let pElement = divElement.querySelector('p');
-          pElement.classList.add('containerTopic');
+          pElement?.classList.add('containerTopic');
         }
         let links = divElement.querySelectorAll('a');
 
@@ -101,7 +103,10 @@ export default class RepositoryGit {
         `https://pinned.berrysauce.me/get/${username}`,
       );
       const data = await response.json();
-      for (let index = 0; index < data.length; index++) {
+      for (let index = 0; index < this.numberLimitRepo; index++) {
+        let listControls = document.createElement('li');
+        let imageControls = document.createElement('img');
+        listControls.appendChild(imageControls);
         //Criar Li
         let listItem = document.createElement('li');
         listItem.className = 'content-body-repository';
@@ -114,6 +119,7 @@ export default class RepositoryGit {
 
         //Colocar Li dentro do UL slide
         this.slideContainer.appendChild(listItem);
+        this.controlsContainer.appendChild(listControls);
       }
     } catch (error) {
       console.error('[Error Criar Elementos do Slide]:', error);
@@ -128,8 +134,7 @@ export default class RepositoryGit {
         `https://pinned.berrysauce.me/get/${username}`,
       );
       const data = await response.json();
-
-      for (let index = 0; index < data.length; index++) {
+      for (let index = 0; index < this.numberLimitRepo; index++) {
         const item = data[index];
         if (item.name && username) {
           await this.getDataReadmeRepository(
@@ -171,7 +176,6 @@ export default class RepositoryGit {
     let olELement = document.querySelector('ol');
     if (olELement) {
       let liElements = olELement.querySelectorAll('li');
-
       for (let i = 0; i < liElements.length; i++) {
         let liElement = liElements[i];
 
