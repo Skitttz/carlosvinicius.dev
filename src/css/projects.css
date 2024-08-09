@@ -408,6 +408,16 @@ ol li {
   background-image: linear-gradient(to right, #1c2130, #252e76);
 }
 
+table {
+  width: 100%;
+  margin-block: 1rem;
+}
+
+blockquote {
+  background-color: #e5e5e5;
+  margin-block: 2rem;
+}
+
 
 
 @media (max-width: 50em) {
