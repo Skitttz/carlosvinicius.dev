@@ -100,7 +100,7 @@ export default class RepositoryGit {
   async createElements(username) {
     try {
       const response = await fetch(
-        `https://pinned.berrysauce.me/get/${username}`,
+        `https://pinned.berrysauce.dev/get/${username}`,
       );
       const data = await response.json();
       for (let index = 0; index < this.numberLimitRepo; index++) {
@@ -131,7 +131,7 @@ export default class RepositoryGit {
   async getDataPinnedRepository(username) {
     try {
       const response = await fetch(
-        `https://pinned.berrysauce.me/get/${username}`,
+        `https://pinned.berrysauce.dev/get/${username}`,
       );
       const data = await response.json();
       for (let index = 0; index < this.numberLimitRepo; index++) {

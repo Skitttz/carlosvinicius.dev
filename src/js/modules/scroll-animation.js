@@ -1,13 +1,13 @@
-import debounce from "./debounce";
+import debounce from './debounce';
 
 export default class ScrollAnimation {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowScreenSplit = window.innerHeight * 0.5;
     this.checkDistance = debounce(this.checkDistance.bind(this), 50);
-    this.divArrowUp = document.querySelector(".divArrow");
-    this.activeClass = "ativo";
-    this.arrowSectionActive = "aboutMe-bg ativo";
+    this.divArrowUp = document.querySelector('.divArrow');
+    this.activeClass = 'ativo';
+    this.arrowSectionActive = 'aboutMe-bg ativo';
   }
 
   /* Captura a distancia de cada objeto ao topo do site */
@@ -50,13 +50,13 @@ export default class ScrollAnimation {
     if (this.sections.length) {
       this.getDistance();
       this.checkDistance();
-      window.addEventListener("scroll", this.checkDistance);
+      window.addEventListener('scroll', this.checkDistance);
     }
     return this;
   }
 
   /* Remove o evento de Scroll */
   stop() {
-    window.removeEventListener("scroll", this.checkDistance);
+    window.removeEventListener('scroll', this.checkDistance);
   }
 }
