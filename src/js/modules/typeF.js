@@ -32,7 +32,43 @@ function enableSwitchButton() {
   }
 }
 
+function firstAnimationLanguage(){
+  let currentLanguage = localStorage.getItem("language") ?? 'pt';
+  const structureType = {
+    pt: {
+      text1: "olá",
+      text2: ", sou ",
+      text3: " O",
+      text4: " C",
+      text5: "programad",
+      text6: "console.log('",
+      text7: "envolvedor ",
+      text8: "Front-End",
+      text9: "');",
+      text10: "<section class='panelSection'></section>"
+    },
+    en: {
+      text1: "hello",
+      text2: ", i am ",
+      text3: " I",
+      text4: " C",
+      text5: "programmer",
+      text6: "console.log('",
+      text7: "developer ",
+      text8: "Front-End",
+      text9: "');",
+      text10: "<section class='panelSection'></section>"
+    }
+  };
+  
+
+  return structureType[currentLanguage]; 
+
+}
+
 function Type(panel) {
+  const animationStructure = firstAnimationLanguage();
+
   const typeA = new TypeIt('#text', {
     lifeLike: false,
     speed: 50,
@@ -41,19 +77,20 @@ function Type(panel) {
       typeA.destroy();
       panel.Aparecer();
       enableSwitchButton(); 
+      showFinalContent();
     },
   })
-    .type('olá', { delay: 100 })
-    .type(', sou ')
+    .type(animationStructure.text1, { delay: 100 })
+    .type(animationStructure.text2)
     .pause(448)
     .move(null, { to: 'START', instant: true, delay: 300 })
     .move(1, { delay: 200 })
     .delete(1)
-    .type('O', { delay: 225 })
+    .type(animationStructure.text3, { delay: 225 })
     .pause(200)
     .move(7, { instant: true })
     .pause(348)
-    .type(' C')
+    .type(animationStructure.text4)
     .pause(1000)
     .delete(1)
     .type('<p></p>')
@@ -61,11 +98,11 @@ function Type(panel) {
     .pause(348)
     .break()
     .pause(200)
-    .type(' ')
+    .type(' </p> ')
     .pause(116)
     .type(' ')
     .pause(135)
-    .type('programad')
+    .type(animationStructure.text5)
     .delete(1)
     .pause(164)
     .delete(1)
@@ -84,7 +121,7 @@ function Type(panel) {
     .pause(167)
     .delete(1)
     .pause(132)
-    .type("console.log('")
+    .type(animationStructure.text6)
     .pause(200)
     .type('d')
     .pause(64)
@@ -104,18 +141,19 @@ function Type(panel) {
     .pause(150)
     .type('s')
     .pause(300)
-    .type('envolvedor ', { delay: 500 })
+    .type(animationStructure.text7, { delay: 500 })
     .pause(150)
-    .type('Front-End', { delay: 300 })
+    .type(animationStructure.text8, { delay: 300 })
     .pause(200)
-    .type('.')
-    .type("');")
+    .type(animationStructure.text9)
     .pause(1000)
     .delete(40, { instant: true })
     .pause(100)
-    .type("<section class='panelSection'></section>")
+    .type(animationStructure.text10)
     .go();
 }
+
+
 
 function TypeConsole(panel) {
   const typeB = new TypeIt('#consoleType', {

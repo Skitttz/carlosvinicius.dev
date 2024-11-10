@@ -56,6 +56,7 @@
         }
       }
 
+
       toggleLanguage(language = null) {
         this.currentLanguage = language || (this.currentLanguage === 'pt' ? 'en' : 'pt');
 
@@ -74,6 +75,7 @@
 
         this.button.textContent = this.currentLanguage === 'en' ? 'PT-BR' : 'EN';
         localStorage.setItem('language', this.currentLanguage);
+
       }
     }
 
@@ -99,7 +101,7 @@
           <li><a class="link" href="#project" data-en="Projects">Projetos</a></li>
           <li><a class="link" href="#about" data-en="About Me">Sobre Mim</a></li>
           <li><a class="link btnOpenModal" href="" data-en="Contact">Contato</a></li>
-          <li><button title="switch button" class="language-switch-button"></button></li>
+          <li><button title="button switch language" class="language-switch-button"></button></li>
 
 
           <div class="hMenu">
