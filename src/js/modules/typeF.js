@@ -9,13 +9,27 @@ function showFinalContent(panel) {
   const consoleElement = document.getElementById('consoleType');
 
   textElement.innerHTML = `
-    <p>${languageManagerTypeF.getText('greeting')}</p>
-    <span class='myName'>${languageManagerTypeF.getText('name')}</span>
+    <p data-en='Hello, I am'>Olá, sou</p>
+    <span class='myName'>Carlos Vinicius,</span>
     <section class='panelSection'></section>
   `;
 
-  consoleElement.textContent = languageManagerTypeF.getText('profession');
+  consoleElement.textContent = 'Desenvolvedor Front-End';
   panel.Aparecer();
+}
+
+function disableSwitchButton() {
+  const switchButton = document.querySelector('.language-switch-button');
+  if (switchButton) {
+    switchButton.disabled = true;
+  }
+}
+
+function enableSwitchButton() {
+  const switchButton = document.querySelector('.language-switch-button');
+  if (switchButton) {
+    switchButton.disabled = false;
+  }
 }
 
 function Type(panel) {
@@ -26,9 +40,10 @@ function Type(panel) {
     afterComplete: function (typeA) {
       typeA.destroy();
       panel.Aparecer();
+      enableSwitchButton(); 
     },
   })
-    .type(languageManagerTypeF.getText('greeting'), { delay: 100 })
+    .type('olá', { delay: 100 })
     .type(', sou ')
     .pause(448)
     .move(null, { to: 'START', instant: true, delay: 300 })
@@ -42,7 +57,7 @@ function Type(panel) {
     .pause(1000)
     .delete(1)
     .type('<p></p>')
-    .type(` <span class='myName'>${languageManagerTypeF.getText('name')}</span>`)
+    .type(" <span class='myName'>Carlos Vinicius,</span>")
     .pause(348)
     .break()
     .pause(200)
@@ -69,7 +84,32 @@ function Type(panel) {
     .pause(167)
     .delete(1)
     .pause(132)
-    .type(languageManagerTypeF.getText('consoleText'))
+    .type("console.log('")
+    .pause(200)
+    .type('d')
+    .pause(64)
+    .type('e')
+    .pause(64)
+    .type('v')
+    .pause(64)
+    .delete(1)
+    .pause(194)
+    .delete(1)
+    .pause(183)
+    .delete(1)
+    .pause(284)
+    .type('D')
+    .pause(93)
+    .type('e')
+    .pause(150)
+    .type('s')
+    .pause(300)
+    .type('envolvedor ', { delay: 500 })
+    .pause(150)
+    .type('Front-End', { delay: 300 })
+    .pause(200)
+    .type('.')
+    .type("');")
     .pause(1000)
     .delete(40, { instant: true })
     .pause(100)
@@ -80,7 +120,7 @@ function Type(panel) {
 function TypeConsole(panel) {
   const typeB = new TypeIt('#consoleType', {
     cursorChar: '▍',
-    strings: languageManagerTypeF.getText('consoleText'),
+    strings: 'Desenvolvedor Front-End.',
     lifeLike: false,
     speed: 50,
     startDelay: 900,
@@ -92,6 +132,7 @@ function TypeConsole(panel) {
 
 export default function TypeF() {
   const panel = new Panel();
+  
   if (shouldResetAnimation(animationData.lastExecutionTime)) {
     localStorage.removeItem('animationData');
     animationData.executed = false;
@@ -103,8 +144,10 @@ export default function TypeF() {
     return;
   }
 
+  disableSwitchButton();
   Type(panel);
   TypeConsole(panel);
+
   localStorage.setItem(
     'animationData',
     JSON.stringify({

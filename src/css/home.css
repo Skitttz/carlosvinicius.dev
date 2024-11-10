@@ -278,6 +278,22 @@
   background-color: #004085;
 }
 
+.language-switch-button:disabled {
+  background-color: #c0c0c0;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.language-switch-button:disabled:hover {
+  background-color: #c0c0c0;
+  transform: none;
+}
+
+.language-switch-button:disabled:active {
+  background-color: #c0c0c0;
+}
+
 @media (max-width: 64em) {
   .homeGif {
     display: none;
