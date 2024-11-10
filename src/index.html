@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="pt-BR" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;800;900&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;800;900&family=Inter:wght@400;500;600;800;900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
   <link rel="icon" type="image/x-icon" href="./favicon.svg">
@@ -25,20 +29,67 @@
       return document.documentElement.setAttribute('data-theme', 'light');
     })();
   </script>
+  <script>
+    class SwitchLanguage {
+      constructor(buttonSelector) {
+        this.button = document.querySelector(buttonSelector);
+        this.currentLanguage = localStorage.getItem('language') || 'pt';
+
+        if (this.button) {
+          this.setDefaultText();
+          this.toggleLanguage(this.currentLanguage);
+
+          this.button.addEventListener('click', () =>
+            this.toggleLanguage(this.currentLanguage === 'pt' ? 'en' : 'pt')
+          );
+        }
+      }
+
+      setDefaultText() {
+        document.querySelectorAll('[data-en]').forEach(element => {
+          element.defaultText = element.textContent;
+        });
+      }
+
+      toggleLanguage(language) {
+        document.querySelectorAll('[data-en]').forEach(element => {
+          element.textContent = language === 'en' ? element.getAttribute('data-en') : element.defaultText;
+        });
+
+        if (language === 'en') {
+          this.button.textContent = 'PT-BR';
+        } else {
+          this.button.textContent = 'EN';
+        }
+
+        this.currentLanguage = language;
+        localStorage.setItem('language', language);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new SwitchLanguage('.language-switch-button');
+    });
+  </script>
 </head>
 
 <body>
-  <div class="divArrow"> <a class="arrowUpLink" href="#home"><img class="arrowUp" src="./assets/img/arrow-up.svg" alt="ArrowUp"></a></div>
+  <div class="divArrow"> <a class="arrowUpLink" href="#home"><img class="arrowUp" src="./assets/img/arrow-up.svg"
+        alt="ArrowUp"></a></div>
   <header class="header-bg fixed">
     <div class="header container ">
       <li>
-        <a class="logo link" href="#home"> <img src="./assets/img/logo.svg" alt="" class="logoImg" id="ImagemLogo" aria-label="Logo"></a>
+        <a class="logo link" href="#home"> <img src="./assets/img/logo.svg" alt="" class="logoImg" id="ImagemLogo"
+            aria-label="Logo"></a>
       </li>
       <nav class="menu" data-menu="smooth">
         <ul class="header-menu">
-          <li><a class="link" href="#project">Projetos</a></li>
-          <li><a class="link" href="#about">Sobre Mim</a></li>
-          <li><a class="link btnOpenModal" href="">Contato</a></li>
+          <li><a class="link" href="#project" data-en="Projects">Projetos</a></li>
+          <li><a class="link" href="#about" data-en="About Me">Sobre Mim</a></li>
+          <li><a class="link btnOpenModal" href="" data-en="Contact">Contato</a></li>
+          <li><button class="language-switch-button"></button></li>
+
+
           <div class="hMenu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -56,40 +107,44 @@
       <div class="modal-container">
         <div class="menu-modal">
           <div class="navBtn">
-            <a class="btnCloseModal" href=""></a>
+            <a rel="noopener noreferrer" class="btnCloseModal" href=""></a>
           </div>
         </div>
         <div class="divForm">
-          <h3 class="title-modal">Entrar em contato</h3>
-          <h4 class="subtitle-modal">Preencha o formulário abaixo para entrar em contato.</h4>
+          <h3 class="title-modal" data-en="Contact Us">Entrar em contato</h3>
+          <h4 class="subtitle-modal" data-en="Fill out the form below to get in touch.">Preencha o formulário abaixo
+            para entrar em contato.</h4>
           <form class="main-form" id="FormId">
             <div class="item-form item-name">
-              <input required type="text" placeholder="" id="nome">
-              <label for="name">Nome</label>
+              <input title="name" required type="text" placeholder="" id="nome">
+              <label for="name" data-en="Name">Nome</label>
             </div>
             <div class="item-form item-email">
               <input required type="email" placeholder="ㅤ" id="email">
-              <label for="email">E-mail</label>
+              <label for="email" data-en="Email">E-mail</label>
             </div>
             <div class="item-form item-subject">
-              <input required type="text" placeholder="" id="assunto">
-              <label for="subject">Assunto</label>
+              <input title="subject" required type="text" placeholder="" id="assunto">
+              <label for="subject" data-en="Subject">Assunto</label>
             </div>
             <div class="item-form item-message">
-              <textarea class="textarea-modal" id="mensagem" name="mensagem" rows="5" required></textarea>
-              <label for="message">Mensagem</label>
+              <textarea title="text area modal" class="textarea-modal" id="mensagem" name="mensagem" rows="5"
+                required></textarea>
+              <label for="message" data-en="Message">Mensagem</label>
             </div>
-            <button class="btn-submit" type="submit">Enviar Mensagem</button>
+            <button class="btn-submit" type="submit" data-en="Send Message">Enviar Mensagem</button>
           </form>
           <div class="othersContact">
-
-            <span class="orText">Outras formas de contato</span>
+            <span class="orText" data-en="Other ways to contact">Outras formas de contato</span>
             <ul class="linksContactModal">
-              <li><a href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/" target="_blank" aria-label="LinkedinHome"> <img src="./assets/img/icon-linkedin.svg" class="icon" alt=""> </a></li>
-              <li><a href="https://github.com/Skitttz" target="_blank" aria-label="githubHome"><img src="./assets/img/icon-github.svg" class="icon" alt=""></a></li>
-              <li><a href="https://wa.me/5582981229049" target="_blank" aria-label="emailHome"><img src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a></li>
+              <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/"
+                  target="_blank" aria-label="LinkedinHome"> <img src="./assets/img/icon-linkedin.svg" class="icon"
+                    alt=""> </a></li>
+              <li><a rel="noopener noreferrer" href="https://github.com/Skitttz" target="_blank"
+                  aria-label="githubHome"><img src="./assets/img/icon-github.svg" class="icon" alt=""></a></li>
+              <li><a rel="noopener noreferrer" href="https://wa.me/5582981229049" target="_blank"
+                  aria-label="emailHome"><img src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a></li>
             </ul>
-
           </div>
         </div>
       </div>
@@ -98,10 +153,15 @@
   <section class="home-bg" data-animation="scroll" id="home">
     <div class="grid container first">
       <ul class="linksContato">
-        <li><a href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/" target="_blank" aria-label="LinkedinHome"> <img src="./assets/img/icon-linkedin.svg" class="icon" alt=""> </a></li>
-        <li><a href="https://github.com/Skitttz" target="_blank" aria-label="githubHome"><img src="./assets/img/icon-github.svg" class="icon" alt=""></a></li>
-        <li><a href="mailto:skittz.dev@gmail.com" target="_blank"><img src="./assets/img/icon-email.svg" class="icon" alt="" aria-label="EmailHome"></a></li>
-        <li><a href="https://wa.me/5582981229049" target="_blank" aria-label="emailHome"><img src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a></li>
+        <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/carlos-vinicius-6a2874234/" target="_blank"
+            aria-label="LinkedinHome">
+            <img src="./assets/img/icon-linkedin.svg" class="icon" alt=""> </a></li>
+        <li><a rel="noopener noreferrer" href="https://github.com/Skitttz" target="_blank" aria-label="githubHome"><img
+              src="./assets/img/icon-github.svg" class="icon" alt=""></a></li>
+        <li><a rel="noopener noreferrer" href="mailto:skittz.dev@gmail.com" target="_blank"><img
+              src="./assets/img/icon-email.svg" class="icon" alt="" aria-label="EmailHome"></a></li>
+        <li><a rel="noopener noreferrer" href="https://wa.me/5582981229049" target="_blank" aria-label="emailHome"><img
+              src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a></li>
       </ul>
       <div class="home-main">
         <p id="text">
@@ -124,8 +184,10 @@
           </div>
         </section>
         <div class="linksBtn">
-          <a class="btn btn-cv btnOpenModal" href="" target="_blank">Entrar em contato</a>
-          <a class=" btn btn-contact" href="./assets/file/Curriculo_CarlosVinicius.pdf" download="Curriculo-CarlosVinicius">Download CV <img src="./assets/img/downloadArrow.svg" class="icon i-download" alt=""></a>
+          <a class="btn btn-cv btnOpenModal" href="" target="_blank" data-en="Contact Me">Entrar em contato</a>
+          <a class=" btn btn-contact" href="./assets/file/Curriculo_CarlosVinicius.pdf"
+            download="Curriculo-CarlosVinicius">Download CV <img src="./assets/img/downloadArrow.svg"
+              class="icon i-download" alt=""></a>
         </div>
       </div>
       <div class="homeGif">
@@ -139,26 +201,17 @@
 
   <section class="projects-bg" id="project" data-animation="scroll">
     <div class="container projects">
-      <h1 class="line-2 title projects-title">Projetos </h1>
+      <h1 class="line-2 title projects-title" data-en="Projects">Projetos </h1>
 
       <div class="control-main">
         <div class="arrow-nav">
-          <button class="prev"></button>
+          <button title="button prev" class="prev"></button>
 
         </div>
         <ul class="controls">
-
-          <!-- <li><img src="./assets/img/control-aniArt-icon.svg" alt=""></li>
-          <li><img src="./assets/img/control-surfCurse-icon.svg" alt=""></li>
-          <li><img src="./assets/img/control-DrinkWater-icon.svg" alt=""></li> -->
-          <!-- <li><img src="./assets/img/logoNights4Films.svg" alt=""></li>
-          <li><img src="./assets/img/logoCats.svg" alt=""></li>
-          <li><img src="./assets/img/control-surfCurse-icon.svg" alt=""></li>
-          <li><img src="./assets/img/control-aniArt-icon.svg" alt=""></li> -->
         </ul>
-
         <div class="arrow-nav">
-          <button class="next"></button>
+          <button title="button next" class="next"></button>
         </div>
 
       </div>
@@ -176,9 +229,26 @@
         <img class="aboutMeImg" src="./assets/img/photo.jpeg" alt="">
       </div>
       <div class="content-text">
-        <h1 class="line-1 title">Sobre mim</h1>
-        <p>Sou formado em Ciência da Computação pela <a href="https://www.unit.br/" target="_blank">Universidade Tirdentes</a>, meu foco atualmente é desenvolvimento web. Tenho uma base sólida em <span class="skills-content">HTML,CSS e Javascript</span> com ênfase em <span class="skills-content">React</span>, além disso atualmente estou aprendendo <span class="skills-content">TypeScript e NextJS</span> para expandir meus conhecimentos e também me aventurando em <span class="skills-content">Express e Nest.js</span>. Nos momentos de lazer, gosto de jogar,editar fotos e vídeos. Fique à vontade para explorar meus trabalhos. Fico à disposição para esclarecer dúvidas ou explorar oportunidades.</p>
-        <!-- <img class="photoMobile aboutMeImg" src="./assets/img/photo.jpeg" alt=""> -->
+        <h1 class="line-1 title" data-en="About me">Sobre mim</h1>
+        <p>
+          <span data-en="I graduated in Computer Science from">Sou formado em Ciência da Computação pela</span>
+          <a rel="noopener noreferrer" href="https://www.unit.br/" target="_blank">Universidade Tirdentes</a>
+          <span data-en="my focus is currently web development. I have a solid foundation in">, meu foco atualmente é
+            desenvolvimento web. Tenho uma base sólida em</span>
+          <span class="skills-content" data-en="HTML, CSS, and Javascript">HTML,CSS e Javascript</span>
+          <span data-en="with an emphasis on">com ênfase em</span>
+          <span class="skills-content" data-en="React">React</span>
+          <span data-en="and I am currently learning">, além disso atualmente estou aprendendo</span>
+          <span class="skills-content" data-en="TypeScript and NextJS">TypeScript e NextJS</span>
+          <span data-en="to expand my knowledge and also venturing into">para expandir meus conhecimentos e também me
+            aventurando em</span>
+          <span class="skills-content" data-en="Express and Nest.js">Express e Nest.js</span>.
+          <span
+            data-en="In my leisure time, I enjoy playing, editing photos and videos. Feel free to explore my work. I am available to clarify doubts or explore opportunities.">Nos
+            momentos de lazer, gosto de jogar, editar fotos e vídeos. Fique à vontade para explorar meus trabalhos. Fico
+            à disposição para esclarecer dúvidas ou explorar oportunidades.</span>
+        </p>
+
       </div>
       <section class="tech-bg" id="tech" data-animation="scroll">
         <div class="container tech-main" id="#tech">
@@ -216,9 +286,12 @@
       <div class="dados">
         <p>Desenvolvido por <a class="author-footer" href="https://github.com/Skitttz" target="__blank">@skittz</a></p>
         <div class="icons">
-          <a href="https://wa.me/5582981229049" target="_blank" aria-label="WhatsappFooter"> <img src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a>
-          <a href="mailto:skittz.dev@gmail.com" target="_blank" aria-label="EmailFooter"> <img src="./assets/img/icon-email.svg" class="icon" alt=""></a>
-          <a href="https://github.com/Skitttz" target="_blank" aria-label="GitHubFooter"> <img src="./assets/img/icon-github.svg" class="icon" alt=""></a>
+          <a rel="noopener noreferrer" href="https://wa.me/5582981229049" target="_blank" aria-label="WhatsappFooter">
+            <img src="./assets/img/icon-whatsapp.svg" class="icon" alt=""></a>
+          <a rel="noopener noreferrer" href="mailto:skittz.dev@gmail.com" target="_blank" aria-label="EmailFooter"> <img
+              src="./assets/img/icon-email.svg" class="icon" alt=""></a>
+          <a rel="noopener noreferrer" href="https://github.com/Skitttz" target="_blank" aria-label="GitHubFooter"> <img
+              src="./assets/img/icon-github.svg" class="icon" alt=""></a>
         </div>
       </div>
     </div>
