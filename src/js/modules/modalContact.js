@@ -41,10 +41,17 @@ export default class ModalContact {
     this.sendEmail = this.sendEmail.bind(this);
 
     //Message & others
-    this.msgAlertSucess = "Mensagem enviada com sucesso!";
-    this.msgAlertError = "Ops! Erro ao enviar a mensagem";
-
+    this.msgAlertSucess = {pt:"Mensagem enviada com sucesso!", en:"Message sent successfully!"};
+    this.msgAlertError = {pt:"Ops! Erro ao enviar a mensagem", en:"Oops! Error sending the message"};
+    this.alertMessage = {pt: "Preencha todos os campos", en: "Please fill in all fields"};
+    this.buttonSubmitLabelSending = {pt: "Enviando...", en: "Sending..."};
+    this.buttonSubmitLabelTextDefault = {pt:"Enviar mensagem", en:"Submit Message"};
     this.activeClass = "ativo";
+  }
+
+  getLanguage() {
+    const language = localStorage.getItem('language') ?? "pt";
+    return language;
   }
 
   toggleModal() {
@@ -64,8 +71,9 @@ export default class ModalContact {
 
   async sendEmail() {
     let loading = true;
+    const language = this.getLanguage();
     if (loading && this.btnSubmit) {
-      this.btnSubmit.innerText = "Enviando...";
+      this.btnSubmit.innerText = this.buttonSubmitLabelSending[language];
     }
     const valueInputName = this.inputName.value;
     const valueInputEmail = this.inputEmail.value;
@@ -98,7 +106,7 @@ export default class ModalContact {
         });
         loading = false;
         if (this.btnSubmit && !loading) {
-          this.btnSubmit.innerText = "Enviar mensagem";
+          this.btnSubmit.innerText = this.buttonSubmitLabelTextDefault[language];
           clearInputs(
             this.inputName,
             this.inputEmail,
@@ -108,11 +116,11 @@ export default class ModalContact {
         }
         if (!response.ok) {
           throw new Error(
-            "Erro ao enviar o e-mail. Por favor, tente novamente mais tarde.",
+            "Error sending the email. Please try again later.",
           );
         }
         Toastify({
-          text: this.msgAlertSucess,
+          text: this.msgAlertSucess[language],
           duration: 5000,
           newWindow: true,
           close: true,
@@ -128,7 +136,7 @@ export default class ModalContact {
       } catch (error) {
         console.error(error);
         Toastify({
-          text: this.msgAlertError,
+          text: this.msgAlertError[language],
           duration: 6000,
           newWindow: true,
           close: true,
@@ -142,7 +150,7 @@ export default class ModalContact {
         }).showToast();
       }
     } else {
-      alert("Preencha todos os campos");
+      alert(this.alertMessage[language]);
     }
   }
 
