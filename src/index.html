@@ -39,38 +39,41 @@
           this.setDefaultText();
           this.toggleLanguage(this.currentLanguage);
 
-          this.button.addEventListener('click', () =>
-            this.toggleLanguage(this.currentLanguage === 'pt' ? 'en' : 'pt')
-          );
+          this.button.addEventListener('click', () => this.toggleLanguage());
         }
       }
 
       setDefaultText() {
         document.querySelectorAll('[data-en]').forEach(element => {
-          element.defaultText = element.textContent;
+          if (!element.dataset.defaultText) {
+            element.dataset.defaultText = element.textContent;
+          }
         });
-        document.querySelectorAll('[data-ptbr]').forEach(element => {
-          element.defaultText = element.textContent;
-        });
+
+        const ptElement = document.querySelector('[data-ptbr]');
+        if (ptElement && !ptElement.dataset.defaultText) {
+          ptElement.dataset.defaultText = ptElement.textContent;
+        }
       }
 
-      toggleLanguage(language) {
+      toggleLanguage(language = null) {
+        this.currentLanguage = language || (this.currentLanguage === 'pt' ? 'en' : 'pt');
+
         document.querySelectorAll('[data-en]').forEach(element => {
-          element.textContent = language === 'en' ? element.getAttribute('data-en') : element.defaultText;
+          element.textContent = this.currentLanguage === 'en'
+            ? element.getAttribute('data-en') || element.dataset.defaultText
+            : element.dataset.defaultText || element.textContent;
         });
 
-        document.querySelectorAll('[data-ptbr]').forEach(element => {
-          element.textContent = language === 'pt' ? element.getAttribute('data-ptbr') : element.defaultText;
-        });
-
-        if (language === 'en') {
-          this.button.textContent = 'PT-BR';
-        } else {
-          this.button.textContent = 'EN';
+        const ptElement = document.querySelector('[data-ptbr]');
+        if (ptElement) {
+          ptElement.textContent = this.currentLanguage === 'pt'
+            ? ptElement.getAttribute('data-ptbr') || ptElement.dataset.defaultText
+            : ptElement.dataset.defaultText || ptElement.textContent;
         }
 
-        this.currentLanguage = language;
-        localStorage.setItem('language', language);
+        this.button.textContent = this.currentLanguage === 'en' ? 'PT-BR' : 'EN';
+        localStorage.setItem('language', this.currentLanguage);
       }
     }
 
@@ -78,6 +81,8 @@
       new SwitchLanguage('.language-switch-button');
     });
   </script>
+
+
 </head>
 
 <body>
@@ -94,7 +99,7 @@
           <li><a class="link" href="#project" data-en="Projects">Projetos</a></li>
           <li><a class="link" href="#about" data-en="About Me">Sobre Mim</a></li>
           <li><a class="link btnOpenModal" href="" data-en="Contact">Contato</a></li>
-          <li><button class="language-switch-button"></button></li>
+          <li><button title="switch button" class="language-switch-button"></button></li>
 
 
           <div class="hMenu">
@@ -114,7 +119,7 @@
       <div class="modal-container">
         <div class="menu-modal">
           <div class="navBtn">
-            <a rel="noopener noreferrer" class="btnCloseModal" href=""></a>
+            <a title="close modal button" rel="noopener noreferrer" class="btnCloseModal" href=""></a>
           </div>
         </div>
         <div class="divForm">
