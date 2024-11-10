@@ -49,11 +49,18 @@
         document.querySelectorAll('[data-en]').forEach(element => {
           element.defaultText = element.textContent;
         });
+        document.querySelectorAll('[data-ptbr]').forEach(element => {
+          element.defaultText = element.textContent;
+        });
       }
 
       toggleLanguage(language) {
         document.querySelectorAll('[data-en]').forEach(element => {
           element.textContent = language === 'en' ? element.getAttribute('data-en') : element.defaultText;
+        });
+
+        document.querySelectorAll('[data-ptbr]').forEach(element => {
+          element.textContent = language === 'pt' ? element.getAttribute('data-ptbr') : element.defaultText;
         });
 
         if (language === 'en') {
@@ -175,7 +182,7 @@
           <div class='cssContainer'>
             <img class="loading" src="./assets/img/loading.svg" alt="">
             <pre class="textArea"><code class='css'>
-          <span class="textCode" id="consoleType" data-en="Front-End Developer"></span>
+          <span class="textCode" id="consoleType" data-en="Front-End Developer" data-ptbr="Desenvolvedor Front-End"></span>
           <p id="broken-line"></p>
           <span class="exit-console">...Program finished with exit code 0
             Press ENTER to exit console
@@ -256,7 +263,8 @@
           <div class="tech-container">
             <article class="tech-text">
               <h2 id="tech-title"></h2>
-              <p id="tech-about">(Use os icones para ver um pequeno resumo das tecnologias que utilizo)</p>
+              <p data-en="(Use the icons to see a brief summary of the technologies I use.)">(Use os ícones para ver um
+                pequeno resumo das tecnologias que utilizo)</p>
             </article>
             <div class="tech-card">
               <ul class="card-ul">

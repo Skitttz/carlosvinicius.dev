@@ -119,8 +119,7 @@ function Type(panel) {
 
 function TypeConsole(panel) {
   const typeB = new TypeIt('#consoleType', {
-    cursorChar: '▍',
-    strings: 'Desenvolvedor Front-End.',
+    cursor:false,
     lifeLike: false,
     speed: 50,
     startDelay: 900,
