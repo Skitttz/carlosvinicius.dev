@@ -22,6 +22,22 @@
   <title>Portfólio {Carlos Vinicius} </title>
   <script>
     (function () {
+      function setLanguageBasedOnRegion() {
+        if (localStorage.getItem('language')) return null
+        const userLanguage = navigator.language || navigator.userLanguage;
+
+        if (userLanguage === 'pt-BR') {
+          localStorage.setItem('language', 'pt');
+        } else {
+          localStorage.setItem('language', 'en');
+        }
+      }
+
+      setLanguageBasedOnRegion();
+    })();
+  </script>
+  <script>
+    (function () {
       var theme = localStorage.getItem('theme') || 'light';
       if (theme === 'dark') {
         return document.documentElement.setAttribute('data-theme', 'dark');
@@ -38,21 +54,22 @@
         if (this.button) {
           this.setDefaultText();
           this.toggleLanguage(this.currentLanguage);
-
           this.button.addEventListener('click', () => this.toggleLanguage());
         }
       }
 
+
+
       setDefaultText() {
         document.querySelectorAll('[data-en]').forEach(element => {
-          if (!element.dataset.defaultText) {
-            element.dataset.defaultText = element.textContent;
+          if (!element.dataset.ptbr) {
+            element.dataset.ptbr = element.textContent;
           }
         });
 
         const ptElement = document.querySelector('[data-ptbr]');
-        if (ptElement && !ptElement.dataset.defaultText) {
-          ptElement.dataset.defaultText = ptElement.textContent;
+        if (ptElement && !ptElement.dataset.ptbr) {
+          ptElement.dataset.ptbr = ptElement.textContent;
         }
       }
 
@@ -62,20 +79,28 @@
 
         document.querySelectorAll('[data-en]').forEach(element => {
           element.textContent = this.currentLanguage === 'en'
-            ? element.getAttribute('data-en') || element.dataset.defaultText
-            : element.dataset.defaultText || element.textContent;
+            ? element.getAttribute('data-en') || element.dataset.ptbr
+            : element.dataset.ptbr || element.textContent;
         });
 
         const ptElement = document.querySelector('[data-ptbr]');
+        const textCode = document.querySelector('.textCode');
         if (ptElement) {
           ptElement.textContent = this.currentLanguage === 'pt'
-            ? ptElement.getAttribute('data-ptbr') || ptElement.dataset.defaultText
-            : ptElement.dataset.defaultText || ptElement.textContent;
+            ? ptElement.getAttribute('data-ptbr') || ptElement.dataset.ptbr
+            : ptElement.dataset.ptbr || ptElement.textContent;
         }
-
+        if (this.currentLanguage === 'pt') {
+          if (textCode) {
+            textCode.textContent = this.currentLanguage === 'pt'
+              ? textCode.getAttribute('data-ptbr') || textCode.dataset.ptbr
+              : textCode.dataset.ptbr || textCode.textContent;
+          }
+        }
         this.button.textContent = this.currentLanguage === 'en' ? 'PT-BR' : 'EN';
         localStorage.setItem('language', this.currentLanguage);
-
+        this.button.style.transition = "all .6s";
+        this.currentLanguage === 'pt' ? this.button.style.backgroundColor = '' : this.button.style.backgroundColor = 'green';
       }
     }
 
@@ -270,7 +295,8 @@
           <div class="tech-container">
             <article class="tech-text">
               <h2 id="tech-title"></h2>
-              <p data-en="(Use the icons to see a brief summary of the technologies I use.)">(Use os ícones para ver um
+              <p id="tech-about" data-en="(Use the icons to see a brief summary of the technologies I use.)">(Use os
+                ícones para ver um
                 pequeno resumo das tecnologias que utilizo)</p>
             </article>
             <div class="tech-card">

@@ -7,14 +7,14 @@ const animationDelayRemoveStorage = 3 * 60 * 1000;
 function showFinalContent(panel) {
   const textElement = document.getElementById('text');
   const consoleElement = document.getElementById('consoleType');
-
+  let currentLanguage = localStorage.getItem("language") ?? 'pt';
+  let isLanguagePTBR = currentLanguage === 'pt';
   textElement.innerHTML = `
-    <p data-en='Hello, I am'>Olá, sou</p>
-    <span class='myName'>Carlos Vinicius,</span>
-    <section class='panelSection'></section>
+    <p data-en="Hi, I am" data-ptbr="Olá, sou">${isLanguagePTBR ? "Olá, sou" : "Hi, I am"}</p>
+    <span class="myName">Carlos Vinicius,</span>
+    <section class="panelSection"></section>
   `;
-
-  consoleElement.textContent = 'Desenvolvedor Front-End';
+  consoleElement.textContent = isLanguagePTBR ? 'Desenvolvedor Front-End' : 'Front-End Developer';
   panel.Aparecer();
 }
 
@@ -42,19 +42,21 @@ function firstAnimationLanguage(){
       text4: " C",
       text5: "programad",
       text6: "console.log('",
+      textAtip: "s",
       text7: "envolvedor ",
       text8: "Front-End",
       text9: "');",
       text10: "<section class='panelSection'></section>"
     },
     en: {
-      text1: "hello",
-      text2: ", i am ",
-      text3: " I",
+      text1: "hi",
+      text2: ", I am ",
+      text3: " H",
       text4: " C",
-      text5: "programmer",
+      text5: "programme",
       text6: "console.log('",
-      text7: "developer ",
+      textAtip: "v",
+      text7: "eloper ",
       text8: "Front-End",
       text9: "');",
       text10: "<section class='panelSection'></section>"
@@ -139,7 +141,7 @@ function Type(panel) {
     .pause(93)
     .type('e')
     .pause(150)
-    .type('s')
+    .type(animationStructure.textAtip)
     .pause(300)
     .type(animationStructure.text7, { delay: 500 })
     .pause(150)

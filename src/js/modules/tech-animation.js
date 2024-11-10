@@ -122,7 +122,7 @@ export default class Tech {
           const linguagem = this.linguagens[index];
           this.targetContent.classList.add('ativo');
 
-          const language = localStorage.getItem('language') || 'pt'; 
+          const language = localStorage.getItem('language') ?? 'pt'; 
 
           const nome = linguagem.nome[language];
           const texto = linguagem.texto[language];

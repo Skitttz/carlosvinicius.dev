@@ -1,7 +1,6 @@
 import emailjs from "@emailjs/nodejs";
 
 export const handler = async (event) => {
-  console.log(event);
   const {
     API_EMAIL_SERVICE_ID,
     API_EMAIL_PUBLIC_KEY,
