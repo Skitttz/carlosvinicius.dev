@@ -1,5 +1,6 @@
 import TypeIt from 'typeit';
 import Panel from './createPanel.js';
+
 const animationData = JSON.parse(localStorage.getItem('animationData') || '{}');
 const animationDelayRemoveStorage = 3 * 60 * 1000;
 
@@ -8,12 +9,12 @@ function showFinalContent(panel) {
   const consoleElement = document.getElementById('consoleType');
 
   textElement.innerHTML = `
-    <p>Olá, sou</p>
-    <span class='myName'>Carlos Vinicius,</span>
+    <p>${languageManagerTypeF.getText('greeting')}</p>
+    <span class='myName'>${languageManagerTypeF.getText('name')}</span>
     <section class='panelSection'></section>
   `;
 
-  consoleElement.textContent = 'Desenvolvedor Front-End.';
+  consoleElement.textContent = languageManagerTypeF.getText('profession');
   panel.Aparecer();
 }
 
@@ -27,7 +28,7 @@ function Type(panel) {
       panel.Aparecer();
     },
   })
-    .type('olá', { delay: 100 })
+    .type(languageManagerTypeF.getText('greeting'), { delay: 100 })
     .type(', sou ')
     .pause(448)
     .move(null, { to: 'START', instant: true, delay: 300 })
@@ -41,7 +42,7 @@ function Type(panel) {
     .pause(1000)
     .delete(1)
     .type('<p></p>')
-    .type(" <span class='myName'>Carlos Vinicius,</span>")
+    .type(` <span class='myName'>${languageManagerTypeF.getText('name')}</span>`)
     .pause(348)
     .break()
     .pause(200)
@@ -68,32 +69,7 @@ function Type(panel) {
     .pause(167)
     .delete(1)
     .pause(132)
-    .type("console.log('")
-    .pause(200)
-    .type('d')
-    .pause(64)
-    .type('e')
-    .pause(64)
-    .type('v')
-    .pause(64)
-    .delete(1)
-    .pause(194)
-    .delete(1)
-    .pause(183)
-    .delete(1)
-    .pause(284)
-    .type('D')
-    .pause(93)
-    .type('e')
-    .pause(150)
-    .type('s')
-    .pause(300)
-    .type('envolvedor ', { delay: 500 })
-    .pause(150)
-    .type('Front-End', { delay: 300 })
-    .pause(200)
-    .type('.')
-    .type("');")
+    .type(languageManagerTypeF.getText('consoleText'))
     .pause(1000)
     .delete(40, { instant: true })
     .pause(100)
@@ -104,7 +80,7 @@ function Type(panel) {
 function TypeConsole(panel) {
   const typeB = new TypeIt('#consoleType', {
     cursorChar: '▍',
-    strings: 'Desenvolvedor Front-End.',
+    strings: languageManagerTypeF.getText('consoleText'),
     lifeLike: false,
     speed: 50,
     startDelay: 900,
