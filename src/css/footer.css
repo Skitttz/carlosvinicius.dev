@@ -15,6 +15,12 @@
   justify-content: space-between;
 }
 
+.footer-author {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
 .icons {
   display: flex;
   align-items: center;
@@ -25,11 +31,12 @@
   color: #e2e2e2;
 }
 
-.author-footer {
+.author {
   color: var(--color-b3);
 }
 
-[data-theme="dark"] .author-footer {
+
+[data-theme="dark"] .author {
   color: var(--color-b4);
 }
 
