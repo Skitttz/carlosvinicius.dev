@@ -1,5 +1,5 @@
-import { marked } from 'marked';
 import * as DOMPurify from 'dompurify';
+import { marked } from 'marked';
 import { generateDefaultColor } from './generateDefaultColor';
 
 export default class RepositoryGit {
@@ -11,15 +11,15 @@ export default class RepositoryGit {
   }
 
   renderizeCodeTag() {
-    let codeElements = document.querySelectorAll('code');
-    codeElements.forEach(function (codeElement) {
-      let liElement = codeElement.parentElement;
+    const codeElements = document.querySelectorAll('code');
+    for (const codeElement of codeElements) {
+      const liElement = codeElement.parentElement;
       liElement.classList.add('liDoCode');
-    });
+    }
   }
 
   clearTopicsHyperLink() {
-    let divElements = document.querySelectorAll('.body-repository');
+    const divElements = document.querySelectorAll('.body-repository');
     const objectTopicsHref = {
       0: { id: 0, href: '#contexto-' },
       1: { id: 1, href: '#contexto' },
@@ -32,40 +32,50 @@ export default class RepositoryGit {
     };
 
     if (divElements) {
-      divElements.forEach((divElement) => {
-        let defaultColor = generateDefaultColor();
+      for (const divElement of divElements) {
+        const defaultColor = generateDefaultColor();
         // Seleciona todos os hiperlinks dentro da div
         if (divElement) {
-          let pElement = divElement.querySelector('p');
+          const pElement = divElement.querySelector('p');
           pElement?.classList.add('containerTopic');
         }
-        let links = divElement.querySelectorAll('a');
+        const links = divElement.querySelectorAll('a');
 
         // Itera sobre os hiperlinks
-        links.forEach((linkElement) => {
+        for (const linkElement of links) {
           for (const key in objectTopicsHref) {
             if (
-              objectTopicsHref.hasOwnProperty(key) &&
               objectTopicsHref[key].href === linkElement.getAttribute('href')
             ) {
-              let topicElement = document.createElement('span');
+              const topicElement = document.createElement('span');
               topicElement.textContent = linkElement.textContent;
               linkElement.parentNode.replaceChild(topicElement, linkElement);
               topicElement.classList.add('titleTopic');
               topicElement.style.backgroundColor = defaultColor;
-
-              break;
             }
           }
-        });
-      });
+        }
+      }
     }
   }
+
+  generateMarginDetails() {
+    const divElements = document.querySelectorAll('.body-repository');
+
+    for (const divElement of divElements) {
+      const details = divElement.querySelectorAll('details');
+
+      for (const detailsElement of details) {
+        detailsElement.classList.add('details-margin');
+      }
+    }
+  }
+
   transformArchorToVideo(src) {
-    let linkElement = document.querySelector(`a[href="${src}"]`);
+    const linkElement = document.querySelector(`a[href="${src}"]`);
     if (linkElement) {
-      let videoURL = linkElement.href;
-      let videoElement = document.createElement('video');
+      const videoURL = linkElement.href;
+      const videoElement = document.createElement('video');
       videoElement.src = videoURL;
       videoElement.controls = true;
       videoElement.style.width = '100%';
@@ -77,13 +87,13 @@ export default class RepositoryGit {
   }
 
   allLinksBlank(tagName) {
-    let links = document.querySelectorAll(tagName);
-    links.forEach((link) => {
+    const links = document.querySelectorAll(tagName);
+    for (const link of links) {
       if (link.href) {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
       }
-    });
+    }
   }
 
   async getDataUserGit(username) {
@@ -104,14 +114,14 @@ export default class RepositoryGit {
       );
       const data = await response.json();
       for (let index = 0; index < this.numberLimitRepo; index++) {
-        let listControls = document.createElement('li');
-        let imageControls = document.createElement('img');
+        const listControls = document.createElement('li');
+        const imageControls = document.createElement('img');
         listControls.appendChild(imageControls);
         //Criar Li
-        let listItem = document.createElement('li');
+        const listItem = document.createElement('li');
         listItem.className = 'content-body-repository';
         //Criar Div
-        let divElement = document.createElement('div');
+        const divElement = document.createElement('div');
         divElement.className = 'body-repository';
 
         //Colocar div dentro do Li
@@ -173,20 +183,20 @@ export default class RepositoryGit {
   }
 
   searchLiGuide() {
-    let olELement = document.querySelector('ol');
+    const olELement = document.querySelector('ol');
     if (olELement) {
-      let liElements = olELement.querySelectorAll('li');
+      const liElements = olELement.querySelectorAll('li');
       for (let i = 0; i < liElements.length; i++) {
-        let liElement = liElements[i];
+        const liElement = liElements[i];
 
         // Verifique se este <li> contém um elemento <ul>
-        let pElement = liElement.querySelector('p');
+        const pElement = liElement.querySelector('p');
 
         // Se este <li> contém um <ul>, verifique se contém um <a> dentro do <ul>
-        let ulElement = liElement.querySelector('ul');
+        const ulElement = liElement.querySelector('ul');
 
         if (pElement && ulElement) {
-          let li2ndElement = ulElement.querySelector('li');
+          const li2ndElement = ulElement.querySelector('li');
           pElement.classList.add('stepStepP');
           ulElement.classList.add('stepStepUL');
           li2ndElement.classList.add('stepStepLI');
@@ -204,6 +214,7 @@ export default class RepositoryGit {
       ]);
       this.searchLiGuide();
       this.clearTopicsHyperLink();
+      this.generateMarginDetails();
       this.renderizeCodeTag();
       this.transformArchorToVideo(
         'https://github.com/Skitttz/Cats/assets/94083688/bcd0c656-1773-4e9c-9add-68d0176c3b36',

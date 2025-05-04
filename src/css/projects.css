@@ -18,6 +18,10 @@
   display: inline-block;
 }
 
+.details-margin {
+  margin: 40px 0;
+}
+
 .wrap {
   transition: background-color 0.3s ease-in-out;
 }
