@@ -156,6 +156,11 @@
   .card-ul {
     justify-content: center;
   }
+
+
+  .line-3::before {
+    top: 6px;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -167,7 +172,7 @@
     z-index: 9999;
     position: absolute;
     left: -10px;
-    top: 6px;
+    top: 2px;
     content: '';
     background-color: var(--color-b2);
     width: 5px;
