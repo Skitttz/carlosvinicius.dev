@@ -58,6 +58,10 @@
   .dados li {
     margin-bottom: 0rem;
   }
+
+  .author {
+    font-size: .8rem;
+  }
 }
 
 @media (max-width: 26.25em) {
